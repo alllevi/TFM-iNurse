@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">iNurse</string>
+
+    <!-- Strings relacionados con el login -->
+    <string name="prompt_email">Usuario</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Aceptar</string>
+    <string name="error_invalid_email">El usuario no es válido</string>
+    <string name="error_invalid_password">La contraseña es muy corta</string>
+    <string name="error_incorrect_password">La contraseña es incorrecta</string>
+
+    <!-- Strings relacionados con el menu pacientes -->
+    <string name="error_field_required">Este campo es obligatorio</string>
+    <string name="realizar_solicitud">Realizar solicitud</string>
+    <string name="mis_solicitudes">Mis solicitudes</string>
+    <string name="seleccionar_menu">Seleccionar menú</string>
+    <string name="mis_avisos">Mis avisos</string>
+    <string name="informacion_hospital">Información del hospital</string>
+
+    <!-- Strings relacionados con el menu personal -->
+    <string name="configurar_avisos">Configurar avisos</string>
+    <string name="menus_encargados">Menús encargados</string>
+    <string name="ver_solicitudes">Ver solicitudes</string>
+    <string name="mapa_camas">Mapa de camas</string>
+
+    <!-- Strings relacionados con realizar solicitud paciente -->
+    <string name="desea_solicitar">¿Qué desea solicitar?</string>
+    <string name="seleccione_prioridad">Seleccionar prioridad</string>
+    <string name="descripcion">Descripción de la solicitud</string>
+    <string name="enviar_solicitud">Enviar solicitud</string>
+
+    <!-- Strings relacionados con mis solicitudes paciente -->
+    <string name="filtrar_por_estado">Filtar por estado</string>
+    <string name="prioridad">Prioridad:</string>
+    <string name="solicitud">Solicitud:</string>
+    <string name="estado">Estado:</string>
+
+    <!-- Strings relacionados con seleccionar menu paciente -->
+    <string name="seleccione_el_menu">Seleccione el menú</string>
+    <string name="primer_plato">Primer plato -</string>
+    <string name="segundo_plato">Segundo plato -</string>
+    <string name="postre">Postre -</string>
+    <string name="avisos_programados">Avisos programados</string>
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="prioridades">
+        <item>Baja</item>
+        <item>Media</item>
+        <item>Alta</item>
+        <item>Emergencia</item>
+    </string-array>
+
+    <string-array name="estados">
+        <item>Todos</item>
+        <item>Pendientes</item>
+        <item>En progreso</item>
+        <item>Finalizados</item>
+        <item>Rechazados</item>
+    </string-array>
+</resources>

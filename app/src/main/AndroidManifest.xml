@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="tfm.muuinf.viciano.lledo.alejandro.inurse">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".pacientes.MenuPacientes" />
+        <activity android:name=".personal.MenuPersonal" />
+        <activity android:name=".pacientes.RealizarSolicitud">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".pacientes.MenuPacientes" />
+        </activity>
+        <activity android:name=".pacientes.MisSolicitudes">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".pacientes.MenuPacientes" />
+        </activity>
+        <activity android:name=".pacientes.SeleccionMenu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".pacientes.MenuPacientes" />
+        </activity>
+        <activity android:name=".pacientes.MisAvisos">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".pacientes.MenuPacientes" />
+        </activity>
+    </application>
+
+</manifest>
