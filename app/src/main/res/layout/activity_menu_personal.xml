@@ -24,24 +24,24 @@
             android:text="@string/ver_solicitudes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button" />
+            android:id="@+id/bt_menu_personal_solicitudes" />
 
         <Button
             android:text="@string/mapa_camas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button7" />
+            android:id="@+id/bt_menu_personal_mapa" />
 
         <Button
             android:text="@string/menus_encargados"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button8" />
+            android:id="@+id/bt_menu_personal_menus" />
 
         <Button
             android:text="@string/configurar_avisos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button9" />
+            android:id="@+id/bt_menu_personal_configurar" />
     </LinearLayout>
 </RelativeLayout>

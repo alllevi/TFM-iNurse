@@ -23,15 +23,6 @@ public class MenuPacientes extends AppCompatActivity implements View.OnClickList
 
         initComponentes();
         setEventos();
-
-    }
-
-    private void setEventos() {
-        this.btRealizarSolicitud.setOnClickListener(this);
-        this.btMisSolicitudes.setOnClickListener(this);
-        this.btSeleccionarMenu.setOnClickListener(this);
-        this.btMisAvisos.setOnClickListener(this);
-        this.btInfoHospital.setOnClickListener(this);
     }
 
     private void initComponentes() {
@@ -40,6 +31,14 @@ public class MenuPacientes extends AppCompatActivity implements View.OnClickList
         this.btSeleccionarMenu = (Button) findViewById(R.id.btMenuPacienteSelecMenu);
         this.btMisAvisos = (Button) findViewById(R.id.btMenuPacienteMisAvisos);
         this.btInfoHospital = (Button) findViewById(R.id.btMenuPacienteInfoHosp);
+    }
+
+    private void setEventos() {
+        this.btRealizarSolicitud.setOnClickListener(this);
+        this.btMisSolicitudes.setOnClickListener(this);
+        this.btSeleccionarMenu.setOnClickListener(this);
+        this.btMisAvisos.setOnClickListener(this);
+        this.btInfoHospital.setOnClickListener(this);
     }
 
     @Override

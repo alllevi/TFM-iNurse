@@ -18,7 +18,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:weightSum="1">
 
         <TextView
             android:text="@string/seleccione_el_menu"
@@ -28,9 +29,29 @@
             android:textColor="?android:attr/textColorPrimary"
             android:layout_marginBottom="15dp" />
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:layout_marginBottom="30dp">
+
+            <Button
+                android:text="@string/guardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_seleccion_menu_guardar"
+                android:isScrollContainer="false" />
+        </LinearLayout>
+
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/rv_seleccion_menu" />
+            android:layout_height="wrap_content"
+            android:id="@+id/rv_seleccion_menu"
+            android:layout_marginBottom="0dp"
+            android:layout_weight="0">
+
+        </android.support.v7.widget.RecyclerView>
+
     </LinearLayout>
 </RelativeLayout>

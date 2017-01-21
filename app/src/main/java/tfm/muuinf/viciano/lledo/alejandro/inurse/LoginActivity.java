@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.pacientes.MenuPacientes;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.personal.MenuPersonal;
 
 /**
  * A login screen that offers login via email/password.
@@ -74,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
         this.mProgressView = findViewById(R.id.login_progress);
 
         // acceso rapido a menu pacientes
-        final Intent intent = new Intent(getBaseContext(), MenuPacientes.class);
+        final Intent intent = new Intent(getBaseContext(), MenuPersonal.class);
         startActivity(intent);
     }
 

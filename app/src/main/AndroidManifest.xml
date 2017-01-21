@@ -44,6 +44,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".pacientes.MenuPacientes" />
         </activity>
+        <activity android:name=".personal.ListarSolicitudes"></activity>
     </application>
 
 </manifest>

@@ -33,6 +33,17 @@ public class AdapterSeleccionMenus extends RecyclerView.Adapter<AdapterSeleccion
         holder.tvSegundoPlato.setText("Pollo asado con patatas fritas");
         holder.tvTercerPlato.setText("Yogurt natural");
         holder.ckSeleccionado.setSelected(true);
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View view) {
+                if (holder.ckSeleccionado.isChecked()) {
+                    holder.ckSeleccionado.setChecked(false);
+                } else {
+                    holder.ckSeleccionado.setChecked(true);
+                }
+            }
+        });
     }
 
     @Override

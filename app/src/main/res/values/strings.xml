@@ -26,7 +26,7 @@
     <!-- Strings relacionados con realizar solicitud paciente -->
     <string name="desea_solicitar">¿Qué desea solicitar?</string>
     <string name="seleccione_prioridad">Seleccionar prioridad</string>
-    <string name="descripcion">Descripción de la solicitud</string>
+    <string name="descripcion_de_la_solicitud">Descripción de la solicitud</string>
     <string name="enviar_solicitud">Enviar solicitud</string>
 
     <!-- Strings relacionados con mis solicitudes paciente -->
@@ -40,6 +40,13 @@
     <string name="primer_plato">Primer plato -</string>
     <string name="segundo_plato">Segundo plato -</string>
     <string name="postre">Postre -</string>
+
+    <!-- Strings relacionados con seleccionar mis avisos paciente-->
     <string name="avisos_programados">Avisos programados</string>
+    <string name="fecha_inicio">Fecha inicio:</string>
+    <string name="descripcion">Descripción:</string>
+    <string name="guardar">Guardar</string>
+    <string name="empezar_progreso">Empezar progreso</string>
+    <string name="rechazar">Rechazar</string>
 
 </resources>
