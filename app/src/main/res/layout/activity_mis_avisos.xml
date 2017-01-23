@@ -8,14 +8,17 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="tfm.muuinf.viciano.lledo.alejandro.inurse.pacientes.MisAvisos">
+    tools:context="tfm.muuinf.viciano.lledo.alejandro.inurse.pacientes.MisAvisosActivity">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp">
 
         <TextView
             android:text="@string/avisos_programados"

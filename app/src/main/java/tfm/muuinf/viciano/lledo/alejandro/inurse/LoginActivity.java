@@ -18,8 +18,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.pacientes.MenuPacientes;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.personal.MenuPersonal;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.pacientes.MenuPacientesActivity;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.personal.MenuPersonalActivity;
 
 /**
  * A login screen that offers login via email/password.
@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
         this.mProgressView = findViewById(R.id.login_progress);
 
         // acceso rapido a menu pacientes
-        final Intent intent = new Intent(getBaseContext(), MenuPersonal.class);
+        final Intent intent = new Intent(getBaseContext(), MenuPersonalActivity.class);
         startActivity(intent);
     }
 
@@ -221,7 +221,7 @@ public class LoginActivity extends AppCompatActivity {
 
             if (success) {
                 finish();
-                final Intent intent = new Intent(getBaseContext(), MenuPacientes.class);
+                final Intent intent = new Intent(getBaseContext(), MenuPacientesActivity.class);
                 startActivity(intent);
             } else {
                 LoginActivity.this.mPasswordView.setError(getString(R.string.error_incorrect_password));

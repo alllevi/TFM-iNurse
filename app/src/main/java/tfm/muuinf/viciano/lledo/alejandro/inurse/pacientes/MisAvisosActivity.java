@@ -9,7 +9,7 @@ import android.widget.TextView;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.adapters.AdapterMisAvisos;
 
-public class MisAvisos extends AppCompatActivity {
+public class MisAvisosActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     TextView tv_fecha;

@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
-public class MenuPersonal extends AppCompatActivity implements View.OnClickListener {
+public class MenuPersonalActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btSolicitudes;
     Button btMapaDeCamas;
@@ -42,14 +42,16 @@ public class MenuPersonal extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(final View v) {
         if (v.getId() == R.id.bt_menu_personal_solicitudes) {
-            final Intent listarSolicitudIntent = new Intent(this, ListarSolicitudes.class);
+            final Intent listarSolicitudIntent = new Intent(this, ListarSolicitudesActivity.class);
             startActivity(listarSolicitudIntent);
         } else if (v.getId() == R.id.bt_menu_personal_mapa) {
 
         } else if (v.getId() == R.id.bt_menu_personal_menus) {
-
+            final Intent listarMenusIntent = new Intent(this, ListarMenusActivity.class);
+            startActivity(listarMenusIntent);
         } else {
-
+            final Intent configurarAvisosIntent = new Intent(this, ConfigurarAvisosActivity.class);
+            startActivity(configurarAvisosIntent);
         }
     }
 

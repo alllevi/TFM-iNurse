@@ -9,12 +9,19 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.personal.ListarSolicitudesActivity;
 
 /**
  * Created by Alex on 21/01/2017.
  */
 
 public class AdapterListarSolicitudes extends RecyclerView.Adapter<AdapterListarSolicitudes.ListarSolicitudesViewHolder> {
+
+    ListarSolicitudesActivity listarSolicitudesActivity;
+
+    public AdapterListarSolicitudes(final ListarSolicitudesActivity activity) {
+        this.listarSolicitudesActivity = activity;
+    }
 
     @Override
     public ListarSolicitudesViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
@@ -31,6 +38,19 @@ public class AdapterListarSolicitudes extends RecyclerView.Adapter<AdapterListar
         holder.tvSolicitud.setText("Revisión de la cama que se ha Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaroto");
         holder.tvDescripcion.setText("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos");
         //Button listeners
+        holder.btRechazar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                AdapterListarSolicitudes.this.listarSolicitudesActivity.onClickRechazar();
+            }
+        });
+
+        holder.btEmpezar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                //DO SOMETHING
+            }
+        });
     }
 
     @Override

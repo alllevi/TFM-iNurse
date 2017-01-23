@@ -9,7 +9,7 @@ import android.widget.Spinner;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
-public class RealizarSolicitud extends AppCompatActivity {
+public class RealizarSolicitudActivity extends AppCompatActivity {
 
     Spinner cbPrioridades;
     ListView lvRealizarSolicitud;

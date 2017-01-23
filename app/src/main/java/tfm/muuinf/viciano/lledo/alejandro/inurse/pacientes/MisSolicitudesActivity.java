@@ -10,7 +10,7 @@ import android.widget.Spinner;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.adapters.AdapterMisSolicitudes;
 
-public class MisSolicitudes extends AppCompatActivity {
+public class MisSolicitudesActivity extends AppCompatActivity {
 
     Spinner comboEstados;
     RecyclerView recyclerView;

@@ -43,10 +43,30 @@
 
     <!-- Strings relacionados con seleccionar mis avisos paciente-->
     <string name="avisos_programados">Avisos programados</string>
-    <string name="fecha_inicio">Fecha inicio:</string>
+    <string name="fecha_inicio_">Fecha inicio:</string>
     <string name="descripcion">Descripción:</string>
     <string name="guardar">Guardar</string>
+
+    <!-- Strings relacionados con listar solicitudes personal-->
     <string name="empezar_progreso">Empezar progreso</string>
+
+    <!-- Strings relacionados con rechazar solicitud personal-->
     <string name="rechazar">Rechazar</string>
+    <string name="motivo_rechazo">Introduzca el motivo por el cual desea rechazar la solicitud:</string>
+    <string name="cancelar">Cancelar</string>
+
+    <!-- Strings relacionados con listar menus paciente personal-->
+    <string name="filtrar_por_planta">Filtar por planta</string>
+
+    <!-- Strings relacionados con configurar avisos personal-->
+    <string name="paciente_alarma">Paciente al que desea programar el aviso:</string>
+    <string name="planta">Planta</string>
+    <string name="habitacion">Habitación</string>
+    <string name="fecha_inicio">Fecha inicio</string>
+    <string name="repetir_alarma">¿Repetir aviso?</string>
+    <string name="repetir_cada">Repetir cada</string>
+    <string name="horas">horas</string>
+    <string name="descripcion_alarma">Descripción aviso</string>
+    <string name="programar">Programar</string>
 
 </resources>

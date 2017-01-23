@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.adapters.AdapterSeleccionMenus;
 
-public class SeleccionMenu extends AppCompatActivity {
+public class SeleccionMenuActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
 

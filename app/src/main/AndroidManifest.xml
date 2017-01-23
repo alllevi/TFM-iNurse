@@ -22,29 +22,48 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".pacientes.MenuPacientes" />
-        <activity android:name=".personal.MenuPersonal" />
-        <activity android:name=".pacientes.RealizarSolicitud">
+        <activity android:name=".pacientes.MenuPacientesActivity" />
+        <activity android:name=".personal.MenuPersonalActivity" />
+        <activity android:name=".pacientes.RealizarSolicitudActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pacientes.MenuPacientes" />
+                android:value=".pacientes.MenuPacientesActivity" />
         </activity>
-        <activity android:name=".pacientes.MisSolicitudes">
+        <activity android:name=".pacientes.MisSolicitudesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pacientes.MenuPacientes" />
+                android:value=".pacientes.MenuPacientesActivity" />
         </activity>
-        <activity android:name=".pacientes.SeleccionMenu">
+        <activity android:name=".pacientes.SeleccionMenuActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pacientes.MenuPacientes" />
+                android:value=".pacientes.MenuPacientesActivity" />
         </activity>
-        <activity android:name=".pacientes.MisAvisos">
+        <activity android:name=".pacientes.MisAvisosActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".pacientes.MenuPacientes" />
+                android:value=".pacientes.MenuPacientesActivity" />
         </activity>
-        <activity android:name=".personal.ListarSolicitudes"></activity>
+        <activity android:name=".personal.ListarSolicitudesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".personal.MenuPersonalActivity" />
+        </activity>
+        <activity android:name=".personal.RechazarSolicitudActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".personal.ListarSolicitudesActivity" />
+        </activity>
+        <activity android:name=".personal.ListarMenusActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".personal.MenuPersonalActivity" />
+        </activity>
+        <activity android:name=".personal.ConfigurarAvisosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".personal.MenuPersonalActivity" />
+        </activity>
     </application>
 
 </manifest>

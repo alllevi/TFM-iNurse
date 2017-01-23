@@ -14,4 +14,18 @@
         <item>Finalizados</item>
         <item>Rechazados</item>
     </string-array>
+
+    <string-array name="plantas">
+        <item>Planta 1</item>
+        <item>Planta 2</item>
+        <item>Planta 3</item>
+    </string-array>
+
+    <string-array name="habitacion">
+        <item>00</item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+    </string-array>
 </resources>

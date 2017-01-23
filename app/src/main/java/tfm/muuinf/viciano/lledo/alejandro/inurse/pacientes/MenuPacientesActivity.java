@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
-public class MenuPacientes extends AppCompatActivity implements View.OnClickListener {
+public class MenuPacientesActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btRealizarSolicitud;
     Button btMisSolicitudes;
@@ -45,16 +45,16 @@ public class MenuPacientes extends AppCompatActivity implements View.OnClickList
     public void onClick(final View v) {
 
         if (v.getId() == R.id.btMenuPacienteRealizarSolicitud) {
-            final Intent realizarSolicitudIntent = new Intent(this, RealizarSolicitud.class);
+            final Intent realizarSolicitudIntent = new Intent(this, RealizarSolicitudActivity.class);
             startActivity(realizarSolicitudIntent);
         } else if (v.getId() == R.id.btMenuPacienteMisSolicitudes) {
-            final Intent misSolictudesIntent = new Intent(this, MisSolicitudes.class);
+            final Intent misSolictudesIntent = new Intent(this, MisSolicitudesActivity.class);
             startActivity(misSolictudesIntent);
         } else if (v.getId() == R.id.btMenuPacienteSelecMenu) {
-            final Intent seleccionMenuIntent = new Intent(this, SeleccionMenu.class);
+            final Intent seleccionMenuIntent = new Intent(this, SeleccionMenuActivity.class);
             startActivity(seleccionMenuIntent);
         } else if (v.getId() == R.id.btMenuPacienteMisAvisos) {
-            final Intent misAvisosIntent = new Intent(this, MisAvisos.class);
+            final Intent misAvisosIntent = new Intent(this, MisAvisosActivity.class);
             startActivity(misAvisosIntent);
         } else {
 
