@@ -64,6 +64,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".personal.MenuPersonalActivity" />
         </activity>
+        <activity android:name=".personal.MapaCamasActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".personal.MenuPersonalActivity" />
+        </activity>
+        <activity android:name=".personal.DetallePacienteActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".personal.MapaCamasActivity" />
+        </activity>
     </application>
 
 </manifest>

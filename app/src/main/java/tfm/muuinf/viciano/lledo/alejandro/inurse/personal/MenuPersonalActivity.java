@@ -45,7 +45,8 @@ public class MenuPersonalActivity extends AppCompatActivity implements View.OnCl
             final Intent listarSolicitudIntent = new Intent(this, ListarSolicitudesActivity.class);
             startActivity(listarSolicitudIntent);
         } else if (v.getId() == R.id.bt_menu_personal_mapa) {
-
+            final Intent mapaCamasIntent = new Intent(this, MapaCamasActivity.class);
+            startActivity(mapaCamasIntent);
         } else if (v.getId() == R.id.bt_menu_personal_menus) {
             final Intent listarMenusIntent = new Intent(this, ListarMenusActivity.class);
             startActivity(listarMenusIntent);

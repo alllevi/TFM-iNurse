@@ -69,4 +69,22 @@
     <string name="descripcion_alarma">Descripción aviso</string>
     <string name="programar">Programar</string>
 
+    <!-- Strings relacionados con mapa de camas-->
+    <string name="habitacion_">Habitación:</string>
+    <string name="paciente_">Paciente:</string>
+    <string name="sexo_">Sexo:</string>
+    <string name="motivo_ingreso_">Motivo ingreso:</string>
+    <string name="nombre_">Nombre:</string>
+    <string name="apellidos_">Apellidos:</string>
+    <string name="sip_">SIP:</string>
+    <string name="nhc_">NHC:</string>
+    <string name="telelefono_">Teléfono:</string>
+    <string name="edad_">Edad:</string>
+    <string name="fecha_nacimiento_">Fecha nacimiento:</string>
+    <string name="direccion_">Dirección:</string>
+    <string name="ciudad_">Ciudad:</string>
+    <string name="provincia_">Provincia:</string>
+    <string name="alergias_">Alergias:</string>
+    <string name="antecedentes_toxicos_">Antecedentes tóxicos:</string>
+
 </resources>
