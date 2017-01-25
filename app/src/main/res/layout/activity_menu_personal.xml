@@ -43,5 +43,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/bt_menu_personal_configurar" />
+
+        <Button
+            android:text="@string/cerrar_sesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_menu_personal_cerrar_sesion"
+            style="@style/Widget.AppCompat.Button.Borderless" />
     </LinearLayout>
 </RelativeLayout>

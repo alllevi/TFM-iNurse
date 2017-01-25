@@ -73,10 +73,6 @@ public class LoginActivity extends AppCompatActivity {
 
         this.mLoginFormView = findViewById(R.id.login_form);
         this.mProgressView = findViewById(R.id.login_progress);
-
-        // acceso rapido a menu pacientes
-        final Intent intent = new Intent(getBaseContext(), MenuPersonalActivity.class);
-        startActivity(intent);
     }
 
     /**
@@ -133,12 +129,14 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean isEmailValid(final String email) {
         //TODO: Replace this with your own logic
-        return email.contains("@");
+        //return email.contains("@");
+        return true;
     }
 
     private boolean isPasswordValid(final String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        //return password.length() > 4;
+        return true;
     }
 
     /**
@@ -185,6 +183,7 @@ public class LoginActivity extends AppCompatActivity {
 
         private final String mEmail;
         private final String mPassword;
+        private String tipoUsuario;
 
         UserLoginTask(final String email, final String password) {
             this.mEmail = email;
@@ -198,6 +197,13 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 // Simulate network access.
                 Thread.sleep(2000);
+                if (this.mEmail.equals("personal")) {
+                    this.tipoUsuario = "personal";
+                } else if (this.mEmail.equals("paciente")) {
+                    this.tipoUsuario = "paciente";
+                } else {
+                    return false;
+                }
             } catch (final InterruptedException e) {
                 return false;
             }
@@ -221,8 +227,13 @@ public class LoginActivity extends AppCompatActivity {
 
             if (success) {
                 finish();
-                final Intent intent = new Intent(getBaseContext(), MenuPacientesActivity.class);
-                startActivity(intent);
+                if (this.tipoUsuario.equals("personal")) {
+                    final Intent intent = new Intent(getBaseContext(), MenuPersonalActivity.class);
+                    startActivity(intent);
+                } else if (this.tipoUsuario.equals("paciente")) {
+                    final Intent intent = new Intent(getBaseContext(), MenuPacientesActivity.class);
+                    startActivity(intent);
+                }
             } else {
                 LoginActivity.this.mPasswordView.setError(getString(R.string.error_incorrect_password));
                 LoginActivity.this.mPasswordView.requestFocus();

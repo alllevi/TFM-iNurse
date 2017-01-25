@@ -24,7 +24,7 @@
             android:text="@string/realizar_solicitud"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btMenuPacienteRealizarSolicitud"
+            android:id="@+id/bt_menu_paciente_realizar_solicitud"
             android:elevation="0dp"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:background="@color/colorButton" />
@@ -33,28 +33,36 @@
             android:text="@string/mis_solicitudes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btMenuPacienteMisSolicitudes"
+            android:id="@+id/bt_menu_paciente_mis_solicitudes"
             style="@style/Widget.AppCompat.Button.Borderless" />
 
         <Button
             android:text="@string/seleccionar_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btMenuPacienteSelecMenu"
+            android:id="@+id/bt_menu_paciente_selec_menu"
             style="@style/Widget.AppCompat.Button.Borderless" />
 
         <Button
             android:text="@string/mis_avisos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btMenuPacienteMisAvisos"
+            android:id="@+id/bt_menu_paciente_mis_avisos"
             style="@style/Widget.AppCompat.Button.Borderless" />
 
         <Button
             android:text="@string/informacion_hospital"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btMenuPacienteInfoHosp"
+            android:id="@+id/bt_menu_paciente_info_hosp"
             style="@style/Widget.AppCompat.Button.Borderless" />
+
+        <Button
+            android:text="@string/cerrar_sesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_menu_paciente_cerrar_sesion"
+            style="@style/Widget.AppCompat.Button.Borderless" />
+
     </LinearLayout>
 </RelativeLayout>

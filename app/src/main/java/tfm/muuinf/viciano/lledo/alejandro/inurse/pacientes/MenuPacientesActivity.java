@@ -1,7 +1,9 @@
 package tfm.muuinf.viciano.lledo.alejandro.inurse.pacientes;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +17,7 @@ public class MenuPacientesActivity extends AppCompatActivity implements View.OnC
     Button btSeleccionarMenu;
     Button btMisAvisos;
     Button btInfoHospital;
+    Button btCerrarSesion;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -26,11 +29,12 @@ public class MenuPacientesActivity extends AppCompatActivity implements View.OnC
     }
 
     private void initComponentes() {
-        this.btRealizarSolicitud = (Button) findViewById(R.id.btMenuPacienteRealizarSolicitud);
-        this.btMisSolicitudes = (Button) findViewById(R.id.btMenuPacienteMisSolicitudes);
-        this.btSeleccionarMenu = (Button) findViewById(R.id.btMenuPacienteSelecMenu);
-        this.btMisAvisos = (Button) findViewById(R.id.btMenuPacienteMisAvisos);
-        this.btInfoHospital = (Button) findViewById(R.id.btMenuPacienteInfoHosp);
+        this.btRealizarSolicitud = (Button) findViewById(R.id.bt_menu_paciente_realizar_solicitud);
+        this.btMisSolicitudes = (Button) findViewById(R.id.bt_menu_paciente_mis_solicitudes);
+        this.btSeleccionarMenu = (Button) findViewById(R.id.bt_menu_paciente_selec_menu);
+        this.btMisAvisos = (Button) findViewById(R.id.bt_menu_paciente_mis_avisos);
+        this.btInfoHospital = (Button) findViewById(R.id.bt_menu_paciente_info_hosp);
+        this.btCerrarSesion = (Button) findViewById(R.id.bt_menu_paciente_cerrar_sesion);
     }
 
     private void setEventos() {
@@ -39,23 +43,26 @@ public class MenuPacientesActivity extends AppCompatActivity implements View.OnC
         this.btSeleccionarMenu.setOnClickListener(this);
         this.btMisAvisos.setOnClickListener(this);
         this.btInfoHospital.setOnClickListener(this);
+        this.btCerrarSesion.setOnClickListener(this);
     }
 
     @Override
     public void onClick(final View v) {
 
-        if (v.getId() == R.id.btMenuPacienteRealizarSolicitud) {
+        if (v.getId() == R.id.bt_menu_paciente_realizar_solicitud) {
             final Intent realizarSolicitudIntent = new Intent(this, RealizarSolicitudActivity.class);
             startActivity(realizarSolicitudIntent);
-        } else if (v.getId() == R.id.btMenuPacienteMisSolicitudes) {
+        } else if (v.getId() == R.id.bt_menu_paciente_mis_solicitudes) {
             final Intent misSolictudesIntent = new Intent(this, MisSolicitudesActivity.class);
             startActivity(misSolictudesIntent);
-        } else if (v.getId() == R.id.btMenuPacienteSelecMenu) {
+        } else if (v.getId() == R.id.bt_menu_paciente_selec_menu) {
             final Intent seleccionMenuIntent = new Intent(this, SeleccionMenuActivity.class);
             startActivity(seleccionMenuIntent);
-        } else if (v.getId() == R.id.btMenuPacienteMisAvisos) {
+        } else if (v.getId() == R.id.bt_menu_paciente_mis_avisos) {
             final Intent misAvisosIntent = new Intent(this, MisAvisosActivity.class);
             startActivity(misAvisosIntent);
+        } else if (v.getId() == R.id.bt_menu_paciente_info_hosp) {
+
         } else {
 
         }
@@ -63,6 +70,15 @@ public class MenuPacientesActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onBackPressed() {
-        // Boton atras
+        new AlertDialog.Builder(this)
+                .setTitle("¿Cerrar la aplicación?")
+                .setMessage("¿Esta seguro que desea cerrar la aplicación?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(final DialogInterface arg0, final int arg1) {
+                        MenuPacientesActivity.super.onBackPressed();
+                    }
+                }).create().show();
     }
 }

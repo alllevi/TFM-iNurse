@@ -86,5 +86,6 @@
     <string name="provincia_">Provincia:</string>
     <string name="alergias_">Alergias:</string>
     <string name="antecedentes_toxicos_">Antecedentes tóxicos:</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
 
 </resources>
