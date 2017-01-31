@@ -1,14 +1,15 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.comun;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,12 +19,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.pacientes.MenuPacientesActivity;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.personal.MenuPersonalActivity;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.DAL.ServiciosDAL;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.UsuarioDTO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
-/**
- * A login screen that offers login via email/password.
- */
+
 public class LoginActivity extends AppCompatActivity {
 
     /**
@@ -33,16 +33,40 @@ public class LoginActivity extends AppCompatActivity {
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "foo@example.com:hello", "bar@example.com:world"
     };
-    /**
-     * Keep track of the login task to ensure we can cancel it if requested.
-     */
+
+
     private UserLoginTask mAuthTask = null;
+    private SharedPreferences sharedpreferences;
 
     // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        //Inicializamos las shared preferences con la URL_BASE
+        this.sharedpreferences = getSharedPreferences(ConstantesGUI.SHARED_PREFS_FILE, ConstantesGUI.CONTEXT_MODE_PRIVATE);
+
+        /*Comprobamos si existe una sesión abierta por usuario
+             ->Si existe entramos en el menu correspondiente
+         */
+        final String usuarioKey = this.sharedpreferences.getString(ConstantesGUI.USUARIO_KEY, "");
+        final String pacienteKey = this.sharedpreferences.getString(ConstantesGUI.PACIENTE_KEY, "");
+       /* if (StringUtils.isNotBlank(usuarioKey)) {
+            final Intent intent;
+            if (StringUtils.isNotBlank(pacienteKey)) {
+                intent = new Intent(this, MenuPacientesActivity.class);
+            } else {
+                intent = new Intent(this, MenuPersonalActivity.class);
+            }
+            startActivity(intent);
+            finish();
+        }*/
+    }
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -80,6 +104,7 @@ public class LoginActivity extends AppCompatActivity {
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
+
     private void attemptLogin() {
         if (this.mAuthTask != null) {
             return;
@@ -108,7 +133,7 @@ public class LoginActivity extends AppCompatActivity {
             this.mEmailView.setError(getString(R.string.error_field_required));
             focusView = this.mEmailView;
             cancel = true;
-        } else if (!isEmailValid(email)) {
+        } else if (!isUserValid(email)) {
             this.mEmailView.setError(getString(R.string.error_invalid_email));
             focusView = this.mEmailView;
             cancel = true;
@@ -127,16 +152,12 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private boolean isEmailValid(final String email) {
-        //TODO: Replace this with your own logic
-        //return email.contains("@");
-        return true;
+    private boolean isUserValid(final String user) {
+        return user.length() > 4;
     }
 
     private boolean isPasswordValid(final String password) {
-        //TODO: Replace this with your own logic
-        //return password.length() > 4;
-        return true;
+        return password.length() > 4;
     }
 
     /**
@@ -188,6 +209,7 @@ public class LoginActivity extends AppCompatActivity {
         UserLoginTask(final String email, final String password) {
             this.mEmail = email;
             this.mPassword = password;
+            this.tipoUsuario = this.tipoUsuario;
         }
 
         @Override
@@ -197,26 +219,27 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 // Simulate network access.
                 Thread.sleep(2000);
-                if (this.mEmail.equals("personal")) {
+
+                final ServiciosDAL dal = new ServiciosDAL();
+                final UsuarioDTO usuarioDTO = dal.getPacienteDAO().autenticarUsuario(this.mEmail, this.mPassword);
+
+                if (usuarioDTO.getUsuario() == null) {
+                    Log.d("usu", "null");
+                } else {
+                    Log.d("usu", usuarioDTO.getUsuario());
+                }
+               /* if (this.mEmail.equals("personal")) {
                     this.tipoUsuario = "personal";
                 } else if (this.mEmail.equals("paciente")) {
                     this.tipoUsuario = "paciente";
                 } else {
                     return false;
-                }
-            } catch (final InterruptedException e) {
+                }*/
+
+            } catch (final Exception e) {
                 return false;
             }
 
-            for (final String credential : DUMMY_CREDENTIALS) {
-                final String[] pieces = credential.split(":");
-                if (pieces[0].equals(this.mEmail)) {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(this.mPassword);
-                }
-            }
-
-            // TODO: register the new account here.
             return true;
         }
 
@@ -226,14 +249,14 @@ public class LoginActivity extends AppCompatActivity {
             showProgress(false);
 
             if (success) {
-                finish();
+                /*finish();
                 if (this.tipoUsuario.equals("personal")) {
                     final Intent intent = new Intent(getBaseContext(), MenuPersonalActivity.class);
                     startActivity(intent);
                 } else if (this.tipoUsuario.equals("paciente")) {
                     final Intent intent = new Intent(getBaseContext(), MenuPacientesActivity.class);
                     startActivity(intent);
-                }
+                }*/
             } else {
                 LoginActivity.this.mPasswordView.setError(getString(R.string.error_incorrect_password));
                 LoginActivity.this.mPasswordView.requestFocus();

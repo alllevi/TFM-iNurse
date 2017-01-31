@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.pacientes;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.pacientes;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,8 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores.AdapterMisSolicitudes;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.adapters.AdapterMisSolicitudes;
 
 public class MisSolicitudesActivity extends AppCompatActivity {
 

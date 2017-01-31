@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.adapters;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;

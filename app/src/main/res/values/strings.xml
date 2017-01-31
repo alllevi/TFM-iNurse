@@ -24,7 +24,7 @@
     <string name="mapa_camas">Mapa de camas</string>
 
     <!-- Strings relacionados con realizar solicitud paciente -->
-    <string name="desea_solicitar">¿Qué desea solicitar?</string>
+    <string name="motivo_solicitud">Motivo de la solicitud</string>
     <string name="seleccione_prioridad">Seleccionar prioridad</string>
     <string name="descripcion_de_la_solicitud">Descripción de la solicitud</string>
     <string name="enviar_solicitud">Enviar solicitud</string>

@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.pacientes;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.pacientes;
 
 import android.content.DialogInterface;
 import android.content.Intent;

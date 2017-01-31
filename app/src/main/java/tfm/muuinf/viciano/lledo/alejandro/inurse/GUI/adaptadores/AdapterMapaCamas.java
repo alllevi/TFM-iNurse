@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.adapters;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.personal.MapaCamasActivity;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.personal.MapaCamasActivity;
 
 /**
  * Created by Alex on 24/01/2017.

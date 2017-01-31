@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.adapters;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -17,7 +17,7 @@ public class AdapterMisSolicitudes extends RecyclerView.Adapter<AdapterMisSolici
 
     public AdapterMisSolicitudes() {
     }
-    
+
     @Override
     public MisSolicitudesViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
         final View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_mis_solicitudes, parent, false);

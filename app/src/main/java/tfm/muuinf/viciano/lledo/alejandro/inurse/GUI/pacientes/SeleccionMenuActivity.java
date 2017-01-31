@@ -1,12 +1,14 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.pacientes;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.pacientes;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import tfm.muuinf.viciano.lledo.alejandro.inurse.DAL.ServiciosDAL;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores.AdapterSeleccionMenus;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.adapters.AdapterSeleccionMenus;
 
 public class SeleccionMenuActivity extends AppCompatActivity {
 
@@ -19,6 +21,7 @@ public class SeleccionMenuActivity extends AppCompatActivity {
 
         this.recyclerView = (RecyclerView) findViewById(R.id.rv_seleccion_menu);
         rellenarRecyclerView();
+        new getMenus().execute(1, 1, 1);
     }
 
     private void rellenarRecyclerView() {
@@ -26,5 +29,21 @@ public class SeleccionMenuActivity extends AppCompatActivity {
         this.recyclerView.setLayoutManager(llm);
         final AdapterSeleccionMenus adapter = new AdapterSeleccionMenus();
         this.recyclerView.setAdapter(adapter);
+    }
+
+    private class getMenus extends AsyncTask<Integer, Integer, Long> {
+
+        @Override
+        protected Long doInBackground(final Integer... params) {
+            final ServiciosDAL serviciosDAL = new ServiciosDAL();
+            serviciosDAL.getMenusDAO().getMenus();
+            return null;
+        }
+
+        protected void onProgressUpdate(final Integer... progress) {
+        }
+
+        protected void onPostExecute(final Long result) {
+        }
     }
 }

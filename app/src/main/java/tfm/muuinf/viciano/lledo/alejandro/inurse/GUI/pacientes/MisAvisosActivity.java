@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.pacientes;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.pacientes;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,8 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
+import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores.AdapterMisAvisos;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.adapters.AdapterMisAvisos;
 
 public class MisAvisosActivity extends AppCompatActivity {
 
