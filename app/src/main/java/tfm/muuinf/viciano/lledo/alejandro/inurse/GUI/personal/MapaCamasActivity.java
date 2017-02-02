@@ -13,8 +13,8 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
 public class MapaCamasActivity extends AppCompatActivity {
 
-    Spinner cbPlantas;
-    RecyclerView recyclerView;
+    private Spinner cbPlantas;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -27,22 +27,22 @@ public class MapaCamasActivity extends AppCompatActivity {
     }
 
     private void initComponentes() {
-        this.cbPlantas = (Spinner) findViewById(R.id.cb_filtro_plantas_mapa_camas);
-        this.recyclerView = (RecyclerView) findViewById(R.id.rv_mapa_camas);
+        cbPlantas = (Spinner) findViewById(R.id.cb_filtro_plantas_mapa_camas);
+        recyclerView = (RecyclerView) findViewById(R.id.rv_mapa_camas);
     }
 
     private void rellenarComboPlantas() {
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.plantas, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        this.cbPlantas.setAdapter(adapter);
+        cbPlantas.setAdapter(adapter);
     }
 
     private void rellenarRecyclerView() {
         final LinearLayoutManager llm = new LinearLayoutManager(this);
-        this.recyclerView.setLayoutManager(llm);
+        recyclerView.setLayoutManager(llm);
         final AdapterMapaCamas adapter = new AdapterMapaCamas(MapaCamasActivity.this);
-        this.recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
     }
 
     public void onClickCard() {

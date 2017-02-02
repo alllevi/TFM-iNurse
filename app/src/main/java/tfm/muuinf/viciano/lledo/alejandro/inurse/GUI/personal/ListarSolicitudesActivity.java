@@ -27,22 +27,22 @@ public class ListarSolicitudesActivity extends AppCompatActivity {
     }
 
     private void initComponentes() {
-        this.cbEstados = (Spinner) findViewById(R.id.cb_filtro_listar_solicitudes);
-        this.recyclerView = (RecyclerView) findViewById(R.id.rv_listar_solicitudes);
+        cbEstados = (Spinner) findViewById(R.id.cb_filtro_listar_solicitudes);
+        recyclerView = (RecyclerView) findViewById(R.id.rv_listar_solicitudes);
     }
 
     private void rellenarRecyclerView() {
         final LinearLayoutManager llm = new LinearLayoutManager(this);
-        this.recyclerView.setLayoutManager(llm);
+        recyclerView.setLayoutManager(llm);
         final AdapterListarSolicitudes adapter = new AdapterListarSolicitudes(ListarSolicitudesActivity.this);
-        this.recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
     }
 
     private void rellenarComboEstados() {
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.estados, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        this.cbEstados.setAdapter(adapter);
+        cbEstados.setAdapter(adapter);
     }
 
     public void onClickRechazar() {

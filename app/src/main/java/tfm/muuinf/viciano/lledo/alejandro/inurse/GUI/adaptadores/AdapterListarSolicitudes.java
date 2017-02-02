@@ -20,7 +20,7 @@ public class AdapterListarSolicitudes extends RecyclerView.Adapter<AdapterListar
     ListarSolicitudesActivity listarSolicitudesActivity;
 
     public AdapterListarSolicitudes(final ListarSolicitudesActivity activity) {
-        this.listarSolicitudesActivity = activity;
+        listarSolicitudesActivity = activity;
     }
 
     @Override
@@ -41,7 +41,7 @@ public class AdapterListarSolicitudes extends RecyclerView.Adapter<AdapterListar
         holder.btRechazar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                AdapterListarSolicitudes.this.listarSolicitudesActivity.onClickRechazar();
+                listarSolicitudesActivity.onClickRechazar();
             }
         });
 
@@ -71,14 +71,14 @@ public class AdapterListarSolicitudes extends RecyclerView.Adapter<AdapterListar
 
         ListarSolicitudesViewHolder(final View itemView) {
             super(itemView);
-            this.cardView = (CardView) itemView.findViewById(R.id.cv_listar_solicitudes);
-            this.tvPrioridad = (TextView) itemView.findViewById(R.id.tv_listar_solicitudes_prioridad);
-            this.tvFecha = (TextView) itemView.findViewById(R.id.tv_listar_solicitudes_fecha);
-            this.tvEstado = (TextView) itemView.findViewById(R.id.tv_listar_solicitudes_estado);
-            this.tvSolicitud = (TextView) itemView.findViewById(R.id.tv_listar_solicitudes_solicitud);
-            this.tvDescripcion = (TextView) itemView.findViewById(R.id.tv_listar_solicitudes_descripcion);
-            this.btEmpezar = (Button) itemView.findViewById(R.id.bt_listar_solicitudes_empezar);
-            this.btRechazar = (Button) itemView.findViewById(R.id.bt_listar_solicitudes_rechazar);
+            cardView = (CardView) itemView.findViewById(R.id.cv_listar_solicitudes);
+            tvPrioridad = (TextView) itemView.findViewById(R.id.tv_listar_solicitudes_prioridad);
+            tvFecha = (TextView) itemView.findViewById(R.id.tv_listar_solicitudes_fecha);
+            tvEstado = (TextView) itemView.findViewById(R.id.tv_listar_solicitudes_estado);
+            tvSolicitud = (TextView) itemView.findViewById(R.id.tv_listar_solicitudes_solicitud);
+            tvDescripcion = (TextView) itemView.findViewById(R.id.tv_listar_solicitudes_descripcion);
+            btEmpezar = (Button) itemView.findViewById(R.id.bt_listar_solicitudes_empezar);
+            btRechazar = (Button) itemView.findViewById(R.id.bt_listar_solicitudes_rechazar);
         }
 
     }

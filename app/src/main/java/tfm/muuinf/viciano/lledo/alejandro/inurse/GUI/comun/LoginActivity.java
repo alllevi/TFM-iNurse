@@ -3,13 +3,13 @@ package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.comun;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,22 +19,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.apache.commons.lang3.StringUtils;
+
 import tfm.muuinf.viciano.lledo.alejandro.inurse.DAL.ServiciosDAL;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.UsuarioDTO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.pacientes.MenuPacientesActivity;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.personal.MenuPersonalActivity;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
 
 public class LoginActivity extends AppCompatActivity {
-
-    /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
-     */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
-    };
-
-
+    
     private UserLoginTask mAuthTask = null;
     private SharedPreferences sharedpreferences;
 
@@ -49,14 +44,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
 
         //Inicializamos las shared preferences con la URL_BASE
-        this.sharedpreferences = getSharedPreferences(ConstantesGUI.SHARED_PREFS_FILE, ConstantesGUI.CONTEXT_MODE_PRIVATE);
+        sharedpreferences = getSharedPreferences(ConstantesGUI.SHARED_PREFS_FILE, ConstantesGUI.CONTEXT_MODE_PRIVATE);
 
         /*Comprobamos si existe una sesión abierta por usuario
              ->Si existe entramos en el menu correspondiente
          */
-        final String usuarioKey = this.sharedpreferences.getString(ConstantesGUI.USUARIO_KEY, "");
-        final String pacienteKey = this.sharedpreferences.getString(ConstantesGUI.PACIENTE_KEY, "");
-       /* if (StringUtils.isNotBlank(usuarioKey)) {
+        final String usuarioKey = sharedpreferences.getString(ConstantesGUI.USUARIO_KEY, "");
+        final String pacienteKey = sharedpreferences.getString(ConstantesGUI.PACIENTE_KEY, "");
+
+        if (StringUtils.isNotBlank(usuarioKey)) {
             final Intent intent;
             if (StringUtils.isNotBlank(pacienteKey)) {
                 intent = new Intent(this, MenuPacientesActivity.class);
@@ -65,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
             }
             startActivity(intent);
             finish();
-        }*/
+        }
     }
 
     @Override
@@ -73,10 +69,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
-        this.mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
+        mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
 
-        this.mPasswordView = (EditText) findViewById(R.id.password);
-        this.mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        mPasswordView = (EditText) findViewById(R.id.password);
+        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(final TextView textView, final int id, final KeyEvent keyEvent) {
                 if (id == R.id.login || id == EditorInfo.IME_NULL) {
@@ -95,8 +91,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        this.mLoginFormView = findViewById(R.id.login_form);
-        this.mProgressView = findViewById(R.id.login_progress);
+        mLoginFormView = findViewById(R.id.login_form);
+        mProgressView = findViewById(R.id.login_progress);
     }
 
     /**
@@ -106,36 +102,36 @@ public class LoginActivity extends AppCompatActivity {
      */
 
     private void attemptLogin() {
-        if (this.mAuthTask != null) {
+        if (mAuthTask != null) {
             return;
         }
 
         // Reset errors.
-        this.mEmailView.setError(null);
-        this.mPasswordView.setError(null);
+        mEmailView.setError(null);
+        mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
-        final String email = this.mEmailView.getText().toString();
-        final String password = this.mPasswordView.getText().toString();
+        final String email = mEmailView.getText().toString();
+        final String password = mPasswordView.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
 
         // Check for a valid password, if the user entered one.
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            this.mPasswordView.setError(getString(R.string.error_invalid_password));
-            focusView = this.mPasswordView;
+            mPasswordView.setError(getString(R.string.error_invalid_password));
+            focusView = mPasswordView;
             cancel = true;
         }
 
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
-            this.mEmailView.setError(getString(R.string.error_field_required));
-            focusView = this.mEmailView;
+            mEmailView.setError(getString(R.string.error_field_required));
+            focusView = mEmailView;
             cancel = true;
         } else if (!isUserValid(email)) {
-            this.mEmailView.setError(getString(R.string.error_invalid_email));
-            focusView = this.mEmailView;
+            mEmailView.setError(getString(R.string.error_invalid_email));
+            focusView = mEmailView;
             cancel = true;
         }
 
@@ -147,8 +143,8 @@ public class LoginActivity extends AppCompatActivity {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            this.mAuthTask = new UserLoginTask(email, password);
-            this.mAuthTask.execute((Void) null);
+            mAuthTask = new UserLoginTask(email, password);
+            mAuthTask.execute((Void) null);
         }
     }
 
@@ -171,28 +167,28 @@ public class LoginActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             final int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
 
-            this.mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
-            this.mLoginFormView.animate().setDuration(shortAnimTime).alpha(
+            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+            mLoginFormView.animate().setDuration(shortAnimTime).alpha(
                     show ? 0 : 1).setListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(final Animator animation) {
-                    LoginActivity.this.mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+                    mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
                 }
             });
 
-            this.mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-            this.mProgressView.animate().setDuration(shortAnimTime).alpha(
+            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            mProgressView.animate().setDuration(shortAnimTime).alpha(
                     show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(final Animator animation) {
-                    LoginActivity.this.mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+                    mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
                 }
             });
         } else {
             // The ViewPropertyAnimator APIs are not available, so simply show
             // and hide the relevant UI components.
-            this.mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
-            this.mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
     }
 
@@ -205,67 +201,58 @@ public class LoginActivity extends AppCompatActivity {
         private final String mEmail;
         private final String mPassword;
         private String tipoUsuario;
+        private UsuarioDTO usuarioDTO;
 
         UserLoginTask(final String email, final String password) {
-            this.mEmail = email;
-            this.mPassword = password;
-            this.tipoUsuario = this.tipoUsuario;
+            mEmail = email;
+            mPassword = password;
         }
 
         @Override
         protected Boolean doInBackground(final Void... params) {
-            // TODO: attempt authentication against a network service.
 
             try {
-                // Simulate network access.
-                Thread.sleep(2000);
-
                 final ServiciosDAL dal = new ServiciosDAL();
-                final UsuarioDTO usuarioDTO = dal.getPacienteDAO().autenticarUsuario(this.mEmail, this.mPassword);
+                usuarioDTO = dal.getPacienteDAO().autenticarUsuario(mEmail, mPassword);
 
-                if (usuarioDTO.getUsuario() == null) {
-                    Log.d("usu", "null");
-                } else {
-                    Log.d("usu", usuarioDTO.getUsuario());
-                }
-               /* if (this.mEmail.equals("personal")) {
-                    this.tipoUsuario = "personal";
-                } else if (this.mEmail.equals("paciente")) {
-                    this.tipoUsuario = "paciente";
-                } else {
+                if (usuarioDTO == null) {
                     return false;
-                }*/
-
+                } else {
+                    tipoUsuario = usuarioDTO.getTipo();
+                    return true;
+                }
             } catch (final Exception e) {
                 return false;
             }
-
-            return true;
         }
 
         @Override
         protected void onPostExecute(final Boolean success) {
-            LoginActivity.this.mAuthTask = null;
+            mAuthTask = null;
             showProgress(false);
 
             if (success) {
-                /*finish();
-                if (this.tipoUsuario.equals("personal")) {
+                final SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putString(ConstantesGUI.USUARIO_KEY, usuarioDTO.getUsuarioKey().toString());
+                if (tipoUsuario.equals("PERSONAL")) {
                     final Intent intent = new Intent(getBaseContext(), MenuPersonalActivity.class);
                     startActivity(intent);
-                } else if (this.tipoUsuario.equals("paciente")) {
+                } else if (tipoUsuario.equals("PACIENTE")) {
+                    editor.putString(ConstantesGUI.PACIENTE_KEY, usuarioDTO.getPacienteKey().toString());
                     final Intent intent = new Intent(getBaseContext(), MenuPacientesActivity.class);
                     startActivity(intent);
-                }*/
+                }
+                editor.commit();
+                finish();
             } else {
-                LoginActivity.this.mPasswordView.setError(getString(R.string.error_incorrect_password));
-                LoginActivity.this.mPasswordView.requestFocus();
+                mPasswordView.setError(getString(R.string.error_incorrect_password));
+                mPasswordView.requestFocus();
             }
         }
 
         @Override
         protected void onCancelled() {
-            LoginActivity.this.mAuthTask = null;
+            mAuthTask = null;
             showProgress(false);
         }
     }

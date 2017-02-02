@@ -11,9 +11,9 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
 public class RealizarSolicitudActivity extends AppCompatActivity {
 
-    Spinner cbPrioridades;
-    ListView lvRealizarSolicitud;
-    Button btRealizarSolicitud;
+    private Spinner cbPrioridades;
+    private ListView lvRealizarSolicitud;
+    private Button btRealizarSolicitud;
 
     @Override
 
@@ -26,16 +26,16 @@ public class RealizarSolicitudActivity extends AppCompatActivity {
     }
 
     private void initComponentes() {
-        this.cbPrioridades = (Spinner) findViewById(R.id.cb_solicitud_prioridad);
-        this.lvRealizarSolicitud = (ListView) findViewById(R.id.lv_realizar_solicitud);
-        this.btRealizarSolicitud = (Button) findViewById(R.id.bt_enviar_solicitud);
+        cbPrioridades = (Spinner) findViewById(R.id.cb_solicitud_prioridad);
+        lvRealizarSolicitud = (ListView) findViewById(R.id.lv_realizar_solicitud);
+        btRealizarSolicitud = (Button) findViewById(R.id.bt_enviar_solicitud);
     }
 
     private void rellenarComboPrioridades() {
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.prioridades, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        this.cbPrioridades.setAdapter(adapter);
+        cbPrioridades.setAdapter(adapter);
     }
 
 }

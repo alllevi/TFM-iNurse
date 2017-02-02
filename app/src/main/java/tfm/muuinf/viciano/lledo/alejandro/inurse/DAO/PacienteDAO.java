@@ -1,5 +1,6 @@
 package tfm.muuinf.viciano.lledo.alejandro.inurse.DAO;
 
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -25,16 +26,21 @@ public class PacienteDAO extends BasicDAO {
         final JSONArray jsonArrayUsuarios = jsonObject.getJSONArray("usuarios");
 
         if (jsonArrayUsuarios.length() == 0) {
-            return new UsuarioDTO();
+            return null;
         } else {
 
             final JSONObject jsonObjectUsuario = jsonArrayUsuarios.getJSONObject(0);
-            final int usu_key = Integer.parseInt(jsonObjectUsuario.get("usu_key").toString());
-            final String usu_usuario = jsonObjectUsuario.get("usu_usuario").toString();
-            final String usu_password = jsonObjectUsuario.get("usu_password").toString();
-            final String usu_tipo = jsonObjectUsuario.get("usu_tipo").toString();
-            final int paci_key = Integer.parseInt(jsonObjectUsuario.get("paci_key").toString());
-            return new UsuarioDTO(usu_key, usu_usuario, usu_password, usu_tipo, paci_key);
+            final Integer usuKey = Integer.parseInt(jsonObjectUsuario.get("usu_key").toString());
+            final String usuUsuario = jsonObjectUsuario.get("usu_usuario").toString();
+            final String usuPassword = jsonObjectUsuario.get("usu_password").toString();
+            final String usuTipo = jsonObjectUsuario.get("usu_tipo").toString();
+
+            Integer paciKey = null;
+            final String stringPaciKey = jsonObjectUsuario.get("paci_key").toString();
+            if (StringUtils.isNotBlank(stringPaciKey)) {
+                paciKey = Integer.parseInt(stringPaciKey);
+            }
+            return new UsuarioDTO(usuKey, usuUsuario, usuPassword, usuTipo, paciKey);
         }
     }
 

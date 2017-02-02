@@ -9,9 +9,9 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
 public class RechazarSolicitudActivity extends AppCompatActivity {
 
-    Button btRechazar;
-    Button btCancelar;
-    TextView tvDescripcion;
+    private Button btRechazar;
+    private Button btCancelar;
+    private TextView tvDescripcion;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -22,9 +22,9 @@ public class RechazarSolicitudActivity extends AppCompatActivity {
     }
 
     private void initComponentes() {
-        this.btRechazar = (Button) findViewById(R.id.bt_rechazar_solicitud);
-        this.btCancelar = (Button) findViewById(R.id.bt_cancelar_solicitud);
-        this.tvDescripcion = (TextView) findViewById(R.id.tv_motivo_rechazar_solicitud);
+        btRechazar = (Button) findViewById(R.id.bt_rechazar_solicitud);
+        btCancelar = (Button) findViewById(R.id.bt_cancelar_solicitud);
+        tvDescripcion = (TextView) findViewById(R.id.tv_motivo_rechazar_solicitud);
     }
 
     @Override

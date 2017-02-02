@@ -12,8 +12,8 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
 public class MisSolicitudesActivity extends AppCompatActivity {
 
-    Spinner comboEstados;
-    RecyclerView recyclerView;
+    private Spinner comboEstados;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -25,21 +25,21 @@ public class MisSolicitudesActivity extends AppCompatActivity {
     }
 
     private void initComponents() {
-        this.comboEstados = (Spinner) findViewById(R.id.cb_filtro_mis_solicitudes);
-        this.recyclerView = (RecyclerView) findViewById(R.id.rv_mis_solicitudes);
+        comboEstados = (Spinner) findViewById(R.id.cb_filtro_mis_solicitudes);
+        recyclerView = (RecyclerView) findViewById(R.id.rv_mis_solicitudes);
     }
 
     private void rellenarRecyclerView() {
         final LinearLayoutManager llm = new LinearLayoutManager(this);
-        this.recyclerView.setLayoutManager(llm);
+        recyclerView.setLayoutManager(llm);
         final AdapterMisSolicitudes adapter = new AdapterMisSolicitudes();
-        this.recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
     }
 
     private void rellenarComboEstados() {
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.estados, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        this.comboEstados.setAdapter(adapter);
+        comboEstados.setAdapter(adapter);
     }
 }

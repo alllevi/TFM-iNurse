@@ -44,10 +44,10 @@ public class AdapterMisAvisos extends RecyclerView.Adapter<AdapterMisAvisos.MisA
 
         MisAvisosViewHolder(final View itemView) {
             super(itemView);
-            this.cardView = (CardView) itemView.findViewById(R.id.cv_mis_avisos);
-            this.tvFecha = (TextView) itemView.findViewById(R.id.tv_mis_avisos_fecha);
-            this.tvFrecuencia = (TextView) itemView.findViewById(R.id.tv_mis_avisos_frecuencia);
-            this.tvDescripcion = (TextView) itemView.findViewById(R.id.tv_mis_avisos_descripcion);
+            cardView = (CardView) itemView.findViewById(R.id.cv_mis_avisos);
+            tvFecha = (TextView) itemView.findViewById(R.id.tv_mis_avisos_fecha);
+            tvFrecuencia = (TextView) itemView.findViewById(R.id.tv_mis_avisos_frecuencia);
+            tvDescripcion = (TextView) itemView.findViewById(R.id.tv_mis_avisos_descripcion);
         }
     }
 }

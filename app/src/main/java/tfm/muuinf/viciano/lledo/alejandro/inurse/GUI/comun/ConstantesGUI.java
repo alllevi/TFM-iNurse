@@ -13,5 +13,5 @@ public class ConstantesGUI {
 
     public static final String USUARIO_KEY = "USUARIO_KEY";
 
-    public static final String PACIENTE_KEY = "USUARIO_KEY";
+    public static final String PACIENTE_KEY = "PACIENTE_KEY";
 }

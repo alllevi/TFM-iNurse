@@ -15,15 +15,15 @@ public class ServiciosDAL {
 
     public ServiciosDAL() {
 
-        this.menusDAO = new MenusDAO();
-        this.pacienteDAO = new PacienteDAO();
+        menusDAO = new MenusDAO();
+        pacienteDAO = new PacienteDAO();
     }
 
     public MenusDAO getMenusDAO() {
-        return this.menusDAO;
+        return menusDAO;
     }
 
     public PacienteDAO getPacienteDAO() {
-        return this.pacienteDAO;
+        return pacienteDAO;
     }
 }

@@ -11,10 +11,10 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
 public class MisAvisosActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    TextView tv_fecha;
-    TextView tv_frecuencia;
-    TextView tv_descripcion;
+    private RecyclerView recyclerView;
+    private TextView tv_fecha;
+    private TextView tv_frecuencia;
+    private TextView tv_descripcion;
 
     @Override
 
@@ -27,16 +27,16 @@ public class MisAvisosActivity extends AppCompatActivity {
     }
 
     private void initComponentes() {
-        this.recyclerView = (RecyclerView) findViewById(R.id.rv_mis_avisos);
-        this.tv_fecha = (TextView) findViewById(R.id.tv_mis_avisos_fecha);
-        this.tv_frecuencia = (TextView) findViewById(R.id.tv_mis_avisos_frecuencia);
-        this.tv_descripcion = (TextView) findViewById(R.id.tv_mis_avisos_descripcion);
+        recyclerView = (RecyclerView) findViewById(R.id.rv_mis_avisos);
+        tv_fecha = (TextView) findViewById(R.id.tv_mis_avisos_fecha);
+        tv_frecuencia = (TextView) findViewById(R.id.tv_mis_avisos_frecuencia);
+        tv_descripcion = (TextView) findViewById(R.id.tv_mis_avisos_descripcion);
     }
 
     private void rellenarRecyclerView() {
         final LinearLayoutManager llm = new LinearLayoutManager(this);
-        this.recyclerView.setLayoutManager(llm);
+        recyclerView.setLayoutManager(llm);
         final AdapterMisAvisos adapter = new AdapterMisAvisos();
-        this.recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
     }
 }

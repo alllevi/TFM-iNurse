@@ -12,23 +12,23 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
 public class SeleccionMenuActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccion_menu);
 
-        this.recyclerView = (RecyclerView) findViewById(R.id.rv_seleccion_menu);
+        recyclerView = (RecyclerView) findViewById(R.id.rv_seleccion_menu);
         rellenarRecyclerView();
         new getMenus().execute(1, 1, 1);
     }
 
     private void rellenarRecyclerView() {
         final LinearLayoutManager llm = new LinearLayoutManager(this);
-        this.recyclerView.setLayoutManager(llm);
+        recyclerView.setLayoutManager(llm);
         final AdapterSeleccionMenus adapter = new AdapterSeleccionMenus();
-        this.recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
     }
 
     private class getMenus extends AsyncTask<Integer, Integer, Long> {

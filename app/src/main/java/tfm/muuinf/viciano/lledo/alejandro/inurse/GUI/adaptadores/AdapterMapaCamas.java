@@ -20,7 +20,7 @@ public class AdapterMapaCamas extends RecyclerView.Adapter<AdapterMapaCamas.Mapa
     MapaCamasActivity mapaCamasActivity;
 
     public AdapterMapaCamas(final MapaCamasActivity activity) {
-        this.mapaCamasActivity = activity;
+        mapaCamasActivity = activity;
     }
 
     @Override
@@ -42,7 +42,7 @@ public class AdapterMapaCamas extends RecyclerView.Adapter<AdapterMapaCamas.Mapa
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                AdapterMapaCamas.this.mapaCamasActivity.onClickCard();
+                mapaCamasActivity.onClickCard();
             }
         });
     }
@@ -63,12 +63,12 @@ public class AdapterMapaCamas extends RecyclerView.Adapter<AdapterMapaCamas.Mapa
 
         MapaCamasViewHolder(final View itemView) {
             super(itemView);
-            this.cardView = (CardView) itemView.findViewById(R.id.cv_mapa_camas);
-            this.tvHabitacion = (TextView) itemView.findViewById(R.id.tv_mapa_habitacion);
-            this.tvPaciente = (TextView) itemView.findViewById(R.id.tv_mapa_paciente);
-            this.tvSexo = (TextView) itemView.findViewById(R.id.tv_mapa_sexo);
-            this.tvMotivo = (TextView) itemView.findViewById(R.id.tv_mapa_motivo_ingreso);
-            this.ivImagen = (ImageView) itemView.findViewById(R.id.iv_mapa_imagen);
+            cardView = (CardView) itemView.findViewById(R.id.cv_mapa_camas);
+            tvHabitacion = (TextView) itemView.findViewById(R.id.tv_mapa_habitacion);
+            tvPaciente = (TextView) itemView.findViewById(R.id.tv_mapa_paciente);
+            tvSexo = (TextView) itemView.findViewById(R.id.tv_mapa_sexo);
+            tvMotivo = (TextView) itemView.findViewById(R.id.tv_mapa_motivo_ingreso);
+            ivImagen = (ImageView) itemView.findViewById(R.id.iv_mapa_imagen);
         }
     }
 }

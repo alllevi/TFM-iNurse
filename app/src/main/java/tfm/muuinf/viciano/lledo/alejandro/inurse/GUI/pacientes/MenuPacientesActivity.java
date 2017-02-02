@@ -2,22 +2,26 @@ package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.pacientes;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.comun.ConstantesGUI;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.comun.LoginActivity;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
 public class MenuPacientesActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btRealizarSolicitud;
-    Button btMisSolicitudes;
-    Button btSeleccionarMenu;
-    Button btMisAvisos;
-    Button btInfoHospital;
-    Button btCerrarSesion;
+    private SharedPreferences sharedpreferences;
+    private Button btRealizarSolicitud;
+    private Button btMisSolicitudes;
+    private Button btSeleccionarMenu;
+    private Button btMisAvisos;
+    private Button btInfoHospital;
+    private Button btCerrarSesion;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -29,21 +33,22 @@ public class MenuPacientesActivity extends AppCompatActivity implements View.OnC
     }
 
     private void initComponentes() {
-        this.btRealizarSolicitud = (Button) findViewById(R.id.bt_menu_paciente_realizar_solicitud);
-        this.btMisSolicitudes = (Button) findViewById(R.id.bt_menu_paciente_mis_solicitudes);
-        this.btSeleccionarMenu = (Button) findViewById(R.id.bt_menu_paciente_selec_menu);
-        this.btMisAvisos = (Button) findViewById(R.id.bt_menu_paciente_mis_avisos);
-        this.btInfoHospital = (Button) findViewById(R.id.bt_menu_paciente_info_hosp);
-        this.btCerrarSesion = (Button) findViewById(R.id.bt_menu_paciente_cerrar_sesion);
+        sharedpreferences = getSharedPreferences(ConstantesGUI.SHARED_PREFS_FILE, ConstantesGUI.CONTEXT_MODE_PRIVATE);
+        btRealizarSolicitud = (Button) findViewById(R.id.bt_menu_paciente_realizar_solicitud);
+        btMisSolicitudes = (Button) findViewById(R.id.bt_menu_paciente_mis_solicitudes);
+        btSeleccionarMenu = (Button) findViewById(R.id.bt_menu_paciente_selec_menu);
+        btMisAvisos = (Button) findViewById(R.id.bt_menu_paciente_mis_avisos);
+        btInfoHospital = (Button) findViewById(R.id.bt_menu_paciente_info_hosp);
+        btCerrarSesion = (Button) findViewById(R.id.bt_menu_paciente_cerrar_sesion);
     }
 
     private void setEventos() {
-        this.btRealizarSolicitud.setOnClickListener(this);
-        this.btMisSolicitudes.setOnClickListener(this);
-        this.btSeleccionarMenu.setOnClickListener(this);
-        this.btMisAvisos.setOnClickListener(this);
-        this.btInfoHospital.setOnClickListener(this);
-        this.btCerrarSesion.setOnClickListener(this);
+        btRealizarSolicitud.setOnClickListener(this);
+        btMisSolicitudes.setOnClickListener(this);
+        btSeleccionarMenu.setOnClickListener(this);
+        btMisAvisos.setOnClickListener(this);
+        btInfoHospital.setOnClickListener(this);
+        btCerrarSesion.setOnClickListener(this);
     }
 
     @Override
@@ -64,8 +69,40 @@ public class MenuPacientesActivity extends AppCompatActivity implements View.OnC
         } else if (v.getId() == R.id.bt_menu_paciente_info_hosp) {
 
         } else {
-
+            eventoCerrarSesion();
         }
+    }
+
+    private void eventoCerrarSesion() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(MenuPacientesActivity.this);
+
+        builder.setMessage("¿Quiere cerrar su sesión?")
+                .setTitle("Salir");
+
+        builder.setPositiveButton("Cerrar sesión", new DialogInterface.OnClickListener() {
+            public void onClick(final DialogInterface dialog, final int id) {
+                // Cerramos la sesion
+                cerrarSesion();
+
+            }
+        });
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            public void onClick(final DialogInterface dialog, final int id) {
+                //No hacemos nada
+            }
+        });
+        final AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void cerrarSesion() {
+        final SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putString(ConstantesGUI.USUARIO_KEY, "");
+        editor.putString(ConstantesGUI.PACIENTE_KEY, "");
+        editor.commit();
+        final Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override

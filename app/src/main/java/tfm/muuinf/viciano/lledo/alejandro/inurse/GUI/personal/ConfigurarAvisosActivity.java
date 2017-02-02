@@ -13,12 +13,12 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 public class ConfigurarAvisosActivity extends AppCompatActivity {
 
     //Faltan los selectores de fecha
-    Spinner cbPlanta;
-    Spinner cbHabitacion;
-    CheckBox chRepetir;
-    TextView tvHoras;
-    TextView tvDescripcion;
-    Button btProgramar;
+    private Spinner cbPlanta;
+    private Spinner cbHabitacion;
+    private CheckBox chRepetir;
+    private TextView tvHoras;
+    private TextView tvDescripcion;
+    private Button btProgramar;
 
     @Override
 
@@ -31,25 +31,25 @@ public class ConfigurarAvisosActivity extends AppCompatActivity {
     }
 
     private void initComponentes() {
-        this.cbPlanta = (Spinner) findViewById(R.id.cb_avisos_planta);
-        this.cbHabitacion = (Spinner) findViewById(R.id.cb_avisos_habitacion);
-        this.chRepetir = (CheckBox) findViewById(R.id.ch_avisos_repetir);
-        this.tvHoras = (TextView) findViewById(R.id.tv_avisos_horas);
-        this.tvDescripcion = (TextView) findViewById(R.id.tv_avisos_descripcion);
-        this.btProgramar = (Button) findViewById(R.id.bt_alarmas_programar);
+        cbPlanta = (Spinner) findViewById(R.id.cb_avisos_planta);
+        cbHabitacion = (Spinner) findViewById(R.id.cb_avisos_habitacion);
+        chRepetir = (CheckBox) findViewById(R.id.ch_avisos_repetir);
+        tvHoras = (TextView) findViewById(R.id.tv_avisos_horas);
+        tvDescripcion = (TextView) findViewById(R.id.tv_avisos_descripcion);
+        btProgramar = (Button) findViewById(R.id.bt_alarmas_programar);
     }
 
     private void rellenarCombPlantas() {
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.plantas, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        this.cbPlanta.setAdapter(adapter);
+        cbPlanta.setAdapter(adapter);
     }
 
     private void rellenarComboHabitaciones() {
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.habitacion, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        this.cbHabitacion.setAdapter(adapter);
+        cbHabitacion.setAdapter(adapter);
     }
 }

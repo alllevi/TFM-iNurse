@@ -62,12 +62,12 @@ public class AdapterSeleccionMenus extends RecyclerView.Adapter<AdapterSeleccion
 
         public SeleccionMenusViewHolder(final View itemView) {
             super(itemView);
-            this.cardView = (CardView) itemView.findViewById(R.id.cv_seleccion_menu);
-            this.tvMenuId = (TextView) itemView.findViewById(R.id.tv_menu_id);
-            this.tvPrimerPlato = (TextView) itemView.findViewById(R.id.tv_primer_plato);
-            this.tvSegundoPlato = (TextView) itemView.findViewById(R.id.tv_segundo_plato);
-            this.tvTercerPlato = (TextView) itemView.findViewById(R.id.tv_postre);
-            this.ckSeleccionado = (CheckBox) itemView.findViewById(R.id.ch_menu_solicitado);
+            cardView = (CardView) itemView.findViewById(R.id.cv_seleccion_menu);
+            tvMenuId = (TextView) itemView.findViewById(R.id.tv_menu_id);
+            tvPrimerPlato = (TextView) itemView.findViewById(R.id.tv_primer_plato);
+            tvSegundoPlato = (TextView) itemView.findViewById(R.id.tv_segundo_plato);
+            tvTercerPlato = (TextView) itemView.findViewById(R.id.tv_postre);
+            ckSeleccionado = (CheckBox) itemView.findViewById(R.id.ch_menu_solicitado);
         }
     }
 }

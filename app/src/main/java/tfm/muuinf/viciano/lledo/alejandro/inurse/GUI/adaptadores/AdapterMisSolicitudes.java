@@ -50,12 +50,12 @@ public class AdapterMisSolicitudes extends RecyclerView.Adapter<AdapterMisSolici
 
         MisSolicitudesViewHolder(final View itemView) {
             super(itemView);
-            this.cardView = (CardView) itemView.findViewById(R.id.cv_mis_solicitudes);
-            this.tvPrioridad = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_prioridad);
-            this.tvFecha = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_fecha);
-            this.tvEstado = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_estado);
-            this.tvSolicitud = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_solicitud);
-            this.tvDescripcion = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_descripcion);
+            cardView = (CardView) itemView.findViewById(R.id.cv_mis_solicitudes);
+            tvPrioridad = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_prioridad);
+            tvFecha = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_fecha);
+            tvEstado = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_estado);
+            tvSolicitud = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_solicitud);
+            tvDescripcion = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_descripcion);
         }
     }
 }
