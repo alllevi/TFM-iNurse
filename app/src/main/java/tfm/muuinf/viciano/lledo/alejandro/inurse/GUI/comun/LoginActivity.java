@@ -29,7 +29,7 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
 
 public class LoginActivity extends AppCompatActivity {
-    
+
     private UserLoginTask mAuthTask = null;
     private SharedPreferences sharedpreferences;
 
@@ -43,7 +43,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        //Inicializamos las shared preferences con la URL_BASE
         sharedpreferences = getSharedPreferences(ConstantesGUI.SHARED_PREFS_FILE, ConstantesGUI.CONTEXT_MODE_PRIVATE);
 
         /*Comprobamos si existe una sesión abierta por usuario

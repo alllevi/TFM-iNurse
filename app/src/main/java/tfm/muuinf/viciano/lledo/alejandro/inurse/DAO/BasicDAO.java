@@ -8,12 +8,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by Alex on 31/01/2017.
  */
 
 public class BasicDAO {
+
+    public static SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
     public JSONObject realizarPeticionHTTP(final URL url) throws Exception {
 

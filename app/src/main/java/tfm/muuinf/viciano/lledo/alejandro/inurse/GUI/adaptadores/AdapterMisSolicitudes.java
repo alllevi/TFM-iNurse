@@ -7,6 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.List;
+
+import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.SolicitudDTO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
 /**
@@ -15,7 +19,11 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
 public class AdapterMisSolicitudes extends RecyclerView.Adapter<AdapterMisSolicitudes.MisSolicitudesViewHolder> {
 
-    public AdapterMisSolicitudes() {
+    List<SolicitudDTO> listaSolicitudesDTO;
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+
+    public AdapterMisSolicitudes(final List<SolicitudDTO> listaSolicitudesDTO) {
+        this.listaSolicitudesDTO = listaSolicitudesDTO;
     }
 
     @Override
@@ -27,16 +35,17 @@ public class AdapterMisSolicitudes extends RecyclerView.Adapter<AdapterMisSolici
 
     @Override
     public void onBindViewHolder(final MisSolicitudesViewHolder holder, final int position) {
-        holder.tvPrioridad.setText("Emergencia");
-        holder.tvFecha.setText("22/12/1992 20:20");
-        holder.tvEstado.setText("En progreso");
-        holder.tvSolicitud.setText("Revisión de la cama que se ha Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaroto");
-        holder.tvDescripcion.setText("Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos");
+        holder.tvPrioridad.setText(listaSolicitudesDTO.get(position).getPrioridadDescripcion());
+        holder.tvFecha.setText(listaSolicitudesDTO.get(position).getFecha().toString());
+        holder.tvFecha.setText(sdf.format(listaSolicitudesDTO.get(position).getFecha()));
+        holder.tvEstado.setText(listaSolicitudesDTO.get(position).getTipoDescripcion());
+        holder.tvSolicitud.setText(listaSolicitudesDTO.get(position).getDescripcion());
+        holder.tvDescripcion.setText(listaSolicitudesDTO.get(position).getDescripcionLarga());
     }
 
     @Override
     public int getItemCount() {
-        return 3;
+        return listaSolicitudesDTO.size();
     }
 
     public class MisSolicitudesViewHolder extends RecyclerView.ViewHolder {
