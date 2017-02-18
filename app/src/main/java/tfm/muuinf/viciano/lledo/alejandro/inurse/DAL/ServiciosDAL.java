@@ -1,5 +1,6 @@
 package tfm.muuinf.viciano.lledo.alejandro.inurse.DAL;
 
+import tfm.muuinf.viciano.lledo.alejandro.inurse.DAO.AvisosDAO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.DAO.MaestrosDAO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.DAO.MenusDAO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.DAO.PacienteDAO;
@@ -15,12 +16,14 @@ public class ServiciosDAL {
     private final PacienteDAO pacienteDAO;
     private final SolicitudDAO solicitudDAO;
     private final MaestrosDAO maestrosDAO;
+    private final AvisosDAO avisosDAO;
 
     public ServiciosDAL() {
         menusDAO = new MenusDAO();
         pacienteDAO = new PacienteDAO();
         solicitudDAO = new SolicitudDAO();
         maestrosDAO = new MaestrosDAO();
+        avisosDAO = new AvisosDAO();
     }
 
     public MenusDAO getMenusDAO() {
@@ -41,5 +44,9 @@ public class ServiciosDAL {
 
     public MaestrosDAO getMaestrosDAO() {
         return maestrosDAO;
+    }
+
+    public AvisosDAO getAvisosDAO() {
+        return avisosDAO;
     }
 }

@@ -232,7 +232,7 @@ public class LoginActivity extends AppCompatActivity {
 
             if (success) {
                 final SharedPreferences.Editor editor = sharedpreferences.edit();
-                editor.putString(ConstantesGUI.USUARIO_KEY, usuarioDTO.getUsuarioKey().toString());
+                editor.putString(ConstantesGUI.USUARIO_KEY, usuarioDTO.getKey().toString());
                 if (tipoUsuario.equals("PERSONAL")) {
                     final Intent intent = new Intent(getBaseContext(), MenuPersonalActivity.class);
                     startActivity(intent);

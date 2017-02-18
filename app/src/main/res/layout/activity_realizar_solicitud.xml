@@ -80,6 +80,7 @@
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
             android:ems="10"
+            android:focusable="false"
             android:id="@+id/et_descripcion_solicitud"
             android:textSize="15sp" />
 

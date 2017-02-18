@@ -9,13 +9,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.DAL.ServiciosDAL;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.MaestroTiposDTO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.SolicitudDTO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores.AdapterMisSolicitudes;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.comun.ConstantesGUI;
@@ -27,49 +31,76 @@ public class MisSolicitudesActivity extends AppCompatActivity {
     private MisSolicitudesTask solicitudesTask = null;
     private Spinner comboEstados;
     private RecyclerView recyclerView;
-    private List<SolicitudDTO> listaSolicitudesDTO;
+    private List<SolicitudDTO> listaSolicitudes;
+    private List<MaestroTiposDTO> listaMaestroTipos;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mis_solicitudes);
         initComponents();
-        rellenarComboEstados();
+        initTask();
     }
 
     private void initComponents() {
         sharedpreferences = getSharedPreferences(ConstantesGUI.SHARED_PREFS_FILE, ConstantesGUI.CONTEXT_MODE_PRIVATE);
         comboEstados = (Spinner) findViewById(R.id.cb_filtro_mis_solicitudes);
         recyclerView = (RecyclerView) findViewById(R.id.rv_mis_solicitudes);
-        obtenerSolicitudes();
     }
 
     private void rellenarRecyclerView() {
-        final LinearLayoutManager llm = new LinearLayoutManager(this);
+        LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);
-        final AdapterMisSolicitudes adapter = new AdapterMisSolicitudes(listaSolicitudesDTO);
+        AdapterMisSolicitudes adapter = new AdapterMisSolicitudes(listaSolicitudes);
         recyclerView.setAdapter(adapter);
     }
 
     private void rellenarComboEstados() {
-        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.estados, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        comboEstados.setAdapter(adapter);
+        List<String> arrayList = new ArrayList<>();
+        for (MaestroTiposDTO maestro : listaMaestroTipos) {
+            arrayList.add(maestro.getDescripcion());
+        }
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayList);
+        comboEstados.setAdapter(arrayAdapter);
+        comboEstados.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                List<SolicitudDTO> listaFiltrada = new ArrayList<>();
+                String codigoSelected = listaMaestroTipos.get(position).getCodigo();
+
+                if (!"TIPEST1".equals(codigoSelected)) {
+                    for (SolicitudDTO solicitud : listaSolicitudes) {
+                        String codigoSolicitud = solicitud.getTipoCodigo();
+                        if (codigoSelected.equals(codigoSolicitud)) {
+                            listaFiltrada.add(solicitud);
+                        }
+                    }
+                    AdapterMisSolicitudes adapter = new AdapterMisSolicitudes(listaFiltrada);
+                    recyclerView.setAdapter(adapter);
+                } else {
+                    // Se selecciona mostrar todos y se muestra la lista original
+                    AdapterMisSolicitudes adapter = new AdapterMisSolicitudes(listaSolicitudes);
+                    recyclerView.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
     }
 
-    private void obtenerSolicitudes() {
-        final boolean conexion = checkInternet();
-        if (conexion) {
+    private void initTask() {
+        if (checkInternet()) {
             solicitudesTask = new MisSolicitudesTask();
             solicitudesTask.execute((Void) null);
         }
     }
 
     private boolean checkInternet() {
-
-        final ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        final NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
         if (networkInfo != null && networkInfo.isConnected()) {
             return true;
@@ -83,10 +114,11 @@ public class MisSolicitudesActivity extends AppCompatActivity {
 
         @Override
         protected Boolean doInBackground(final Void... params) {
-            final ServiciosDAL dal = new ServiciosDAL();
-            final String pacienteKey = sharedpreferences.getString(ConstantesGUI.PACIENTE_KEY, "");
+            ServiciosDAL dal = new ServiciosDAL();
+            String pacienteKey = sharedpreferences.getString(ConstantesGUI.PACIENTE_KEY, "");
             try {
-                listaSolicitudesDTO = dal.getSolicitudDAO().getSolicitudesByPacienteKey(Integer.parseInt(pacienteKey));
+                listaSolicitudes = dal.getSolicitudDAO().getSolicitudesByPacienteKey(Integer.parseInt(pacienteKey));
+                listaMaestroTipos = dal.getMaestrosDAO().getMaestroTipos();
             } catch (final Exception e) {
                 e.printStackTrace();
                 return false;
@@ -98,6 +130,7 @@ public class MisSolicitudesActivity extends AppCompatActivity {
         protected void onPostExecute(Boolean success) {
             if (success) {
                 rellenarRecyclerView();
+                rellenarComboEstados();
             } else {
                 Toast.makeText(getApplicationContext(), "Se ha producido un error inesperado", Toast.LENGTH_SHORT).show();
             }

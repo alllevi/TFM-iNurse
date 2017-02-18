@@ -46,6 +46,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".GUI.pacientes.MenuPacientesActivity" />
         </activity>
+        <activity android:name=".GUI.pacientes.InfoHospitalActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".GUI.pacientes.MenuPacientesActivity" />
+        </activity>
         <activity android:name=".GUI.personal.ListarSolicitudesActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

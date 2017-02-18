@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -33,10 +32,30 @@
                     android:textStyle="normal|bold" />
 
                 <TextView
-                    android:text="22/12/2016 20:30"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_mis_avisos_fecha"
+                    android:id="@+id/tv_mis_avisos_fecha_ini"
+                    android:layout_weight="1"
+                    android:layout_marginStart="3dp"
+                    android:textColor="?android:attr/textColorPrimary" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/fecha_fin_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="normal|bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_mis_avisos_fecha_fin"
                     android:layout_weight="1"
                     android:layout_marginStart="3dp"
                     android:textColor="?android:attr/textColorPrimary" />
@@ -49,12 +68,10 @@
                 android:layout_marginTop="4dp">
 
                 <TextView
-                    android:text="TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_mis_avisos_frecuencia"
                     android:layout_weight="1"
-                    tools:text="Sin repetición"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textStyle="normal|bold" />
             </LinearLayout>
@@ -73,7 +90,6 @@
                     android:textStyle="normal|bold" />
 
                 <TextView
-                    android:text="Revisión de la cama que se ha Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquaroto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_mis_avisos_descripcion"

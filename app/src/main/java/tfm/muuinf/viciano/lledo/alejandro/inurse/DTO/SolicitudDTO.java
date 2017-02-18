@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class SolicitudDTO {
 
-    private Integer solicitudKey;
+    private Integer key;
     private String descripcion;
     private String descripcionLarga;
     private Integer prioridad;
@@ -21,8 +21,8 @@ public class SolicitudDTO {
 
     }
 
-    public SolicitudDTO(final Integer solicitudKey, final String descripcion, final String descripcionLarga, final Integer prioridad, final String prioridadDescripcion, final String tipoCodigo, final String tipoDescripcion, final Date fecha) {
-        this.solicitudKey = solicitudKey;
+    public SolicitudDTO(final Integer key, final String descripcion, final String descripcionLarga, final Integer prioridad, final String prioridadDescripcion, final String tipoCodigo, final String tipoDescripcion, final Date fecha) {
+        this.key = key;
         this.descripcion = descripcion;
         this.descripcionLarga = descripcionLarga;
         this.prioridad = prioridad;
@@ -32,8 +32,8 @@ public class SolicitudDTO {
         this.fecha = fecha;
     }
 
-    public Integer getSolicitudKey() {
-        return solicitudKey;
+    public Integer getKey() {
+        return key;
     }
 
     public String getDescripcion() {
@@ -64,8 +64,8 @@ public class SolicitudDTO {
         return fecha;
     }
 
-    public void setSolicitudKey(final Integer solicitudKey) {
-        this.solicitudKey = solicitudKey;
+    public void setKey(final Integer key) {
+        this.key = key;
     }
 
     public void setDescripcion(final String descripcion) {

@@ -6,7 +6,7 @@ package tfm.muuinf.viciano.lledo.alejandro.inurse.DTO;
 
 public class UsuarioDTO {
 
-    private Integer usuarioKey;
+    private Integer key;
     private String usuario;
     private String password;
     private String tipo;
@@ -16,20 +16,20 @@ public class UsuarioDTO {
 
     }
 
-    public UsuarioDTO(final Integer usuarioKey, final String usuario, final String password, final String tipo, final Integer pacienteKey) {
-        this.usuarioKey = usuarioKey;
+    public UsuarioDTO(final Integer key, final String usuario, final String password, final String tipo, final Integer pacienteKey) {
+        this.key = key;
         this.usuario = usuario;
         this.password = password;
         this.tipo = tipo;
         this.pacienteKey = pacienteKey;
     }
 
-    public Integer getUsuarioKey() {
-        return this.usuarioKey;
+    public Integer getKey() {
+        return this.key;
     }
 
-    public void setUsuarioKey(final int usuarioKey) {
-        this.usuarioKey = usuarioKey;
+    public void setKey(final int key) {
+        this.key = key;
     }
 
     public String getUsuario() {

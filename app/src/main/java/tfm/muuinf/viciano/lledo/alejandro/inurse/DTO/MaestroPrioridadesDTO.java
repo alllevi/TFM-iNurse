@@ -6,25 +6,25 @@ package tfm.muuinf.viciano.lledo.alejandro.inurse.DTO;
 
 public class MaestroPrioridadesDTO {
 
-    private Integer prioridadKey;
+    private Integer key;
     private String descripcion;
     private Integer prioriodad;
 
     public MaestroPrioridadesDTO() {
     }
 
-    public MaestroPrioridadesDTO(Integer prioridadKey, String descripcion, Integer prioriodad) {
-        this.prioridadKey = prioridadKey;
+    public MaestroPrioridadesDTO(Integer key, String descripcion, Integer prioriodad) {
+        this.key = key;
         this.descripcion = descripcion;
         this.prioriodad = prioriodad;
     }
 
-    public Integer getPrioridadKey() {
-        return prioridadKey;
+    public Integer getKey() {
+        return key;
     }
 
-    public void setPrioridadKey(Integer prioridadKey) {
-        this.prioridadKey = prioridadKey;
+    public void setKey(Integer key) {
+        this.key = key;
     }
 
     public String getDescripcion() {

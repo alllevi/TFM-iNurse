@@ -55,19 +55,20 @@ public class MenuPacientesActivity extends AppCompatActivity implements View.OnC
     public void onClick(final View v) {
 
         if (v.getId() == R.id.bt_menu_paciente_realizar_solicitud) {
-            final Intent realizarSolicitudIntent = new Intent(this, RealizarSolicitudActivity.class);
+            Intent realizarSolicitudIntent = new Intent(this, RealizarSolicitudActivity.class);
             startActivity(realizarSolicitudIntent);
         } else if (v.getId() == R.id.bt_menu_paciente_mis_solicitudes) {
-            final Intent misSolictudesIntent = new Intent(this, MisSolicitudesActivity.class);
+            Intent misSolictudesIntent = new Intent(this, MisSolicitudesActivity.class);
             startActivity(misSolictudesIntent);
         } else if (v.getId() == R.id.bt_menu_paciente_selec_menu) {
-            final Intent seleccionMenuIntent = new Intent(this, SeleccionMenuActivity.class);
+            Intent seleccionMenuIntent = new Intent(this, SeleccionMenuActivity.class);
             startActivity(seleccionMenuIntent);
         } else if (v.getId() == R.id.bt_menu_paciente_mis_avisos) {
-            final Intent misAvisosIntent = new Intent(this, MisAvisosActivity.class);
+            Intent misAvisosIntent = new Intent(this, MisAvisosActivity.class);
             startActivity(misAvisosIntent);
         } else if (v.getId() == R.id.bt_menu_paciente_info_hosp) {
-
+            Intent infoHospitalIntent = new Intent(this, InfoHospitalActivity.class);
+            startActivity(infoHospitalIntent);
         } else {
             eventoCerrarSesion();
         }

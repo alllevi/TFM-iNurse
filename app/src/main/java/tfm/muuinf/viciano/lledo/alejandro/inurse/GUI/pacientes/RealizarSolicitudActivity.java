@@ -7,6 +7,7 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -53,6 +54,23 @@ public class RealizarSolicitudActivity extends AppCompatActivity {
         tvPrioridadSeleccionada = (TextView) findViewById(R.id.tv_prioridad_seleccionada);
         etDescripcionSolicitud = (EditText) findViewById(R.id.et_descripcion_solicitud);
         btRealizarSolicitud = (Button) findViewById(R.id.bt_enviar_solicitud);
+        setListeners();
+
+    }
+
+    public void setListeners() {
+
+        //Permite que al crear la actividad el editText no gane el foco
+        etDescripcionSolicitud.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                v.setFocusable(true);
+                v.setFocusableInTouchMode(true);
+                return false;
+            }
+        });
+
         btRealizarSolicitud.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 descripcionSolicitud = etDescripcionSolicitud.getText().toString();
@@ -84,25 +102,22 @@ public class RealizarSolicitudActivity extends AppCompatActivity {
     }
 
     private void initTask() {
-        final boolean conexion = checkInternet();
-        if (conexion) {
+        if (checkInternet()) {
             realizarSolicitudTask = new RealizarSolicitudTask();
             realizarSolicitudTask.execute((Void) null);
         }
     }
 
     private void insertarTask() {
-        final boolean conexion = checkInternet();
-        if (conexion) {
+        if (checkInternet()) {
             insertarSolicitudTask = new InsertarSolicitudTask();
             insertarSolicitudTask.execute((Void) null);
         }
     }
 
     private boolean checkInternet() {
-
-        final ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        final NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
         if (networkInfo != null && networkInfo.isConnected()) {
             return true;
@@ -119,7 +134,7 @@ public class RealizarSolicitudActivity extends AppCompatActivity {
 
         @Override
         protected Boolean doInBackground(final Void... params) {
-            final ServiciosDAL dal = new ServiciosDAL();
+            ServiciosDAL dal = new ServiciosDAL();
             try {
                 listaMaestroSolicitudesDTO = dal.getMaestrosDAO().getMaestroSolicitudes();
                 listaMaestroPrioridadesDTO = dal.getMaestrosDAO().getMaestroPrioridades();
@@ -147,9 +162,9 @@ public class RealizarSolicitudActivity extends AppCompatActivity {
 
         @Override
         protected Boolean doInBackground(final Void... params) {
-            final ServiciosDAL dal = new ServiciosDAL();
+            ServiciosDAL dal = new ServiciosDAL();
             String pacienteKey = sharedpreferences.getString(ConstantesGUI.PACIENTE_KEY, "");
-            String maestroSolicitudKey = listaMaestroSolicitudesDTO.get(indexSelectedSolicitud).getMaestroSolicitudKey().toString();
+            String maestroSolicitudKey = listaMaestroSolicitudesDTO.get(indexSelectedSolicitud).getKey().toString();
             try {
                 return dal.getSolicitudDAO().insertarSolicitud(pacienteKey, maestroSolicitudKey, descripcionSolicitud);
             } catch (final Exception e) {

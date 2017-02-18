@@ -87,5 +87,8 @@
     <string name="alergias_">Alergias:</string>
     <string name="antecedentes_toxicos_">Antecedentes tóxicos:</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="fecha_fin_">Fecha fin:</string>
+    <string name="repetir_aviso_horas">Repetir cada #H# horas</string>
+    <string name="sin_repeticion">Sin repetición</string>
 
 </resources>
