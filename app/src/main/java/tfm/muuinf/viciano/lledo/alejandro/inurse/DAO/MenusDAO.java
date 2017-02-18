@@ -7,6 +7,7 @@ import android.util.Log;
  */
 
 public class MenusDAO {
+
     public MenusDAO() {
     }
 

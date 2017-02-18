@@ -22,7 +22,7 @@ public class PacienteDAO extends BasicDAO {
         final URL url = new URL(ConstantesDAO.SERVICIO_AUTENTICACION +
                 "usuario=" + usuario + "&password=" + password);
 
-        final JSONObject jsonObject = realizarPeticionHTTP(url);
+        final JSONObject jsonObject = getHTTP(url);
         final JSONArray jsonArrayUsuarios = jsonObject.getJSONArray("usuarios");
 
         if (jsonArrayUsuarios.length() == 0) {
