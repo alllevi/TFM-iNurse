@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.comun;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -21,11 +21,11 @@ import android.widget.TextView;
 
 import org.apache.commons.lang3.StringUtils;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DAL.ServiciosDAL;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.UsuarioDTO;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.pacientes.MenuPacientesActivity;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.personal.MenuPersonalActivity;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dal.ServiciosDAL;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.UsuarioDTO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.pacientes.MenuPacientesActivity;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal.MenuPersonalActivity;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -241,7 +241,7 @@ public class LoginActivity extends AppCompatActivity {
                     final Intent intent = new Intent(getBaseContext(), MenuPacientesActivity.class);
                     startActivity(intent);
                 }
-                editor.commit();
+                editor.apply();
                 finish();
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));

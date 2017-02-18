@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.personal;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,9 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.comun.ConstantesGUI;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.comun.LoginActivity;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesGUI;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.LoginActivity;
 
 public class MenuPersonalActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -92,7 +92,7 @@ public class MenuPersonalActivity extends AppCompatActivity implements View.OnCl
     private void cerrarSesion() {
         final SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putString(ConstantesGUI.USUARIO_KEY, "");
-        editor.commit();
+        editor.apply();
         final Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
