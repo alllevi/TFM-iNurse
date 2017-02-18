@@ -1,8 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.DTO;
-
-/**
- * Created by Alex on 31/01/2017.
- */
+package tfm.muuinf.viciano.lledo.alejandro.inurse.dto;
 
 public class UsuarioDTO {
 

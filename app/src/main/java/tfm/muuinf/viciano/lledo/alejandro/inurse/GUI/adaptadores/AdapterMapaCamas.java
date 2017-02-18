@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -8,16 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.personal.MapaCamasActivity;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
-
-/**
- * Created by Alex on 24/01/2017.
- */
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal.MapaCamasActivity;
 
 public class AdapterMapaCamas extends RecyclerView.Adapter<AdapterMapaCamas.MapaCamasViewHolder> {
 
-    MapaCamasActivity mapaCamasActivity;
+    private MapaCamasActivity mapaCamasActivity;
 
     public AdapterMapaCamas(final MapaCamasActivity activity) {
         mapaCamasActivity = activity;
@@ -27,8 +23,7 @@ public class AdapterMapaCamas extends RecyclerView.Adapter<AdapterMapaCamas.Mapa
 
     public MapaCamasViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
         final View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_mapa_camas, parent, false);
-        final MapaCamasViewHolder vh = new MapaCamasViewHolder(v);
-        return vh;
+        return new MapaCamasViewHolder(v);
     }
 
     @Override

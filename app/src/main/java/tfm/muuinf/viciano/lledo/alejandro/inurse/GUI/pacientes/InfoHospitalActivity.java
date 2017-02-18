@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.pacientes;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.pacientes;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -18,10 +18,10 @@ public class InfoHospitalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_hospital);
         WebView myWebView = (WebView) findViewById(R.id.info_hosp_webview);
-        WebSettings webSettings = myWebView.getSettings();
-        myWebView.getSettings().setSupportZoom(true);
-        myWebView.getSettings().setUseWideViewPort(true);
         myWebView.setInitialScale(1);
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setSupportZoom(true);
+        webSettings.setUseWideViewPort(true);
         if (checkInternet()) {
             myWebView.loadUrl("http://www.hospital-lafe.com/");
         }

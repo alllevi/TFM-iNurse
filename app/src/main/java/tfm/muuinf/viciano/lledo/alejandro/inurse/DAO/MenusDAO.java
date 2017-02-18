@@ -1,10 +1,6 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.DAO;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.dao;
 
 import android.util.Log;
-
-/**
- * Created by Alex on 30/01/2017.
- */
 
 public class MenusDAO {
 

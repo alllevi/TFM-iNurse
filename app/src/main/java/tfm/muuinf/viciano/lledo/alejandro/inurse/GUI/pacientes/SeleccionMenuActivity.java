@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.pacientes;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.pacientes;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -6,9 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DAL.ServiciosDAL;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores.AdapterSeleccionMenus;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dal.ServiciosDAL;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores.AdapterSeleccionMenus;
 
 public class SeleccionMenuActivity extends AppCompatActivity {
 

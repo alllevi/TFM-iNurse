@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.pacientes.InfoHospitalActivity">
+    tools:context="tfm.muuinf.viciano.lledo.alejandro.inurse.gui.pacientes.InfoHospitalActivity">
 
     <WebView
         android:layout_width="match_parent"

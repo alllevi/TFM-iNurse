@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.DAO;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.dao;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -7,13 +7,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.MaestroPrioridadesDTO;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.MaestroSolicitudDTO;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.MaestroTiposDTO;
-
-/**
- * Created by Alex on 09/02/2017.
- */
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MaestroPrioridadesDTO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MaestroSolicitudDTO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MaestroTiposDTO;
 
 public class MaestrosDAO extends BasicDAO {
 

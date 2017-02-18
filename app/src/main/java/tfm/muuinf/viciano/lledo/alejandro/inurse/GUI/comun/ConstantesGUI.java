@@ -1,10 +1,6 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.comun;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun;
 
 import android.content.Context;
-
-/**
- * Created by Alex on 31/01/2017.
- */
 
 public class ConstantesGUI {
     public static final String SHARED_PREFS_FILE = "manomanitasConf";

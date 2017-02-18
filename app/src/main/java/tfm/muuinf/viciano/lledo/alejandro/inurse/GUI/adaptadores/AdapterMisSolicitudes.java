@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -10,17 +10,13 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.SolicitudDTO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
-
-/**
- * Created by Alex on 19/01/2017.
- */
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.SolicitudDTO;
 
 public class AdapterMisSolicitudes extends RecyclerView.Adapter<AdapterMisSolicitudes.MisSolicitudesViewHolder> {
 
-    List<SolicitudDTO> listaSolicitudesDTO;
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+    private List<SolicitudDTO> listaSolicitudesDTO;
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
 
     public AdapterMisSolicitudes(final List<SolicitudDTO> listaSolicitudesDTO) {
         this.listaSolicitudesDTO = listaSolicitudesDTO;
@@ -29,8 +25,7 @@ public class AdapterMisSolicitudes extends RecyclerView.Adapter<AdapterMisSolici
     @Override
     public MisSolicitudesViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
         final View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_mis_solicitudes, parent, false);
-        final MisSolicitudesViewHolder vh = new MisSolicitudesViewHolder(v);
-        return vh;
+        return new MisSolicitudesViewHolder(v);
     }
 
     @Override

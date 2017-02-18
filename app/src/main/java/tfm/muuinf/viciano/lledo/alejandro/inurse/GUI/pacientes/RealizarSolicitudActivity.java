@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.pacientes;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.pacientes;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -20,17 +20,15 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DAL.ServiciosDAL;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.MaestroPrioridadesDTO;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.MaestroSolicitudDTO;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.comun.ConstantesGUI;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dal.ServiciosDAL;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MaestroPrioridadesDTO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MaestroSolicitudDTO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesGUI;
 
 public class RealizarSolicitudActivity extends AppCompatActivity {
 
     private SharedPreferences sharedpreferences;
-    private RealizarSolicitudTask realizarSolicitudTask = null;
-    private InsertarSolicitudTask insertarSolicitudTask = null;
     private ListView lvRealizarSolicitud;
     private TextView tvPrioridadSeleccionada;
     private EditText etDescripcionSolicitud;
@@ -58,7 +56,7 @@ public class RealizarSolicitudActivity extends AppCompatActivity {
 
     }
 
-    public void setListeners() {
+    private void setListeners() {
 
         //Permite que al crear la actividad el editText no gane el foco
         etDescripcionSolicitud.setOnTouchListener(new View.OnTouchListener() {
@@ -91,7 +89,6 @@ public class RealizarSolicitudActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> arg0, View view, int position, long arg3) {
                 indexSelectedSolicitud = position;
                 Integer prioridad = listaMaestroSolicitudesDTO.get(position).getPrioridad();
-                String descripcionPrioridad;
                 for (MaestroPrioridadesDTO maestroP : listaMaestroPrioridadesDTO) {
                     if (maestroP.getPrioriodad().equals(prioridad)) {
                         tvPrioridadSeleccionada.setText(maestroP.getDescripcion());
@@ -103,14 +100,14 @@ public class RealizarSolicitudActivity extends AppCompatActivity {
 
     private void initTask() {
         if (checkInternet()) {
-            realizarSolicitudTask = new RealizarSolicitudTask();
+            RealizarSolicitudTask realizarSolicitudTask = new RealizarSolicitudTask();
             realizarSolicitudTask.execute((Void) null);
         }
     }
 
     private void insertarTask() {
         if (checkInternet()) {
-            insertarSolicitudTask = new InsertarSolicitudTask();
+            InsertarSolicitudTask insertarSolicitudTask = new InsertarSolicitudTask();
             insertarSolicitudTask.execute((Void) null);
         }
     }
@@ -130,7 +127,7 @@ public class RealizarSolicitudActivity extends AppCompatActivity {
     /**
      * Task para recuperar los maestros de solicitudes y prioridades
      */
-    public class RealizarSolicitudTask extends AsyncTask<Void, Void, Boolean> {
+    private class RealizarSolicitudTask extends AsyncTask<Void, Void, Boolean> {
 
         @Override
         protected Boolean doInBackground(final Void... params) {
@@ -158,7 +155,7 @@ public class RealizarSolicitudActivity extends AppCompatActivity {
     /**
      * Task para insertar la solicitud en la base de datos
      */
-    public class InsertarSolicitudTask extends AsyncTask<Void, Void, Boolean> {
+    private class InsertarSolicitudTask extends AsyncTask<Void, Void, Boolean> {
 
         @Override
         protected Boolean doInBackground(final Void... params) {

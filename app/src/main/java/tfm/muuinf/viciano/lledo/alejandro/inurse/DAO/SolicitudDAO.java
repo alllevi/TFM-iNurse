@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.DAO;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.dao;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -9,11 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.SolicitudDTO;
-
-/**
- * Created by Alex on 09/02/2017.
- */
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.SolicitudDTO;
 
 public class SolicitudDAO extends BasicDAO {
 
@@ -46,17 +42,12 @@ public class SolicitudDAO extends BasicDAO {
 
     public boolean insertarSolicitud(final String pacienteKey, final String maestroSolicitudKey, final String descripcion) throws IOException {
 
-        StringBuilder stringBuilder = new StringBuilder(ConstantesDAO.INSERTAR_SOLICITUD);
-        stringBuilder.append("paciKey=" + pacienteKey);
-        stringBuilder.append("&maSoliKey=" + maestroSolicitudKey);
-        stringBuilder.append("&descripcion=" + descripcion);
+        String stringURL = ConstantesDAO.INSERTAR_SOLICITUD + "paciKey=" + pacienteKey +
+                "&maSoliKey=" + maestroSolicitudKey +
+                "&descripcion=" + descripcion;
 
-        URL url = new URL(stringBuilder.toString());
+        URL url = new URL(stringURL);
         String codigoRespuesta = insertHTTP(url);
-        if ("1".equals(codigoRespuesta)) {
-            return true;
-        } else {
-            return false;
-        }
+        return "1".equals(codigoRespuesta);
     }
 }

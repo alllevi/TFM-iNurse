@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.pacientes;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.pacientes;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -18,17 +18,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DAL.ServiciosDAL;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.MaestroTiposDTO;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.SolicitudDTO;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores.AdapterMisSolicitudes;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.comun.ConstantesGUI;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dal.ServiciosDAL;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MaestroTiposDTO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.SolicitudDTO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores.AdapterMisSolicitudes;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesGUI;
 
 public class MisSolicitudesActivity extends AppCompatActivity {
 
     private SharedPreferences sharedpreferences;
-    private MisSolicitudesTask solicitudesTask = null;
     private Spinner comboEstados;
     private RecyclerView recyclerView;
     private List<SolicitudDTO> listaSolicitudes;
@@ -93,7 +92,7 @@ public class MisSolicitudesActivity extends AppCompatActivity {
 
     private void initTask() {
         if (checkInternet()) {
-            solicitudesTask = new MisSolicitudesTask();
+            MisSolicitudesTask solicitudesTask = new MisSolicitudesTask();
             solicitudesTask.execute((Void) null);
         }
     }
@@ -110,7 +109,7 @@ public class MisSolicitudesActivity extends AppCompatActivity {
         }
     }
 
-    public class MisSolicitudesTask extends AsyncTask<Void, Void, Boolean> {
+    private class MisSolicitudesTask extends AsyncTask<Void, Void, Boolean> {
 
         @Override
         protected Boolean doInBackground(final Void... params) {

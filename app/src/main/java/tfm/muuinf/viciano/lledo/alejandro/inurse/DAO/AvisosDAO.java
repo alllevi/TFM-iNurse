@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.DAO;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.dao;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -8,11 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.AvisosDTO;
-
-/**
- * Created by Alex on 18/02/2017.
- */
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.AvisosDTO;
 
 public class AvisosDAO extends BasicDAO {
 
@@ -20,9 +16,7 @@ public class AvisosDAO extends BasicDAO {
     }
 
     public List<AvisosDTO> getAvisosPaciente(String pacienteKey) throws Exception {
-        StringBuilder stringBuilder = new StringBuilder(ConstantesDAO.AVISOS_BY_PACI_KEY);
-        stringBuilder.append("paciKey=" + pacienteKey);
-        URL url = new URL(stringBuilder.toString());
+        URL url = new URL(ConstantesDAO.AVISOS_BY_PACI_KEY + "paciKey=" + pacienteKey);
         JSONObject jsonObject = getHTTP(url);
         JSONArray jsonArrayUsuarios = jsonObject.getJSONArray("avisos");
 

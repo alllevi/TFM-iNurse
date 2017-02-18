@@ -1,8 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.DTO;
-
-/**
- * Created by Alex on 09/02/2017.
- */
+package tfm.muuinf.viciano.lledo.alejandro.inurse.dto;
 
 public class MaestroPrioridadesDTO {
 

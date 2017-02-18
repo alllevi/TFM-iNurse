@@ -1,10 +1,6 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.DTO;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.dto;
 
 import java.util.Date;
-
-/**
- * Created by Alex on 09/02/2017.
- */
 
 public class SolicitudDTO {
 

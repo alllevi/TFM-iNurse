@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.personal;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

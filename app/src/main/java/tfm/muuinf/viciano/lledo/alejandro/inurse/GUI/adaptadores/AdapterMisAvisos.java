@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores;
 
 import android.content.Context;
 import android.support.v7.widget.CardView;
@@ -12,18 +12,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.AvisosDTO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
-
-/**
- * Created by Alex on 21/01/2017.
- */
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.AvisosDTO;
 
 public class AdapterMisAvisos extends RecyclerView.Adapter<AdapterMisAvisos.MisAvisosViewHolder> {
 
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
-    Context context;
-    List<AvisosDTO> listaAvisosDTO = new ArrayList<>();
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+    private Context context;
+    private List<AvisosDTO> listaAvisosDTO = new ArrayList<>();
 
     public AdapterMisAvisos(List<AvisosDTO> listaAvisosDTO, Context context) {
         this.listaAvisosDTO = listaAvisosDTO;
@@ -34,8 +30,7 @@ public class AdapterMisAvisos extends RecyclerView.Adapter<AdapterMisAvisos.MisA
 
     public MisAvisosViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
         final View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_mis_avisos, parent, false);
-        final MisAvisosViewHolder vh = new MisAvisosViewHolder(v);
-        return vh;
+        return new MisAvisosViewHolder(v);
     }
 
     @Override

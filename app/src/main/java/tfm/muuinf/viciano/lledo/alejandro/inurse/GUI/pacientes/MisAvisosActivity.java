@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.pacientes;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.pacientes;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,26 +9,20 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DAL.ServiciosDAL;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.AvisosDTO;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores.AdapterMisAvisos;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.comun.ConstantesGUI;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dal.ServiciosDAL;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.AvisosDTO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores.AdapterMisAvisos;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesGUI;
 
 public class MisAvisosActivity extends AppCompatActivity {
 
     private SharedPreferences sharedpreferences;
-    private MisAvisosTask misAvisosTask = null;
     private RecyclerView recyclerView;
-    private TextView tvFechaIni;
-    private TextView tvFechaFin;
-    private TextView tvFrecuencia;
-    private TextView tvDescripcion;
     private List<AvisosDTO> listaAvisos;
 
     @Override
@@ -43,10 +37,6 @@ public class MisAvisosActivity extends AppCompatActivity {
     private void initComponentes() {
         sharedpreferences = getSharedPreferences(ConstantesGUI.SHARED_PREFS_FILE, ConstantesGUI.CONTEXT_MODE_PRIVATE);
         recyclerView = (RecyclerView) findViewById(R.id.rv_mis_avisos);
-        tvFechaIni = (TextView) findViewById(R.id.tv_mis_avisos_fecha_ini);
-        tvFechaFin = (TextView) findViewById(R.id.tv_mis_avisos_fecha_fin);
-        tvFrecuencia = (TextView) findViewById(R.id.tv_mis_avisos_frecuencia);
-        tvDescripcion = (TextView) findViewById(R.id.tv_mis_avisos_descripcion);
     }
 
     private void rellenarRecyclerView() {
@@ -58,7 +48,7 @@ public class MisAvisosActivity extends AppCompatActivity {
 
     private void initTask() {
         if (checkInternet()) {
-            misAvisosTask = new MisAvisosTask();
+            MisAvisosTask misAvisosTask = new MisAvisosTask();
             misAvisosTask.execute((Void) null);
         }
     }
@@ -75,7 +65,7 @@ public class MisAvisosActivity extends AppCompatActivity {
         }
     }
 
-    public class MisAvisosTask extends AsyncTask<Void, Void, Boolean> {
+    private class MisAvisosTask extends AsyncTask<Void, Void, Boolean> {
 
         @Override
         protected Boolean doInBackground(final Void... params) {

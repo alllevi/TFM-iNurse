@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.DAO;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.dao;
 
 import org.apache.commons.io.IOUtils;
 import org.json.JSONObject;
@@ -12,15 +12,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 
-/**
- * Created by Alex on 31/01/2017.
- */
+class BasicDAO {
 
-public class BasicDAO {
+    static SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
-    public static SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-
-    public JSONObject getHTTP(final URL url) throws Exception {
+    JSONObject getHTTP(final URL url) throws Exception {
 
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
         try {
@@ -31,7 +27,7 @@ public class BasicDAO {
         }
     }
 
-    public String insertHTTP(final URL url) throws IOException {
+    String insertHTTP(final URL url) throws IOException {
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
         try {
             InputStream inputStream = new BufferedInputStream(urlConnection.getInputStream());

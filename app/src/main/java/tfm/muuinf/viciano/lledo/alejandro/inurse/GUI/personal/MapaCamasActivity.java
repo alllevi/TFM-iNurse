@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.personal;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores.AdapterMapaCamas;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores.AdapterMapaCamas;
 
 public class MapaCamasActivity extends AppCompatActivity {
 

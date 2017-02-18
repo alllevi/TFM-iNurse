@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -8,16 +8,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.personal.ListarSolicitudesActivity;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
-
-/**
- * Created by Alex on 21/01/2017.
- */
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal.ListarSolicitudesActivity;
 
 public class AdapterListarSolicitudes extends RecyclerView.Adapter<AdapterListarSolicitudes.ListarSolicitudesViewHolder> {
 
-    ListarSolicitudesActivity listarSolicitudesActivity;
+    private ListarSolicitudesActivity listarSolicitudesActivity;
 
     public AdapterListarSolicitudes(final ListarSolicitudesActivity activity) {
         listarSolicitudesActivity = activity;
@@ -26,8 +22,7 @@ public class AdapterListarSolicitudes extends RecyclerView.Adapter<AdapterListar
     @Override
     public ListarSolicitudesViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
         final View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_listar_solicitudes, parent, false);
-        final ListarSolicitudesViewHolder vh = new ListarSolicitudesViewHolder(v);
-        return vh;
+        return new ListarSolicitudesViewHolder(v);
     }
 
     @Override

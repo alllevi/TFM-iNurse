@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.GUI.adaptadores;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -10,10 +10,6 @@ import android.widget.TextView;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 
-/**
- * Created by Alex on 19/01/2017.
- */
-
 public class AdapterSeleccionMenus extends RecyclerView.Adapter<AdapterSeleccionMenus.SeleccionMenusViewHolder> {
 
     public AdapterSeleccionMenus() {
@@ -22,8 +18,7 @@ public class AdapterSeleccionMenus extends RecyclerView.Adapter<AdapterSeleccion
     @Override
     public SeleccionMenusViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
         final View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_seleccion_menu, parent, false);
-        final SeleccionMenusViewHolder vh = new SeleccionMenusViewHolder(v);
-        return vh;
+        return new SeleccionMenusViewHolder(v);
     }
 
     @Override

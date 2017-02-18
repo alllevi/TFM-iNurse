@@ -1,4 +1,4 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.DAO;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.dao;
 
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
@@ -6,11 +6,7 @@ import org.json.JSONObject;
 
 import java.net.URL;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DTO.UsuarioDTO;
-
-/**
- * Created by Alex on 31/01/2017.
- */
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.UsuarioDTO;
 
 public class PacienteDAO extends BasicDAO {
 

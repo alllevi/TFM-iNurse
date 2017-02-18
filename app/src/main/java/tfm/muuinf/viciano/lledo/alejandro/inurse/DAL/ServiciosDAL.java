@@ -1,14 +1,10 @@
-package tfm.muuinf.viciano.lledo.alejandro.inurse.DAL;
+package tfm.muuinf.viciano.lledo.alejandro.inurse.dal;
 
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DAO.AvisosDAO;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DAO.MaestrosDAO;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DAO.MenusDAO;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DAO.PacienteDAO;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.DAO.SolicitudDAO;
-
-/**
- * Created by Alex on 30/01/2017.
- */
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dao.AvisosDAO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dao.MaestrosDAO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dao.MenusDAO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dao.PacienteDAO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dao.SolicitudDAO;
 
 public class ServiciosDAL {
 
