@@ -62,6 +62,15 @@ public class SolicitudDAO extends BasicDAO {
         return "1".equals(codigoRespuesta);
     }
 
+    public boolean updateToRechazada(final Integer key, final String motivo) throws IOException {
+
+        String stringURL = ConstantesDAO.UPDATE_SOLICITUD_RECHAZADA + "soliKey=" + key + "&motivo=" + motivo;
+
+        URL url = new URL(stringURL);
+        String codigoRespuesta = insertHTTP(url);
+        return "1".equals(codigoRespuesta);
+    }
+
     public List<SolicitudDTO> getAllSolicitudes() throws Exception {
 
         URL url = new URL(ConstantesDAO.SOLICITUDES_ALL);

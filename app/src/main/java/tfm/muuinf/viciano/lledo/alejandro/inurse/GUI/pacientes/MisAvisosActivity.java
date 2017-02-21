@@ -1,12 +1,8 @@
 package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.pacientes;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
@@ -18,8 +14,9 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.dal.ServiciosDAL;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.AvisosDTO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores.AdapterMisAvisos;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesComun;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.InurseActivity;
 
-public class MisAvisosActivity extends AppCompatActivity {
+public class MisAvisosActivity extends InurseActivity {
 
     private SharedPreferences sharedpreferences;
     private RecyclerView recyclerView;
@@ -50,23 +47,6 @@ public class MisAvisosActivity extends AppCompatActivity {
         if (checkInternet()) {
             MisAvisosTask misAvisosTask = new MisAvisosTask();
             misAvisosTask.execute((Void) null);
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        // Boton atras
-    }
-
-    private boolean checkInternet() {
-        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-
-        if (networkInfo != null && networkInfo.isConnected()) {
-            return true;
-        } else {
-            Toast.makeText(getApplicationContext(), "Compruebe su conexión a internet", Toast.LENGTH_SHORT).show();
-            return false;
         }
     }
 

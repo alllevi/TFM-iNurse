@@ -1,17 +1,13 @@
 package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.pacientes;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.Toast;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.InurseActivity;
 
-public class InfoHospitalActivity extends AppCompatActivity {
+public class InfoHospitalActivity extends InurseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,23 +20,6 @@ public class InfoHospitalActivity extends AppCompatActivity {
         webSettings.setUseWideViewPort(true);
         if (checkInternet()) {
             myWebView.loadUrl("http://www.hospital-lafe.com/");
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        // Boton atras
-    }
-
-    private boolean checkInternet() {
-        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-
-        if (networkInfo != null && networkInfo.isConnected()) {
-            return true;
-        } else {
-            Toast.makeText(getApplicationContext(), "Compruebe su conexión a internet", Toast.LENGTH_SHORT).show();
-            return false;
         }
     }
 }

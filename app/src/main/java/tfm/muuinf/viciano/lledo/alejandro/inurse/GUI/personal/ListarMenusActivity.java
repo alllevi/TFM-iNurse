@@ -1,14 +1,14 @@
 package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.InurseActivity;
 
-public class ListarMenusActivity extends AppCompatActivity {
+public class ListarMenusActivity extends InurseActivity {
 
     private Spinner cbPlantas;
     private ListView lvListaMenus;
@@ -33,9 +33,5 @@ public class ListarMenusActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cbPlantas.setAdapter(adapter);
     }
-
-    @Override
-    public void onBackPressed() {
-        // Boton atras
-    }
+    
 }

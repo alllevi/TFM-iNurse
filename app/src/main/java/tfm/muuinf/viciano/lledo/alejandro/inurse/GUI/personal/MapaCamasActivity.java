@@ -2,7 +2,6 @@ package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ArrayAdapter;
@@ -10,8 +9,9 @@ import android.widget.Spinner;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores.AdapterMapaCamas;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.InurseActivity;
 
-public class MapaCamasActivity extends AppCompatActivity {
+public class MapaCamasActivity extends InurseActivity {
 
     private Spinner cbPlantas;
     private RecyclerView recyclerView;
@@ -49,9 +49,5 @@ public class MapaCamasActivity extends AppCompatActivity {
         final Intent detallePacienteIntent = new Intent(this, DetallePacienteActivity.class);
         startActivity(detallePacienteIntent);
     }
-
-    @Override
-    public void onBackPressed() {
-        // Boton atras
-    }
+    
 }

@@ -8,7 +8,6 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -28,7 +27,7 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.pacientes.MenuPacientesActi
 import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal.MenuPersonalActivity;
 
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends InurseActivity {
 
     private UserLoginTask mAuthTask = null;
     private SharedPreferences sharedpreferences;
@@ -142,8 +141,10 @@ public class LoginActivity extends AppCompatActivity {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
+            if (checkInternet()) {
+                mAuthTask = new UserLoginTask(email, password);
+                mAuthTask.execute((Void) null);
+            }
         }
     }
 

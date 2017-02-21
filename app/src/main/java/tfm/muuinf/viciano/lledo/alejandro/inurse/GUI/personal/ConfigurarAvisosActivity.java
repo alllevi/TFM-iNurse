@@ -1,7 +1,6 @@
 package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -9,8 +8,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.InurseActivity;
 
-public class ConfigurarAvisosActivity extends AppCompatActivity {
+public class ConfigurarAvisosActivity extends InurseActivity {
 
     //Faltan los selectores de fecha
     private Spinner cbPlanta;
@@ -53,8 +53,4 @@ public class ConfigurarAvisosActivity extends AppCompatActivity {
         cbHabitacion.setAdapter(adapter);
     }
 
-    @Override
-    public void onBackPressed() {
-        // Boton atras
-    }
 }

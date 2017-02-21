@@ -103,7 +103,6 @@ public class AdapterListarSolicitudes extends RecyclerView.Adapter<AdapterListar
             tvDescripcion = (TextView) itemView.findViewById(R.id.tv_listar_solicitudes_descripcion);
             btEmpezar = (Button) itemView.findViewById(R.id.bt_listar_solicitudes_empezar);
             btRechazar = (Button) itemView.findViewById(R.id.bt_listar_solicitudes_rechazar);
-
         }
     }
 }

@@ -1,11 +1,9 @@
 package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,9 +11,11 @@ import android.widget.Toast;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dal.ServiciosDAL;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.InurseActivity;
 
-public class RechazarSolicitudActivity extends AppCompatActivity {
+public class RechazarSolicitudActivity extends InurseActivity {
 
+    private Integer solicitudKey;
     private Button btRechazar;
     private Button btCancelar;
     private TextView tvDescripcion;
@@ -24,6 +24,7 @@ public class RechazarSolicitudActivity extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rechazar_solicitud);
+        solicitudKey = getIntent().getExtras().getInt("solicitudKey");
         initComponentes();
         setListeners();
     }
@@ -41,7 +42,6 @@ public class RechazarSolicitudActivity extends AppCompatActivity {
                 initTask();
             }
         });
-
         btCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,46 +52,43 @@ public class RechazarSolicitudActivity extends AppCompatActivity {
 
     private void initTask() {
         if (checkInternet()) {
-            RechazarSolicitudTask solicitudesTask = new RechazarSolicitudTask();
+            String motivo = tvDescripcion.getText().toString();
+            RechazarSolicitudTask solicitudesTask = new RechazarSolicitudTask(motivo);
             solicitudesTask.execute((Void) null);
         }
     }
 
-    private boolean checkInternet() {
-        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-
-        if (networkInfo != null && networkInfo.isConnected()) {
-            return true;
-        } else {
-            Toast.makeText(getApplicationContext(), "Compruebe su conexión a internet", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
+    private void returnResult() {
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra("accion", "borrar");
+        returnIntent.putExtra("solicitudKey", solicitudKey);
+        setResult(Activity.RESULT_OK, returnIntent);
         finish();
     }
 
     private class RechazarSolicitudTask extends AsyncTask<Void, Void, Boolean> {
 
+        private String motivo;
+
+        public RechazarSolicitudTask(String motivo) {
+            this.motivo = motivo;
+        }
+
         @Override
         protected Boolean doInBackground(final Void... params) {
             ServiciosDAL dal = new ServiciosDAL();
             try {
-                //Realizar llamada correspondiente
+                return dal.getSolicitudDAO().updateToRechazada(solicitudKey, motivo);
             } catch (final Exception e) {
                 e.printStackTrace();
                 return false;
             }
-            return true;
         }
 
         @Override
         protected void onPostExecute(Boolean success) {
             if (success) {
-                //Ha ido bien?
+                returnResult();
             } else {
                 Toast.makeText(getApplicationContext(), "Se ha producido un error inesperado", Toast.LENGTH_SHORT).show();
             }
