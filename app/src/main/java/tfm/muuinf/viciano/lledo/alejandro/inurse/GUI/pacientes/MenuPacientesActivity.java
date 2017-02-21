@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesGUI;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesComun;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.LoginActivity;
 
 public class MenuPacientesActivity extends AppCompatActivity implements View.OnClickListener {
@@ -33,7 +33,7 @@ public class MenuPacientesActivity extends AppCompatActivity implements View.OnC
     }
 
     private void initComponentes() {
-        sharedpreferences = getSharedPreferences(ConstantesGUI.SHARED_PREFS_FILE, ConstantesGUI.CONTEXT_MODE_PRIVATE);
+        sharedpreferences = getSharedPreferences(ConstantesComun.SHARED_PREFS_FILE, ConstantesComun.CONTEXT_MODE_PRIVATE);
         btRealizarSolicitud = (Button) findViewById(R.id.bt_menu_paciente_realizar_solicitud);
         btMisSolicitudes = (Button) findViewById(R.id.bt_menu_paciente_mis_solicitudes);
         btSeleccionarMenu = (Button) findViewById(R.id.bt_menu_paciente_selec_menu);
@@ -98,8 +98,8 @@ public class MenuPacientesActivity extends AppCompatActivity implements View.OnC
 
     private void cerrarSesion() {
         final SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString(ConstantesGUI.USUARIO_KEY, "");
-        editor.putString(ConstantesGUI.PACIENTE_KEY, "");
+        editor.putString(ConstantesComun.USUARIO_KEY, "");
+        editor.putString(ConstantesComun.PACIENTE_KEY, "");
         editor.apply();
         final Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);

@@ -33,4 +33,9 @@ public class ListarMenusActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cbPlantas.setAdapter(adapter);
     }
+
+    @Override
+    public void onBackPressed() {
+        // Boton atras
+    }
 }

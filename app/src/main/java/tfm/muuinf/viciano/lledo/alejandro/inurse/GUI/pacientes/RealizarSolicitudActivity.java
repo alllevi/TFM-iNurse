@@ -24,7 +24,7 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dal.ServiciosDAL;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MaestroPrioridadesDTO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MaestroSolicitudDTO;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesGUI;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesComun;
 
 public class RealizarSolicitudActivity extends AppCompatActivity {
 
@@ -47,7 +47,7 @@ public class RealizarSolicitudActivity extends AppCompatActivity {
     }
 
     private void initComponentes() {
-        sharedpreferences = getSharedPreferences(ConstantesGUI.SHARED_PREFS_FILE, ConstantesGUI.CONTEXT_MODE_PRIVATE);
+        sharedpreferences = getSharedPreferences(ConstantesComun.SHARED_PREFS_FILE, ConstantesComun.CONTEXT_MODE_PRIVATE);
         lvRealizarSolicitud = (ListView) findViewById(R.id.lv_realizar_solicitud);
         tvPrioridadSeleccionada = (TextView) findViewById(R.id.tv_prioridad_seleccionada);
         etDescripcionSolicitud = (EditText) findViewById(R.id.et_descripcion_solicitud);
@@ -124,6 +124,11 @@ public class RealizarSolicitudActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        // Boton atras
+    }
+
     /**
      * Task para recuperar los maestros de solicitudes y prioridades
      */
@@ -160,7 +165,7 @@ public class RealizarSolicitudActivity extends AppCompatActivity {
         @Override
         protected Boolean doInBackground(final Void... params) {
             ServiciosDAL dal = new ServiciosDAL();
-            String pacienteKey = sharedpreferences.getString(ConstantesGUI.PACIENTE_KEY, "");
+            String pacienteKey = sharedpreferences.getString(ConstantesComun.PACIENTE_KEY, "");
             String maestroSolicitudKey = listaMaestroSolicitudesDTO.get(indexSelectedSolicitud).getKey().toString();
             try {
                 return dal.getSolicitudDAO().insertarSolicitud(pacienteKey, maestroSolicitudKey, descripcionSolicitud);
@@ -173,7 +178,7 @@ public class RealizarSolicitudActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Boolean success) {
             if (success) {
-                Toast.makeText(getApplicationContext(), " La solicitud se ha insertado correctamente", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "La solicitud se ha insertado correctamente", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getApplicationContext(), "Se ha producido un error inesperado", Toast.LENGTH_SHORT).show();
             }

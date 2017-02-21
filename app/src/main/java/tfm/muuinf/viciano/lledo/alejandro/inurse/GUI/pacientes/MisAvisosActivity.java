@@ -17,7 +17,7 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dal.ServiciosDAL;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.AvisosDTO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores.AdapterMisAvisos;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesGUI;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesComun;
 
 public class MisAvisosActivity extends AppCompatActivity {
 
@@ -35,7 +35,7 @@ public class MisAvisosActivity extends AppCompatActivity {
     }
 
     private void initComponentes() {
-        sharedpreferences = getSharedPreferences(ConstantesGUI.SHARED_PREFS_FILE, ConstantesGUI.CONTEXT_MODE_PRIVATE);
+        sharedpreferences = getSharedPreferences(ConstantesComun.SHARED_PREFS_FILE, ConstantesComun.CONTEXT_MODE_PRIVATE);
         recyclerView = (RecyclerView) findViewById(R.id.rv_mis_avisos);
     }
 
@@ -51,6 +51,11 @@ public class MisAvisosActivity extends AppCompatActivity {
             MisAvisosTask misAvisosTask = new MisAvisosTask();
             misAvisosTask.execute((Void) null);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Boton atras
     }
 
     private boolean checkInternet() {
@@ -70,7 +75,7 @@ public class MisAvisosActivity extends AppCompatActivity {
         @Override
         protected Boolean doInBackground(final Void... params) {
             ServiciosDAL dal = new ServiciosDAL();
-            String pacienteKey = sharedpreferences.getString(ConstantesGUI.PACIENTE_KEY, "");
+            String pacienteKey = sharedpreferences.getString(ConstantesComun.PACIENTE_KEY, "");
             try {
                 listaAvisos = dal.getAvisosDAO().getAvisosPaciente(pacienteKey);
             } catch (final Exception e) {

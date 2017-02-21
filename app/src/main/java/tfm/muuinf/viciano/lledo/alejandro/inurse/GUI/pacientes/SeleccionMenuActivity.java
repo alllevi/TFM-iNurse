@@ -31,6 +31,11 @@ public class SeleccionMenuActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    @Override
+    public void onBackPressed() {
+        // Boton atras
+    }
+
     private class getMenus extends AsyncTask<Integer, Integer, Long> {
 
         @Override

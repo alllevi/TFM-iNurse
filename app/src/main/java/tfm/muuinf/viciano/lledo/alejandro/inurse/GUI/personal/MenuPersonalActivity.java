@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesGUI;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesComun;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.LoginActivity;
 
 public class MenuPersonalActivity extends AppCompatActivity implements View.OnClickListener {
@@ -33,7 +33,7 @@ public class MenuPersonalActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void initComponentes() {
-        sharedpreferences = getSharedPreferences(ConstantesGUI.SHARED_PREFS_FILE, ConstantesGUI.CONTEXT_MODE_PRIVATE);
+        sharedpreferences = getSharedPreferences(ConstantesComun.SHARED_PREFS_FILE, ConstantesComun.CONTEXT_MODE_PRIVATE);
         btSolicitudes = (Button) findViewById(R.id.bt_menu_personal_solicitudes);
         btMapaDeCamas = (Button) findViewById(R.id.bt_menu_personal_mapa);
         btMenus = (Button) findViewById(R.id.bt_menu_personal_menus);
@@ -91,7 +91,7 @@ public class MenuPersonalActivity extends AppCompatActivity implements View.OnCl
 
     private void cerrarSesion() {
         final SharedPreferences.Editor editor = sharedpreferences.edit();
-        editor.putString(ConstantesGUI.USUARIO_KEY, "");
+        editor.putString(ConstantesComun.USUARIO_KEY, "");
         editor.apply();
         final Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);

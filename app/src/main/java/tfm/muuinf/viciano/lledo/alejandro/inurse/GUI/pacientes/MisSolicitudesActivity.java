@@ -23,7 +23,7 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.dal.ServiciosDAL;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MaestroTiposDTO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.SolicitudDTO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores.AdapterMisSolicitudes;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesGUI;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesComun;
 
 public class MisSolicitudesActivity extends AppCompatActivity {
 
@@ -42,7 +42,7 @@ public class MisSolicitudesActivity extends AppCompatActivity {
     }
 
     private void initComponents() {
-        sharedpreferences = getSharedPreferences(ConstantesGUI.SHARED_PREFS_FILE, ConstantesGUI.CONTEXT_MODE_PRIVATE);
+        sharedpreferences = getSharedPreferences(ConstantesComun.SHARED_PREFS_FILE, ConstantesComun.CONTEXT_MODE_PRIVATE);
         comboEstados = (Spinner) findViewById(R.id.cb_filtro_mis_solicitudes);
         recyclerView = (RecyclerView) findViewById(R.id.rv_mis_solicitudes);
     }
@@ -109,12 +109,17 @@ public class MisSolicitudesActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        // Boton atras
+    }
+
     private class MisSolicitudesTask extends AsyncTask<Void, Void, Boolean> {
 
         @Override
         protected Boolean doInBackground(final Void... params) {
             ServiciosDAL dal = new ServiciosDAL();
-            String pacienteKey = sharedpreferences.getString(ConstantesGUI.PACIENTE_KEY, "");
+            String pacienteKey = sharedpreferences.getString(ConstantesComun.PACIENTE_KEY, "");
             try {
                 listaSolicitudes = dal.getSolicitudDAO().getSolicitudesByPacienteKey(Integer.parseInt(pacienteKey));
                 listaMaestroTipos = dal.getMaestrosDAO().getMaestroTipos();

@@ -31,7 +31,6 @@ public class AdapterMisSolicitudes extends RecyclerView.Adapter<AdapterMisSolici
     @Override
     public void onBindViewHolder(final MisSolicitudesViewHolder holder, final int position) {
         holder.tvPrioridad.setText(listaSolicitudesDTO.get(position).getPrioridadDescripcion());
-        holder.tvFecha.setText(listaSolicitudesDTO.get(position).getFecha().toString());
         holder.tvFecha.setText(sdf.format(listaSolicitudesDTO.get(position).getFecha()));
         holder.tvEstado.setText(listaSolicitudesDTO.get(position).getTipoDescripcion());
         holder.tvSolicitud.setText(listaSolicitudesDTO.get(position).getDescripcion());

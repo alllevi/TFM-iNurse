@@ -43,13 +43,13 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        sharedpreferences = getSharedPreferences(ConstantesGUI.SHARED_PREFS_FILE, ConstantesGUI.CONTEXT_MODE_PRIVATE);
+        sharedpreferences = getSharedPreferences(ConstantesComun.SHARED_PREFS_FILE, ConstantesComun.CONTEXT_MODE_PRIVATE);
 
         /*Comprobamos si existe una sesión abierta por usuario
              ->Si existe entramos en el menu correspondiente
          */
-        final String usuarioKey = sharedpreferences.getString(ConstantesGUI.USUARIO_KEY, "");
-        final String pacienteKey = sharedpreferences.getString(ConstantesGUI.PACIENTE_KEY, "");
+        final String usuarioKey = sharedpreferences.getString(ConstantesComun.USUARIO_KEY, "");
+        final String pacienteKey = sharedpreferences.getString(ConstantesComun.PACIENTE_KEY, "");
 
         if (StringUtils.isNotBlank(usuarioKey)) {
             final Intent intent;
@@ -232,12 +232,12 @@ public class LoginActivity extends AppCompatActivity {
 
             if (success) {
                 final SharedPreferences.Editor editor = sharedpreferences.edit();
-                editor.putString(ConstantesGUI.USUARIO_KEY, usuarioDTO.getKey().toString());
+                editor.putString(ConstantesComun.USUARIO_KEY, usuarioDTO.getKey().toString());
                 if (tipoUsuario.equals("PERSONAL")) {
                     final Intent intent = new Intent(getBaseContext(), MenuPersonalActivity.class);
                     startActivity(intent);
                 } else if (tipoUsuario.equals("PACIENTE")) {
-                    editor.putString(ConstantesGUI.PACIENTE_KEY, usuarioDTO.getPacienteKey().toString());
+                    editor.putString(ConstantesComun.PACIENTE_KEY, usuarioDTO.getPacienteKey().toString());
                     final Intent intent = new Intent(getBaseContext(), MenuPacientesActivity.class);
                     startActivity(intent);
                 }

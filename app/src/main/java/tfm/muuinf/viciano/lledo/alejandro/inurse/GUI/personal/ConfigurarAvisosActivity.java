@@ -52,4 +52,9 @@ public class ConfigurarAvisosActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cbHabitacion.setAdapter(adapter);
     }
+
+    @Override
+    public void onBackPressed() {
+        // Boton atras
+    }
 }

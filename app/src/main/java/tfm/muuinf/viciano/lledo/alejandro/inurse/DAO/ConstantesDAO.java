@@ -9,7 +9,11 @@ class ConstantesDAO {
 
     public static String SOLICITUDES_BY_PACI_KEY = URL_INURSE + "getSolicitudesByPaciKey?";
 
+    public static String SOLICITUDES_ALL = URL_INURSE + "getAllSolicitudes";
+
     public static String MAESTRO_SOLICITUDES = URL_INURSE + "getMaestroSolicitudes";
+
+    public static String UPDATE_SOLICITUD_PROGRESO = URL_INURSE + "updateSolicitudToProgreso?";
 
     public static String INSERTAR_SOLICITUD = URL_INURSE + "insertarSolicitud?";
 
