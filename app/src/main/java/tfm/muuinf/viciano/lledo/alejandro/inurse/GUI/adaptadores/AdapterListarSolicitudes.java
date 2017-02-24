@@ -39,8 +39,8 @@ public class AdapterListarSolicitudes extends RecyclerView.Adapter<AdapterListar
         holder.tvPrioridad.setText(listaSolicitudesDTO.get(position).getPrioridadDescripcion());
         holder.tvFecha.setText(sdf.format(listaSolicitudesDTO.get(position).getFecha()));
         holder.tvEstado.setText(listaSolicitudesDTO.get(position).getTipoDescripcion());
-        //Paciente
-        //Habitacion
+        holder.tvPaciente.setText(listaSolicitudesDTO.get(position).getPaciente());
+        holder.tvHabitacion.setText(listaSolicitudesDTO.get(position).getHabitacion());
         holder.tvSolicitud.setText(listaSolicitudesDTO.get(position).getDescripcion());
         holder.tvDescripcion.setText(listaSolicitudesDTO.get(position).getDescripcionLarga());
 

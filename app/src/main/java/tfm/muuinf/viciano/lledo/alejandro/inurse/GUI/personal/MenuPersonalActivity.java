@@ -55,7 +55,7 @@ public class MenuPersonalActivity extends InurseActivity implements View.OnClick
             final Intent listarSolicitudIntent = new Intent(this, ListarSolicitudesActivity.class);
             startActivity(listarSolicitudIntent);
         } else if (v.getId() == R.id.bt_menu_personal_mapa) {
-            final Intent mapaCamasIntent = new Intent(this, MapaCamasActivity.class);
+            final Intent mapaCamasIntent = new Intent(this, MapaHospitalarioActivity.class);
             startActivity(mapaCamasIntent);
         } else if (v.getId() == R.id.bt_menu_personal_menus) {
             final Intent listarMenusIntent = new Intent(this, ListarMenusActivity.class);

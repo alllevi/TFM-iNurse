@@ -10,13 +10,13 @@ import java.util.List;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.AvisosDTO;
 
-public class AvisosDAO extends BasicDAO {
+public class AvisosDAO extends iNurseDAO {
 
     public AvisosDAO() {
     }
 
     public List<AvisosDTO> getAvisosPaciente(String pacienteKey) throws Exception {
-        URL url = new URL(ConstantesDAO.AVISOS_BY_PACI_KEY + "paciKey=" + pacienteKey);
+        URL url = new URL(ConstantesDAO.MAPA_HOSPITALARIO + "paciKey=" + pacienteKey);
         JSONObject jsonObject = getHTTP(url);
         JSONArray jsonArrayUsuarios = jsonObject.getJSONArray("avisos");
 

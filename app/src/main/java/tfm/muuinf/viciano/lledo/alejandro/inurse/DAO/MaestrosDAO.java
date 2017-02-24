@@ -11,7 +11,7 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MaestroPrioridadesDTO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MaestroSolicitudDTO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MaestroTiposDTO;
 
-public class MaestrosDAO extends BasicDAO {
+public class MaestrosDAO extends iNurseDAO {
 
     public MaestrosDAO() {
     }

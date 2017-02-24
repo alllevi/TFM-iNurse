@@ -12,7 +12,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 
-class BasicDAO {
+class iNurseDAO {
 
     static SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 

@@ -71,7 +71,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".gui.personal.MenuPersonalActivity" />
         </activity>
-        <activity android:name=".gui.personal.MapaCamasActivity">
+        <activity android:name=".gui.personal.MapaHospitalarioActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".gui.personal.MenuPersonalActivity" />
@@ -79,7 +79,7 @@
         <activity android:name=".gui.personal.DetallePacienteActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".gui.personal.MapaCamasActivity" />
+                android:value=".gui.personal.MapaHospitalarioActivity" />
         </activity>
     </application>
 

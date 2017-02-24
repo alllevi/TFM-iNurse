@@ -16,12 +16,23 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/iv_detalle_imagen"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp">
 
             <TextView
                 android:text="@string/habitacion_"
@@ -31,12 +42,12 @@
                 android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
-                android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:id="@+id/tv_detalle_habitacion" />
         </LinearLayout>
 
         <LinearLayout
@@ -53,12 +64,12 @@
                 android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
-                android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:id="@+id/tv_detalle_nombre" />
         </LinearLayout>
 
         <LinearLayout
@@ -75,12 +86,12 @@
                 android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
-                android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:id="@+id/tv_detalle_apellidos" />
         </LinearLayout>
 
         <LinearLayout
@@ -97,12 +108,12 @@
                 android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
-                android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:id="@+id/tv_detalle_sexo" />
         </LinearLayout>
 
         <LinearLayout
@@ -119,12 +130,12 @@
                 android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
-                android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:id="@+id/tv_detalle_edad" />
         </LinearLayout>
 
         <LinearLayout
@@ -141,12 +152,12 @@
                 android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
-                android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:id="@+id/tv_detalle_sip" />
         </LinearLayout>
 
         <LinearLayout
@@ -163,12 +174,12 @@
                 android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
-                android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:id="@+id/tv_detalle_nhc" />
         </LinearLayout>
 
         <LinearLayout
@@ -185,56 +196,12 @@
                 android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
-                android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
-
-            <TextView
-                android:text="@string/alergias_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
-
-            <TextView
-                android:text="@string/antecedentes_toxicos_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:id="@+id/tv_detalle_motivo" />
         </LinearLayout>
 
         <LinearLayout
@@ -251,12 +218,12 @@
                 android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
-                android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:id="@+id/tv_detalle_telefono" />
         </LinearLayout>
 
         <LinearLayout
@@ -273,12 +240,12 @@
                 android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
-                android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:id="@+id/tv_detalle_direccion" />
         </LinearLayout>
 
         <LinearLayout
@@ -295,12 +262,12 @@
                 android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
-                android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:id="@+id/tv_detalle_ciudad" />
         </LinearLayout>
 
         <LinearLayout
@@ -317,13 +284,34 @@
                 android:textColor="?android:attr/textColorPrimary" />
 
             <TextView
-                android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:id="@+id/tv_detalle_provincia" />
         </LinearLayout>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:text="@string/nacionalidad_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="normal|bold"
+                android:textColor="?android:attr/textColorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="3dp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:id="@+id/tv_detalle_nacionalidad" />
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

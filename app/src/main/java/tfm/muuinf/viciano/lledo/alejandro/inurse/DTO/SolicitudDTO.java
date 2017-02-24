@@ -12,6 +12,8 @@ public class SolicitudDTO {
     private String tipoCodigo;
     private String tipoDescripcion;
     private Date fecha;
+    private String paciente;
+    private String habitacion;
 
     public SolicitudDTO() {
 
@@ -26,6 +28,19 @@ public class SolicitudDTO {
         this.tipoCodigo = tipoCodigo;
         this.tipoDescripcion = tipoDescripcion;
         this.fecha = fecha;
+    }
+
+    public SolicitudDTO(final Integer key, final String descripcion, final String descripcionLarga, final Integer prioridad, final String prioridadDescripcion, final String tipoCodigo, final String tipoDescripcion, final Date fecha, final String paciente, final String habitacion) {
+        this.key = key;
+        this.descripcion = descripcion;
+        this.descripcionLarga = descripcionLarga;
+        this.prioridad = prioridad;
+        this.prioridadDescripcion = prioridadDescripcion;
+        this.tipoCodigo = tipoCodigo;
+        this.tipoDescripcion = tipoDescripcion;
+        this.fecha = fecha;
+        this.paciente = paciente;
+        this.habitacion = habitacion;
     }
 
     public Integer getKey() {
@@ -90,6 +105,22 @@ public class SolicitudDTO {
 
     public void setFecha(final Date fecha) {
         this.fecha = fecha;
+    }
+
+    public String getHabitacion() {
+        return habitacion;
+    }
+
+    public void setHabitacion(String habitacion) {
+        this.habitacion = habitacion;
+    }
+
+    public String getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(String paciente) {
+        this.paciente = paciente;
     }
 }
 

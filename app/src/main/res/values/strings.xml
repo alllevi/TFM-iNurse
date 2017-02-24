@@ -90,5 +90,6 @@
     <string name="fecha_fin_">Fecha fin:</string>
     <string name="repetir_aviso_horas">Repetir cada #H# horas</string>
     <string name="sin_repeticion">Sin repetición</string>
+    <string name="nacionalidad_">Nacionalidad:</string>
 
 </resources>

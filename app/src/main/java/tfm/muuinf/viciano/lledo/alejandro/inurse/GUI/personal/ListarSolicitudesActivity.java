@@ -60,13 +60,13 @@ public class ListarSolicitudesActivity extends InurseActivity {
     }
 
     private void rellenarComboEstados() {
-        List<String> arrayList = new ArrayList<>();
+        List<String> arrayEstados = new ArrayList<>();
         for (MaestroTiposDTO maestro : listaMaestroTipos) {
-            arrayList.add(maestro.getDescripcion());
+            arrayEstados.add(maestro.getDescripcion());
             //Creamos una map para los maestroTipos
             hashMapMaestroTipos.put(maestro.getCodigo(), maestro.getDescripcion());
         }
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayList);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayEstados);
         cbEstados.setAdapter(arrayAdapter);
         cbEstados.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

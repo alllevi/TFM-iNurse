@@ -13,7 +13,7 @@ import java.util.List;
 
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.SolicitudDTO;
 
-public class SolicitudDAO extends BasicDAO {
+public class SolicitudDAO extends iNurseDAO {
 
     public SolicitudDAO() {
     }
@@ -90,7 +90,18 @@ public class SolicitudDAO extends BasicDAO {
             String matiCod = jsonObjectUsuario.get("mati_cod").toString();
             String matiDesc = jsonObjectUsuario.get("mati_desc").toString();
             Date soliFecha = formatter.parse(jsonObjectUsuario.get("soli_fecha").toString());
-            listaSolicitudDTO.add(new SolicitudDTO(soliKey, masoliDesc, soliDesc, maprioPrioridad, maprioDesc, matiCod, matiDesc, soliFecha));
+
+            StringBuilder paciBuilder = new StringBuilder();
+            paciBuilder.append(jsonObjectUsuario.get("paci_nombre").toString()).append(" ");
+            paciBuilder.append(jsonObjectUsuario.get("paci_primer_apellido").toString()).append(" ");
+            paciBuilder.append(jsonObjectUsuario.get("paci_segundo_apellido").toString());
+
+            StringBuilder habitacionBuilder = new StringBuilder();
+            habitacionBuilder.append(jsonObjectUsuario.get("mapa_planta").toString()).append("-");
+            habitacionBuilder.append(jsonObjectUsuario.get("mapa_habitacion").toString()).append(" ");
+
+            SolicitudDTO solicitudDTO = new SolicitudDTO(soliKey, masoliDesc, soliDesc, maprioPrioridad, maprioDesc, matiCod, matiDesc, soliFecha, paciBuilder.toString(), habitacionBuilder.toString());
+            listaSolicitudDTO.add(solicitudDTO);
         }
         ordenarPorPrioridad(listaSolicitudDTO);
         return listaSolicitudDTO;
