@@ -62,7 +62,6 @@
     <string name="paciente_alarma">Paciente al que desea programar el aviso:</string>
     <string name="planta">Planta</string>
     <string name="habitacion">Habitación</string>
-    <string name="fecha_inicio">Fecha inicio</string>
     <string name="repetir_alarma">¿Repetir aviso?</string>
     <string name="repetir_cada">Repetir cada</string>
     <string name="horas">horas</string>
@@ -91,5 +90,6 @@
     <string name="repetir_aviso_horas">Repetir cada #H# horas</string>
     <string name="sin_repeticion">Sin repetición</string>
     <string name="nacionalidad_">Nacionalidad:</string>
+    <string name="hora_inicio_">Hora inicio:</string>
 
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_configurar_alarmas"
     android:layout_width="match_parent"
@@ -10,135 +11,216 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal.ConfigurarAvisosActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-
-        <TextView
-            android:text="@string/paciente_alarma"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="@android:style/TextAppearance.Material.Medium"
-            android:textColor="?android:attr/textColorPrimary" />
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
+            android:weightSum="1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
 
             <TextView
-                android:text="@string/planta"
-                android:layout_width="wrap_content"
+                android:text="@string/paciente_alarma"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
                 android:textColor="?android:attr/textColorPrimary" />
 
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/cb_avisos_planta"
-                android:layout_weight="1"
-                android:layout_marginStart="10dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_width="250dp">
+
+                <TextView
+                    android:text="@string/planta"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:layout_width="80dp"
+                    android:layout_gravity="center_vertical" />
+
+                <Spinner
+                    android:layout_height="match_parent"
+                    android:id="@+id/cb_avisos_planta"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="100dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:text="@string/habitacion"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:layout_gravity="center_vertical" />
+
+                <Spinner
+                    android:id="@+id/cb_avisos_habitacion"
+                    android:layout_marginStart="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="100dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:text="@string/paciente_"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tv_avisos_paciente"
+                    android:layout_marginStart="3dp"
+                    android:textColor="?android:attr/textColorPrimary" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:text="@string/fecha_inicio_"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="85dp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_avisos_date_picker"
+                    android:layout_marginStart="5dp"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:hint="dd/mm/yyyy"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_action_calendar_month"
+                    android:id="@+id/iv_avisos_calendar"
+                    android:layout_marginStart="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:weightSum="1">
+
+                <TextView
+                    android:text="@string/hora_inicio_"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="85dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_avisos_time_picker"
+                    android:layout_marginStart="5dp"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:hint="hh:mm"
+                    android:layout_gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_action_clock"
+                    android:id="@+id/iv_avisos_clock"
+                    android:layout_marginStart="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <CheckBox
+                    android:text="@string/repetir_alarma"
+                    android:layout_width="match_parent"
+                    android:id="@+id/ch_avisos_repetir"
+                    android:layout_height="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:text="@string/repetir_cada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:layout_gravity="center_vertical" />
+
+                <EditText
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/tv_avisos_horas"
+                    android:layout_marginStart="15dp"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="@string/horas"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:layout_marginStart="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content" />
+            </LinearLayout>
 
             <TextView
-                android:text="@string/habitacion"
-                android:layout_width="wrap_content"
+                android:text="@string/descripcion_alarma"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.11"
-                android:textColor="?android:attr/textColorPrimary"
-                android:layout_marginStart="10dp" />
-
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/cb_avisos_habitacion"
-                android:layout_weight="0.58"
-                android:layout_marginStart="10dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
-
-            <TextView
-                android:text="@string/fecha_inicio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView7"
-                android:textColor="?android:attr/textColorPrimary" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
-
-            <CheckBox
-                android:text="@string/repetir_alarma"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/ch_avisos_repetir"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
-
-            <TextView
-                android:text="@string/repetir_cada"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_marginTop="15dp"
                 android:textColor="?android:attr/textColorPrimary" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
+                android:inputType="textMultiLine"
                 android:ems="10"
-                android:id="@+id/tv_avisos_horas" />
+                android:id="@+id/tv_avisos_descripcion"
+                android:maxLines="4" />
 
-            <TextView
-                android:text="@string/horas"
-                android:layout_width="wrap_content"
+            <Button
+                android:text="@string/programar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:id="@+id/bt_avisos_programar"
+                android:layout_marginTop="20dp" />
+
         </LinearLayout>
-
-        <TextView
-            android:text="@string/descripcion_alarma"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:textColor="?android:attr/textColorPrimary" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:ems="10"
-            android:id="@+id/tv_avisos_descripcion"
-            android:maxLines="4" />
-
-        <Button
-            android:text="@string/programar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/bt_alarmas_programar"
-            android:layout_marginTop="50dp" />
-
-    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
