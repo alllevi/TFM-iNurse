@@ -2,8 +2,8 @@ package tfm.muuinf.viciano.lledo.alejandro.inurse.dao;
 
 class ConstantesDAO {
 
-    public static final String URL_INURSE = "http://192.168.1.249/iNurse/";
-    // private static final String URL_INURSE = "http://192.168.1.37/iNurse/";
+    // public static final String URL_INURSE = "http://192.168.1.249/iNurse/";
+    private static final String URL_INURSE = "http://192.168.1.37/iNurse/";
 
     public static String SERVICIO_AUTENTICACION = URL_INURSE + "autenticarUsuario?";
 
@@ -32,4 +32,6 @@ class ConstantesDAO {
     public static String DETALLE_PACIENTE = URL_INURSE + "getDetallePaciente?";
 
     public static String AVISOS_CONFIGURACION = URL_INURSE + "getAvisosConfiguracion";
+
+    public static String INSERTAR_AVISOS = URL_INURSE + "insertarAviso?";
 }

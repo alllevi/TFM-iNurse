@@ -159,6 +159,37 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:text="@string/fecha_fin_"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="85dp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_avisos_date_picker_fin"
+                    android:layout_marginStart="5dp"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:hint="dd/mm/yyyy"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_action_calendar_month"
+                    android:id="@+id/iv_avisos_calendar_fin"
+                    android:layout_marginStart="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="15dp">
 
                 <CheckBox
@@ -179,12 +210,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:layout_gravity="center_vertical" />
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/tv_avisos_repetir_cada" />
 
                 <EditText
                     android:inputType="number"
                     android:ems="10"
-                    android:id="@+id/tv_avisos_horas"
+                    android:id="@+id/et_avisos_horas"
+                    android:focusable="false"
                     android:layout_marginStart="15dp"
                     android:layout_width="40dp"
                     android:layout_height="wrap_content" />
@@ -195,7 +228,8 @@
                     android:textColor="?android:attr/textColorPrimary"
                     android:layout_marginStart="15dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content" />
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_avisos_hora" />
             </LinearLayout>
 
             <TextView
@@ -209,8 +243,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
+                android:focusable="false"
                 android:ems="10"
-                android:id="@+id/tv_avisos_descripcion"
+                android:id="@+id/et_avisos_descripcion"
                 android:maxLines="4" />
 
             <Button

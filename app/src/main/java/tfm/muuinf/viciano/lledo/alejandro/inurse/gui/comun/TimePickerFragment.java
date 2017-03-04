@@ -28,6 +28,10 @@ public class TimePickerFragment extends DialogFragment
 
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         ConfigurarAvisosActivity activity = (ConfigurarAvisosActivity) getActivity();
-        activity.setTime(hourOfDay + ":" + minute);
+        if (minute < 10) {
+            activity.setTime(hourOfDay + ":0" + minute);
+        } else {
+            activity.setTime(hourOfDay + ":" + minute);
+        }
     }
 }

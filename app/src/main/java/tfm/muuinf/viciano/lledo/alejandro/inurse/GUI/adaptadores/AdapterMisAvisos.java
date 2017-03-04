@@ -17,7 +17,7 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.AvisosDTO;
 
 public class AdapterMisAvisos extends RecyclerView.Adapter<AdapterMisAvisos.MisAvisosViewHolder> {
 
-    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
     private Context context;
     private List<AvisosDTO> listaAvisosDTO = new ArrayList<>();
 

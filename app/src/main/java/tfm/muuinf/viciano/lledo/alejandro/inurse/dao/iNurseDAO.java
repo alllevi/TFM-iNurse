@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 class iNurseDAO {
 
     static SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+    static SimpleDateFormat formatterLong = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
     JSONObject getHTTP(final URL url) throws Exception {
 

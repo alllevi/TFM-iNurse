@@ -26,6 +26,7 @@ public class DatePickerFragment extends DialogFragment
 
     public void onDateSet(DatePicker view, int year, int month, int day) {
         ConfigurarAvisosActivity activity = (ConfigurarAvisosActivity) getActivity();
-        activity.setDate(day + "/" + month + "/" + year);
+
+        activity.setDate(day + "/" + month + "/" + year, getTag());
     }
 }
