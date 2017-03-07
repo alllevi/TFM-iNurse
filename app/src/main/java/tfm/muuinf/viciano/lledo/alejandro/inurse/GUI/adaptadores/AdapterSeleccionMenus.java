@@ -8,11 +8,20 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import java.util.List;
+
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MenuDTO;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.pacientes.SeleccionMenuActivity;
 
 public class AdapterSeleccionMenus extends RecyclerView.Adapter<AdapterSeleccionMenus.SeleccionMenusViewHolder> {
 
-    public AdapterSeleccionMenus() {
+    private List<MenuDTO> listaMenus;
+    private SeleccionMenuActivity activity;
+
+    public AdapterSeleccionMenus(SeleccionMenuActivity activity, List<MenuDTO> listaMenus) {
+        this.listaMenus = listaMenus;
+        this.activity = activity;
     }
 
     @Override
@@ -23,19 +32,29 @@ public class AdapterSeleccionMenus extends RecyclerView.Adapter<AdapterSeleccion
 
     @Override
     public void onBindViewHolder(final SeleccionMenusViewHolder holder, final int position) {
-        holder.tvMenuId.setText("Menu 1");
-        holder.tvPrimerPlato.setText("Sopa de estrellas");
-        holder.tvSegundoPlato.setText("Pollo asado con patatas fritas");
-        holder.tvTercerPlato.setText("Yogurt natural");
+        holder.tvMenuId.setText("Menu " + (position + 1));
+        holder.tvPrimerPlato.setText(listaMenus.get(position).getPrimero());
+        holder.tvSegundoPlato.setText(listaMenus.get(position).getSegundo());
+        holder.tvTercerPlato.setText(listaMenus.get(position).getPostre());
         holder.ckSeleccionado.setSelected(true);
+        if (listaMenus.get(position).isPrecarga()) {
+            holder.ckSeleccionado.setChecked(true);
+            activity.controlCardViewItems(1);
+        }
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
                 if (holder.ckSeleccionado.isChecked()) {
+                    activity.controlCardViewItems(-1);
                     holder.ckSeleccionado.setChecked(false);
+                    activity.deseleccionarMenu(listaMenus.get(position));
                 } else {
-                    holder.ckSeleccionado.setChecked(true);
+                    Boolean control = activity.controlCardViewItems(1);
+                    if (control) {
+                        holder.ckSeleccionado.setChecked(true);
+                        activity.seleccionarMenu(listaMenus.get(position));
+                    }
                 }
             }
         });

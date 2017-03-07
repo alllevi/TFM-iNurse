@@ -1,5 +1,6 @@
 package tfm.muuinf.viciano.lledo.alejandro.inurse.dao;
 
+import org.apache.commons.lang3.tuple.Pair;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -27,8 +28,8 @@ public class AvisosDAO extends iNurseDAO {
         for (int i = 0; i < jsonArrayUsuarios.length(); i++) {
             JSONObject jsonObjectUsuario = jsonArrayUsuarios.getJSONObject(i);
             Integer avisoKey = Integer.parseInt(jsonObjectUsuario.get("aviso_key").toString());
-            Date avisoFechaInicio = formatter.parse(jsonObjectUsuario.get("aviso_fecha_inicio").toString());
-            Date avisoFechaFin = formatter.parse(jsonObjectUsuario.get("aviso_fecha_fin").toString());
+            Date avisoFechaInicio = formatterLong.parse(jsonObjectUsuario.get("aviso_fecha_inicio").toString());
+            Date avisoFechaFin = formatterLong.parse(jsonObjectUsuario.get("aviso_fecha_fin").toString());
             Integer avisoHorasRepeticion = Integer.parseInt(jsonObjectUsuario.get("aviso_horas_repeticion").toString());
             String avisoDescripcion = jsonObjectUsuario.get("aviso_descripcion").toString();
 
@@ -43,11 +44,12 @@ public class AvisosDAO extends iNurseDAO {
         JSONArray jsonArrayUsuarios = jsonObject.getJSONArray("mapa_hospitalario");
 
         Map<String, List<String>> mapHabitaciones = new HashMap<>();
-        Map<String, String> mapPacientes = new HashMap<>();
+        Map<String, Pair<Integer, String>> mapPacientes = new HashMap<>();
         for (int i = 0; i < jsonArrayUsuarios.length(); i++) {
             JSONObject jsonObjectUsuario = jsonArrayUsuarios.getJSONObject(i);
             String mapaPlanta = jsonObjectUsuario.get("mapa_planta").toString();
             String mapaHabitacion = jsonObjectUsuario.get("mapa_habitacion").toString();
+            Integer paciKey = Integer.parseInt(jsonObjectUsuario.get("paci_key").toString());
             String paciNombre = jsonObjectUsuario.get("paci_nombre").toString();
             String paciPrimerApellido = jsonObjectUsuario.get("paci_primer_apellido").toString();
             String paciSegundoApellido = jsonObjectUsuario.get("paci_segundo_apellido").toString();
@@ -59,8 +61,42 @@ public class AvisosDAO extends iNurseDAO {
                 listaHabitaciones.add(mapaHabitacion);
                 mapHabitaciones.put(mapaPlanta, listaHabitaciones);
             }
-            mapPacientes.put(mapaPlanta + mapaHabitacion, paciNombre + " " + paciPrimerApellido + " " + paciSegundoApellido);
+            Pair<Integer, String> pairPaciente = Pair.of(paciKey, paciNombre + " " + paciPrimerApellido + " " + paciSegundoApellido);
+            mapPacientes.put(mapaPlanta + mapaHabitacion, pairPaciente);
         }
         return new AvisoConfiguracionDTO(mapHabitaciones, mapPacientes);
+    }
+
+    public boolean insertarAviso(String fechaIni, String horaIni, String fechaFin, String repetirHoras, String descripcion, Integer pacienteKey) throws Exception {
+
+        fechaIni = getStringDate(fechaIni);
+        fechaFin = getStringDate(fechaFin);
+        String dateTimeInicio = fechaIni + " " + horaIni;
+        String dateTimeFin = fechaFin + " 00:00";
+
+        String stringURL = ConstantesDAO.INSERTAR_AVISOS + "fechaInicio=" + dateTimeInicio +
+                "&fechaFin=" + dateTimeFin +
+                "&horasRepeticion=" + repetirHoras +
+                "&descripcion=" + descripcion +
+                "&paciKey=" + pacienteKey;
+
+        URL url = new URL(stringURL);
+        String codigoRespuesta = insertHTTP(url);
+        return "1".equals(codigoRespuesta);
+    }
+
+    private String getStringDate(String fecha) {
+        String[] split = fecha.split("/");
+        String anyo = split[2];
+        String mes = split[1];
+        String dia = split[0];
+        if (mes.length() == 1) {
+            mes = "0" + mes;
+        }
+        if (dia.length() == 1) {
+            dia = "0" + mes;
+        }
+        fecha = anyo + "/" + mes + "/" + dia;
+        return fecha;
     }
 }
