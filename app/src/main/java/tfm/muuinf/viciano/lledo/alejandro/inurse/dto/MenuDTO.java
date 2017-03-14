@@ -8,7 +8,9 @@ public class MenuDTO {
     private String primero;
     private String segundo;
     private String postre;
+    private Integer planta;
     private String habitacion;
+    private String nombrePaciente;
     private boolean precarga;
 
     public MenuDTO(Integer menuKey, String codigo, String primero, String segundo, String postre) {
@@ -20,13 +22,15 @@ public class MenuDTO {
         this.precarga = false;
     }
 
-    public MenuDTO(Integer menuKey, String codigo, String primero, String segundo, String postre, String habitacion) {
+    public MenuDTO(Integer menuKey, String codigo, String primero, String segundo, String postre, Integer planta, String habitacion, String nombrePaciente) {
         this.menuKey = menuKey;
         this.codigo = codigo;
         this.primero = primero;
         this.segundo = segundo;
         this.postre = postre;
+        this.planta = planta;
         this.habitacion = habitacion;
+        this.nombrePaciente = nombrePaciente;
     }
 
     public String getHabitacion() {
@@ -83,5 +87,21 @@ public class MenuDTO {
 
     public void setPrecarga(boolean precarga) {
         this.precarga = precarga;
+    }
+
+    public String getNombrePaciente() {
+        return nombrePaciente;
+    }
+
+    public Integer getPlanta() {
+        return planta;
+    }
+
+    public void setPlanta(Integer planta) {
+        this.planta = planta;
+    }
+
+    public void setNombrePaciente(String nombrePaciente) {
+        this.nombrePaciente = nombrePaciente;
     }
 }

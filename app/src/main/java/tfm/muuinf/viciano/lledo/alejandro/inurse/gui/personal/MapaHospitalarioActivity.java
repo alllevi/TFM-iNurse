@@ -39,7 +39,6 @@ public class MapaHospitalarioActivity extends InurseActivity {
 
         initComponentes();
         initTask();
-        setListeners();
     }
 
     private void initComponentes() {
@@ -90,6 +89,13 @@ public class MapaHospitalarioActivity extends InurseActivity {
                 hashMapaPlantas.get(planta).add(mapaHospitalario);
             }
         }
+
+        //Aseguramos que la hash no tenga ninguna planta a null
+        for (int i = 0; i <= maxPlanta; i++) {
+            if (!hashMapaPlantas.containsKey(i)) {
+                hashMapaPlantas.put(i, new ArrayList<MapaHospitalarioDTO>());
+            }
+        }
     }
 
     private void initTask() {
@@ -130,6 +136,7 @@ public class MapaHospitalarioActivity extends InurseActivity {
                 rellenarRecyclerView(listaMapaHospitalario);
                 rellenarComboPlantas();
                 crearHashPlantas();
+                setListeners();
             } else {
                 Toast.makeText(getApplicationContext(), "Se ha producido un error inesperado", Toast.LENGTH_SHORT).show();
             }

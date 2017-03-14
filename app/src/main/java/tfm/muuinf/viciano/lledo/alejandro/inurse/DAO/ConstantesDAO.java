@@ -43,4 +43,6 @@ class ConstantesDAO {
 
     public static String PRECARGA_MENU = URL_INURSE + "precargaMenu?";
 
+    public static String GET_LIST_MENUS = URL_INURSE + "getListMenus?";
+
 }

@@ -91,5 +91,8 @@
     <string name="sin_repeticion">Sin repetición</string>
     <string name="nacionalidad_">Nacionalidad:</string>
     <string name="hora_inicio_">Hora inicio:</string>
+    <string name="primer_plato_">Primer plato:</string>
+    <string name="segundo_plato_">Segundo plato:</string>
+    <string name="postre_">Postre:</string>
 
 </resources>
