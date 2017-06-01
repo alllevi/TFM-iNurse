@@ -27,7 +27,7 @@ public class MapaHospitalarioActivity extends InurseActivity {
 
     private Spinner cbPlantas;
     private RecyclerView recyclerView;
-    List<MapaHospitalarioDTO> listaMapaHospitalario;
+    private List<MapaHospitalarioDTO> listaMapaHospitalario;
     private Integer maxPlanta;
     private Map<Integer, List<MapaHospitalarioDTO>> hashMapaPlantas;
 

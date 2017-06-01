@@ -125,9 +125,7 @@ public class SeleccionMenuActivity extends InurseActivity {
 
         @Override
         protected void onPostExecute(Boolean success) {
-            if (success) {
-                //No hacemos nada
-            } else {
+            if (!success) {
                 Toast.makeText(getApplicationContext(), "Se ha producido un error inesperado", Toast.LENGTH_SHORT).show();
             }
         }
@@ -157,9 +155,7 @@ public class SeleccionMenuActivity extends InurseActivity {
 
         @Override
         protected void onPostExecute(Boolean success) {
-            if (success) {
-                //No hacemos nada
-            } else {
+            if (!success) {
                 Toast.makeText(getApplicationContext(), "Se ha producido un error inesperado", Toast.LENGTH_SHORT).show();
             }
         }

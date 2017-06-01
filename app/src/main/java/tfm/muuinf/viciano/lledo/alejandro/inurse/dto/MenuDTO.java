@@ -37,48 +37,24 @@ public class MenuDTO {
         return habitacion;
     }
 
-    public void setHabitacion(String habitacion) {
-        this.habitacion = habitacion;
-    }
-
     public Integer getMenuKey() {
         return menuKey;
-    }
-
-    public void setMenuKey(Integer menuKey) {
-        this.menuKey = menuKey;
     }
 
     public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
     public String getPrimero() {
         return primero;
-    }
-
-    public void setPrimero(String primero) {
-        this.primero = primero;
     }
 
     public String getSegundo() {
         return segundo;
     }
 
-    public void setSegundo(String segundo) {
-        this.segundo = segundo;
-    }
-
     public String getPostre() {
         return postre;
-    }
-
-    public void setPostre(String postre) {
-        this.postre = postre;
     }
 
     public boolean isPrecarga() {
@@ -95,13 +71,5 @@ public class MenuDTO {
 
     public Integer getPlanta() {
         return planta;
-    }
-
-    public void setPlanta(Integer planta) {
-        this.planta = planta;
-    }
-
-    public void setNombrePaciente(String nombrePaciente) {
-        this.nombrePaciente = nombrePaciente;
     }
 }

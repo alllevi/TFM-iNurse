@@ -42,119 +42,59 @@ public class PacienteDTO {
         return key;
     }
 
-    public void setKey(Integer key) {
-        this.key = key;
-    }
-
     public ImageView getImagenPaciente() {
         return imagenPaciente;
-    }
-
-    public void setImagenPaciente(ImageView imagenPaciente) {
-        this.imagenPaciente = imagenPaciente;
     }
 
     public String getHabitacion() {
         return habitacion;
     }
 
-    public void setHabitacion(String habitacion) {
-        this.habitacion = habitacion;
-    }
-
     public String getNombre() {
         return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getApellidos() {
         return apellidos;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
     public String getSexo() {
         return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
     }
 
     public String getEdad() {
         return edad;
     }
 
-    public void setEdad(String edad) {
-        this.edad = edad;
-    }
-
     public String getSip() {
         return sip;
-    }
-
-    public void setSip(String sip) {
-        this.sip = sip;
     }
 
     public String getNhc() {
         return nhc;
     }
 
-    public void setNhc(String nhc) {
-        this.nhc = nhc;
-    }
-
     public String getMotivoIngreso() {
         return motivoIngreso;
-    }
-
-    public void setMotivoIngreso(String motivoIngreso) {
-        this.motivoIngreso = motivoIngreso;
     }
 
     public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
     public String getDireccion() {
         return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
     }
 
     public String getCiudad() {
         return ciudad;
     }
 
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-
     public String getProvincia() {
         return provincia;
     }
 
-    public void setProvincia(String provincia) {
-        this.provincia = provincia;
-    }
-
     public String getNacionalidad() {
         return nacionalidad;
-    }
-
-    public void setNacionalidad(String nacionalidad) {
-        this.nacionalidad = nacionalidad;
     }
 }

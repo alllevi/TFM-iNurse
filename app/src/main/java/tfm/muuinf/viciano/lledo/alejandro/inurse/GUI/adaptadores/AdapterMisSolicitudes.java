@@ -1,6 +1,5 @@
 package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,7 +43,6 @@ public class AdapterMisSolicitudes extends RecyclerView.Adapter<AdapterMisSolici
 
     public class MisSolicitudesViewHolder extends RecyclerView.ViewHolder {
 
-        CardView cardView;
         TextView tvPrioridad;
         TextView tvFecha;
         TextView tvEstado;
@@ -53,7 +51,6 @@ public class AdapterMisSolicitudes extends RecyclerView.Adapter<AdapterMisSolici
 
         MisSolicitudesViewHolder(final View itemView) {
             super(itemView);
-            cardView = (CardView) itemView.findViewById(R.id.cv_mis_solicitudes);
             tvPrioridad = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_prioridad);
             tvFecha = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_fecha);
             tvEstado = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_estado);

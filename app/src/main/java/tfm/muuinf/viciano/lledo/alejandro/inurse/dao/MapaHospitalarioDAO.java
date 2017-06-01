@@ -27,21 +27,17 @@ public class MapaHospitalarioDAO extends iNurseDAO {
             JSONObject jsonObjectMapaCama = jsonArrayMapaCamas.getJSONObject(i);
             Integer mapaKey = Integer.parseInt(jsonObjectMapaCama.get("mapa_key").toString());
             Integer mapaPlanta = Integer.parseInt(jsonObjectMapaCama.get("mapa_planta").toString());
-
-            StringBuilder habitacionBuilder = new StringBuilder();
-            habitacionBuilder.append(mapaPlanta.toString()).append("-");
-            habitacionBuilder.append(jsonObjectMapaCama.get("mapa_habitacion").toString());
-
-            StringBuilder paciBuilder = new StringBuilder();
-            paciBuilder.append(jsonObjectMapaCama.get("paci_nombre").toString()).append(" ");
-            paciBuilder.append(jsonObjectMapaCama.get("paci_primer_apellido").toString()).append(" ");
-            paciBuilder.append(jsonObjectMapaCama.get("paci_segundo_apellido").toString());
-
+            String mapaHabitacion = jsonObjectMapaCama.get("mapa_habitacion").toString();
+            String paciNombre = jsonObjectMapaCama.get("paci_nombre").toString();
+            String paciPrimerApellido = jsonObjectMapaCama.get("paci_primer_apellido").toString();
+            String paciSegundoApellido = jsonObjectMapaCama.get("paci_segundo_apellido").toString();
             String paciSexo = jsonObjectMapaCama.get("paci_sexo").toString();
             String paciMotivoIngreso = jsonObjectMapaCama.get("paci_motivo_ingreso").toString();
             Integer paciKey = Integer.parseInt(jsonObjectMapaCama.get("paci_key").toString());
 
-            listaMapaHospitalarioDTO.add(new MapaHospitalarioDTO(mapaKey, habitacionBuilder.toString(), mapaPlanta, paciBuilder.toString(), paciSexo, paciMotivoIngreso, paciKey));
+            String habitacion = mapaPlanta.toString() + "-" + mapaHabitacion;
+            String paciente = paciNombre + " " + paciPrimerApellido + " " + paciSegundoApellido;
+            listaMapaHospitalarioDTO.add(new MapaHospitalarioDTO(mapaKey, habitacion, mapaPlanta, paciente, paciSexo, paciMotivoIngreso, paciKey));
         }
         return listaMapaHospitalarioDTO;
     }

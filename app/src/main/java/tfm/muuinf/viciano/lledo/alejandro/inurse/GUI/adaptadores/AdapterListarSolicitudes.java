@@ -1,6 +1,5 @@
 package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,12 +19,10 @@ public class AdapterListarSolicitudes extends RecyclerView.Adapter<AdapterListar
     private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
     private ListarSolicitudesActivity listarSolicitudesActivity;
     private List<SolicitudDTO> listaSolicitudesDTO;
-    private String codigo;
 
-    public AdapterListarSolicitudes(ListarSolicitudesActivity activity, List<SolicitudDTO> listaSolicitudesDTO, String codigo) {
+    public AdapterListarSolicitudes(ListarSolicitudesActivity activity, List<SolicitudDTO> listaSolicitudesDTO) {
         listarSolicitudesActivity = activity;
         this.listaSolicitudesDTO = listaSolicitudesDTO;
-        this.codigo = codigo;
     }
 
     @Override
@@ -80,7 +77,6 @@ public class AdapterListarSolicitudes extends RecyclerView.Adapter<AdapterListar
     }
 
     public class ListarSolicitudesViewHolder extends RecyclerView.ViewHolder {
-        CardView cardView;
         TextView tvPrioridad;
         TextView tvFecha;
         TextView tvPaciente;
@@ -93,7 +89,6 @@ public class AdapterListarSolicitudes extends RecyclerView.Adapter<AdapterListar
 
         ListarSolicitudesViewHolder(final View itemView) {
             super(itemView);
-            cardView = (CardView) itemView.findViewById(R.id.cv_listar_solicitudes);
             tvPrioridad = (TextView) itemView.findViewById(R.id.tv_listar_solicitudes_prioridad);
             tvPaciente = (TextView) itemView.findViewById(R.id.tv_listar_solicitudes_paciente);
             tvHabitacion = (TextView) itemView.findViewById(R.id.tv_listar_solicitudes_habitacion);

@@ -8,10 +8,6 @@ public class UsuarioDTO {
     private String tipo;
     private Integer pacienteKey;
 
-    public UsuarioDTO() {
-
-    }
-
     public UsuarioDTO(final Integer key, final String usuario, final String password, final String tipo, final Integer pacienteKey) {
         this.key = key;
         this.usuario = usuario;
@@ -24,39 +20,19 @@ public class UsuarioDTO {
         return this.key;
     }
 
-    public void setKey(final int key) {
-        this.key = key;
-    }
-
     public String getUsuario() {
-        return this.usuario;
-    }
-
-    public void setUsuario(final String usuario) {
-        this.usuario = usuario;
+        return usuario;
     }
 
     public String getPassword() {
-        return this.password;
-    }
-
-    public void setPassword(final String password) {
-        this.password = password;
+        return password;
     }
 
     public String getTipo() {
         return this.tipo;
     }
 
-    public void setTipo(final String tipo) {
-        this.tipo = tipo;
-    }
-
     public Integer getPacienteKey() {
         return this.pacienteKey;
-    }
-
-    public void setPacienteKey(final int pacienteKey) {
-        this.pacienteKey = pacienteKey;
     }
 }

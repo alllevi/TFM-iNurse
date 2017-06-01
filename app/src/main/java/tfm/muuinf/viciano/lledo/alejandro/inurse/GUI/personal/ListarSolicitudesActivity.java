@@ -21,14 +21,11 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.dal.ServiciosDAL;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MaestroTiposDTO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.SolicitudDTO;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores.AdapterListarSolicitudes;
+import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesComun;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.InurseActivity;
 
 public class ListarSolicitudesActivity extends InurseActivity {
 
-    public static final String TIPEST1 = "TIPEST1";
-    public static final String TIPEST3 = "TIPEST3";
-    public static final String TIPEST5 = "TIPEST5";
-    public static final int REQUEST_CODE = 1;
     private Spinner cbEstados;
     private RecyclerView recyclerView;
     private List<SolicitudDTO> listaSolicitudes;
@@ -46,7 +43,7 @@ public class ListarSolicitudesActivity extends InurseActivity {
     }
 
     private void initComponentes() {
-        codigoSelected = TIPEST1;
+        codigoSelected = ConstantesComun.TIPEST1;
         hashMapMaestroTipos = new HashMap<>();
         cbEstados = (Spinner) findViewById(R.id.cb_filtro_listar_solicitudes);
         recyclerView = (RecyclerView) findViewById(R.id.rv_listar_solicitudes);
@@ -54,8 +51,8 @@ public class ListarSolicitudesActivity extends InurseActivity {
         recyclerView.setLayoutManager(llm);
     }
 
-    private void rellenarRecyclerView(List<SolicitudDTO> lista, String estado) {
-        AdapterListarSolicitudes adapter = new AdapterListarSolicitudes(ListarSolicitudesActivity.this, lista, estado);
+    private void rellenarRecyclerView(List<SolicitudDTO> listaSolicitudes) {
+        AdapterListarSolicitudes adapter = new AdapterListarSolicitudes(ListarSolicitudesActivity.this, listaSolicitudes);
         recyclerView.setAdapter(adapter);
     }
 
@@ -74,18 +71,18 @@ public class ListarSolicitudesActivity extends InurseActivity {
                 List<SolicitudDTO> listaFiltrada = new ArrayList<>();
                 codigoSelected = listaMaestroTipos.get(position).getCodigo();
 
-                if (!TIPEST1.equals(codigoSelected)) {
+                if (!ConstantesComun.TIPEST1.equals(codigoSelected)) {
                     for (SolicitudDTO solicitud : listaSolicitudes) {
                         String codigoSolicitud = solicitud.getTipoCodigo();
                         if (codigoSelected.equals(codigoSolicitud)) {
                             listaFiltrada.add(solicitud);
                         }
                     }
-                    rellenarRecyclerView(listaFiltrada, codigoSelected);
+                    rellenarRecyclerView(listaFiltrada);
                     listaSolicitudesEnUso = listaFiltrada;
                 } else {
                     // Se selecciona mostrar todos y se muestra la lista original
-                    rellenarRecyclerView(listaSolicitudes, codigoSelected);
+                    rellenarRecyclerView(listaSolicitudes);
                     listaSolicitudesEnUso = listaSolicitudes;
                 }
             }
@@ -106,7 +103,7 @@ public class ListarSolicitudesActivity extends InurseActivity {
     public void onClickRechazar(Integer solicitudKey) {
         Intent rechazarSolicitudIntent = new Intent(this, RechazarSolicitudActivity.class);
         rechazarSolicitudIntent.putExtra("solicitudKey", solicitudKey);
-        startActivityForResult(rechazarSolicitudIntent, REQUEST_CODE);
+        startActivityForResult(rechazarSolicitudIntent, ConstantesComun.REQUEST_CODE);
     }
 
     public void onClickEnProgreso(Integer solicitudKey) {
@@ -122,7 +119,7 @@ public class ListarSolicitudesActivity extends InurseActivity {
         for (SolicitudDTO solicitud : listaSolicitudesEnUso) {
             if (solicitudKey.equals(solicitud.getKey())) {
                 //Si tenemos seleccionada la pestaña todos actualizamos el valor, en caso contrario borramos el valor
-                if (!TIPEST1.equals(codigoSelected)) {
+                if (!ConstantesComun.TIPEST1.equals(codigoSelected)) {
                     solicitudBorrar = solicitud;
                 } else {
                     solicitud.setTipoCodigo(codigo);
@@ -139,19 +136,17 @@ public class ListarSolicitudesActivity extends InurseActivity {
                 solicitud.setTipoDescripcion(hashMapMaestroTipos.get(codigo));
             }
         }
-        AdapterListarSolicitudes adapter = new AdapterListarSolicitudes(ListarSolicitudesActivity.this, listaSolicitudesEnUso, codigoSelected);
+        AdapterListarSolicitudes adapter = new AdapterListarSolicitudes(ListarSolicitudesActivity.this, listaSolicitudesEnUso);
         recyclerView.setAdapter(adapter);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_CANCELED) {
-            // code to handle cancelled state
-        } else if (requestCode == REQUEST_CODE) {
+        if (requestCode == ConstantesComun.REQUEST_CODE) {
             String accion = data.getStringExtra("accion");
             Integer solicitudKey = data.getIntExtra("solicitudKey", 0);
             if ("borrar".equals(accion)) {
-                updateLists(solicitudKey, TIPEST5);
+                updateLists(solicitudKey, ConstantesComun.TIPEST5);
             }
         }
     }
@@ -177,7 +172,7 @@ public class ListarSolicitudesActivity extends InurseActivity {
         @Override
         protected void onPostExecute(Boolean success) {
             if (success) {
-                rellenarRecyclerView(listaSolicitudes, codigoSelected);
+                rellenarRecyclerView(listaSolicitudes);
                 rellenarComboEstados();
             } else {
                 Toast.makeText(getApplicationContext(), "Se ha producido un error inesperado", Toast.LENGTH_SHORT).show();
@@ -210,7 +205,7 @@ public class ListarSolicitudesActivity extends InurseActivity {
         @Override
         protected void onPostExecute(Boolean success) {
             if (success) {
-                updateLists(solicitudKey, TIPEST3);
+                updateLists(solicitudKey, ConstantesComun.TIPEST3);
                 Toast.makeText(getApplicationContext(), "Se ha actualizado el estado", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getApplicationContext(), "Se ha producido un error inesperado", Toast.LENGTH_SHORT).show();

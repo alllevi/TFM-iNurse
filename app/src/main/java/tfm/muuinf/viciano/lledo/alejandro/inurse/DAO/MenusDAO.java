@@ -13,7 +13,7 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.MenuDTO;
 
 public class MenusDAO extends iNurseDAO {
     private static DateTime inicioDia;
-    private static DateTime almuerzo;
+    private static DateTime desayuno;
     private static DateTime comida;
     private static DateTime merienda;
 
@@ -91,17 +91,10 @@ public class MenusDAO extends iNurseDAO {
             String segundoApellido = jsonObjectUsuario.get("segundoApellido").toString();
             Integer planta = Integer.parseInt(jsonObjectUsuario.get("planta").toString());
             String habitacion = jsonObjectUsuario.get("habitacion").toString();
+            String plantaHabitacion = planta.toString() + "-" + habitacion;
+            String paciente = nombre + " " + primerApellido + " " + segundoApellido;
 
-            StringBuilder habitacionBuilder = new StringBuilder();
-            habitacionBuilder.append(planta.toString()).append("-");
-            habitacionBuilder.append(habitacion);
-
-            StringBuilder paciBuilder = new StringBuilder();
-            paciBuilder.append(nombre).append(" ");
-            paciBuilder.append(primerApellido).append(" ");
-            paciBuilder.append(segundoApellido);
-
-            MenuDTO menuDTO = new MenuDTO(mesoKey, codigo, primerPlato, segundoPlato, postre, planta, habitacionBuilder.toString(), paciBuilder.toString());
+            MenuDTO menuDTO = new MenuDTO(mesoKey, codigo, primerPlato, segundoPlato, postre, planta, plantaHabitacion, paciente);
             listaMenuDTO.add(menuDTO);
         }
         return listaMenuDTO;
@@ -125,9 +118,9 @@ public class MenusDAO extends iNurseDAO {
     private String getCodigoNow() {
         DateTime dateNow = new DateTime();
         String codigo;
-        if (inicioDia.isBefore(dateNow) && almuerzo.isAfter(dateNow)) {
+        if (inicioDia.isBefore(dateNow) && desayuno.isAfter(dateNow)) {
             codigo = "TIPMENU1";
-        } else if (almuerzo.isBefore(dateNow) && comida.isAfter(dateNow)) {
+        } else if (desayuno.isBefore(dateNow) && comida.isAfter(dateNow)) {
             codigo = "TIPMENU2";
         } else if (comida.isBefore(dateNow) && merienda.isAfter(dateNow)) {
             codigo = "TIPMENU3";
@@ -138,28 +131,24 @@ public class MenusDAO extends iNurseDAO {
     }
 
     private void initCalendar() {
-        DateTime dateInicioDia = new DateTime()
+        inicioDia = new DateTime()
                 .withHourOfDay(0)
                 .withMinuteOfHour(0)
                 .withSecondOfMinute(0);
-        inicioDia = dateInicioDia;
 
-        DateTime dateAlmuerzo = new DateTime()
+        desayuno = new DateTime()
                 .withHourOfDay(12)
                 .withMinuteOfHour(0)
                 .withSecondOfMinute(0);
-        almuerzo = dateAlmuerzo;
 
-        DateTime dateComida = new DateTime()
+        comida = new DateTime()
                 .withHourOfDay(15)
                 .withMinuteOfHour(30)
                 .withSecondOfMinute(0);
-        comida = dateComida;
 
-        DateTime dateMerienda = new DateTime()
+        merienda = new DateTime()
                 .withHourOfDay(18)
                 .withMinuteOfHour(30)
                 .withSecondOfMinute(0);
-        merienda = dateMerienda;
     }
 }

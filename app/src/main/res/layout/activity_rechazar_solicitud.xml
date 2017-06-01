@@ -33,7 +33,8 @@
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
             android:ems="10"
-            android:id="@+id/tv_motivo_rechazar_solicitud" />
+            android:id="@+id/tv_motivo_rechazar_solicitud"
+            android:labelFor="@+id/tv_motivo_rechazar_solicitud" />
 
         <LinearLayout
             android:orientation="horizontal"

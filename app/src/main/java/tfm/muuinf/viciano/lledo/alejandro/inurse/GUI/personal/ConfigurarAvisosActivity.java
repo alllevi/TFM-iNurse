@@ -1,6 +1,5 @@
 package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal;
 
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -25,7 +24,6 @@ import java.util.List;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.R;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dal.ServiciosDAL;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.dto.AvisoConfiguracionDTO;
-import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.ConstantesComun;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.DatePickerFragment;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.InurseActivity;
 import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.TimePickerFragment;
@@ -33,7 +31,6 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.TimePickerFragment;
 public class ConfigurarAvisosActivity extends InurseActivity {
 
     private AvisoConfiguracionDTO avisosConfiguracion;
-    private SharedPreferences sharedpreferences;
     private Integer pacienteSelected;
     private Spinner cbPlantas;
     private Spinner cbHabitacion;
@@ -62,7 +59,6 @@ public class ConfigurarAvisosActivity extends InurseActivity {
     }
 
     private void initComponentes() {
-        sharedpreferences = getSharedPreferences(ConstantesComun.SHARED_PREFS_FILE, ConstantesComun.CONTEXT_MODE_PRIVATE);
         cbPlantas = (Spinner) findViewById(R.id.cb_avisos_planta);
         cbHabitacion = (Spinner) findViewById(R.id.cb_avisos_habitacion);
         tvPaciente = (TextView) findViewById(R.id.tv_avisos_paciente);
@@ -237,15 +233,13 @@ public class ConfigurarAvisosActivity extends InurseActivity {
     }
 
     private void insertarAviso() {
-        String planta = cbPlantas.getSelectedItem().toString();
-        String habitacion = cbHabitacion.getSelectedItem().toString();
         String fechaIni = tvDatePicker.getText().toString();
         String horaIni = tvTimePicker.getText().toString();
         String fechaFin = tvDatePickerFin.getText().toString();
         String repetirHoras = etHoras.getText().toString();
         String descripcion = etDescripcion.getText().toString();
         if (checkInternet()) {
-            InsertarAvisosTask insertarAvisosTask = new InsertarAvisosTask(planta, habitacion, fechaIni, horaIni, fechaFin, repetirHoras, descripcion);
+            InsertarAvisosTask insertarAvisosTask = new InsertarAvisosTask(fechaIni, horaIni, fechaFin, repetirHoras, descripcion);
             insertarAvisosTask.execute((Void) null);
         }
     }
@@ -291,17 +285,13 @@ public class ConfigurarAvisosActivity extends InurseActivity {
      */
     private class InsertarAvisosTask extends AsyncTask<Void, Void, Boolean> {
 
-        private String planta;
-        private String habitacion;
         private String fechaIni;
         private String horaIni;
         private String fechaFin;
         private String repetirHoras;
         private String descripcion;
 
-        public InsertarAvisosTask(String planta, String habitacion, String fechaIni, String horaIni, String fechaFin, String repetirHoras, String descripcion) {
-            this.planta = planta;
-            this.habitacion = habitacion;
+        public InsertarAvisosTask(String fechaIni, String horaIni, String fechaFin, String repetirHoras, String descripcion) {
             this.fechaIni = fechaIni;
             this.horaIni = horaIni;
             this.fechaFin = fechaFin;

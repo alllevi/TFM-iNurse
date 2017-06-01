@@ -24,55 +24,27 @@ public class MapaHospitalarioDTO {
         return key;
     }
 
-    public void setKey(Integer key) {
-        this.key = key;
-    }
-
     public String getHabitacion() {
         return habitacion;
-    }
-
-    public void setHabitacion(String habitacion) {
-        this.habitacion = habitacion;
     }
 
     public String getPaciente() {
         return paciente;
     }
 
-    public void setPaciente(String paciente) {
-        this.paciente = paciente;
-    }
-
     public String getSexo() {
         return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
     }
 
     public String getMotivo() {
         return motivo;
     }
 
-    public void setMotivo(String motivo) {
-        this.motivo = motivo;
-    }
-
     public Integer getPlanta() {
         return planta;
     }
 
-    public void setPlanta(Integer planta) {
-        this.planta = planta;
-    }
-
     public Integer getPacienteKey() {
         return pacienteKey;
-    }
-
-    public void setPacienteKey(Integer pacienteKey) {
-        this.pacienteKey = pacienteKey;
     }
 }

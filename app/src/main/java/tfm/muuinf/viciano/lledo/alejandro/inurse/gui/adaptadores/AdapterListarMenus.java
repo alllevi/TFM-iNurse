@@ -1,6 +1,5 @@
 package tfm.muuinf.viciano.lledo.alejandro.inurse.gui.adaptadores;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,7 +40,6 @@ public class AdapterListarMenus extends RecyclerView.Adapter<AdapterListarMenus.
     }
 
     public class ListarMenusViewHolder extends RecyclerView.ViewHolder {
-        CardView cardView;
         TextView tvHabitacion;
         TextView tvPaciente;
         TextView tvPrimerPlato;
@@ -50,7 +48,6 @@ public class AdapterListarMenus extends RecyclerView.Adapter<AdapterListarMenus.
 
         ListarMenusViewHolder(final View itemView) {
             super(itemView);
-            cardView = (CardView) itemView.findViewById(R.id.cv_listar_menus);
             tvPaciente = (TextView) itemView.findViewById(R.id.tv_listar_menus_paciente);
             tvHabitacion = (TextView) itemView.findViewById(R.id.tv_listar_menus_habitacion);
             tvPrimerPlato = (TextView) itemView.findViewById(R.id.tv_listar_menus_primero);

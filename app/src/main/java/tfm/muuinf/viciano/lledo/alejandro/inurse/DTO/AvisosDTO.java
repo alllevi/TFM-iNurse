@@ -36,24 +36,4 @@ public class AvisosDTO {
     public String getDescripcion() {
         return descripcion;
     }
-
-    public void setKey(Integer key) {
-        this.key = key;
-    }
-
-    public void setFechaInicio(Date fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    public void setFechaFin(Date fechaFin) {
-        this.fechaFin = fechaFin;
-    }
-
-    public void setHorasRepeticion(Integer horasRepeticion) {
-        this.horasRepeticion = horasRepeticion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
 }

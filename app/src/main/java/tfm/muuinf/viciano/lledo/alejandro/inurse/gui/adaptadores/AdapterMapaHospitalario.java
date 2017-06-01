@@ -16,7 +16,7 @@ import tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal.MapaHospitalarioAc
 public class AdapterMapaHospitalario extends RecyclerView.Adapter<AdapterMapaHospitalario.MapaHospitalarioViewHolder> {
 
     private MapaHospitalarioActivity mapaHospitalarioActivity;
-    List<MapaHospitalarioDTO> listaMapaHospitalario;
+    private List<MapaHospitalarioDTO> listaMapaHospitalario;
 
     public AdapterMapaHospitalario(final MapaHospitalarioActivity mapaHospitalarioActivity, List<MapaHospitalarioDTO> listaMapaHospitalario) {
         this.mapaHospitalarioActivity = mapaHospitalarioActivity;
@@ -40,7 +40,7 @@ public class AdapterMapaHospitalario extends RecyclerView.Adapter<AdapterMapaHos
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                mapaHospitalarioActivity.onClickCard(listaMapaHospitalario.get(position).getPacienteKey());
+                mapaHospitalarioActivity.onClickCard(listaMapaHospitalario.get(holder.getAdapterPosition()).getPacienteKey());
             }
         });
     }

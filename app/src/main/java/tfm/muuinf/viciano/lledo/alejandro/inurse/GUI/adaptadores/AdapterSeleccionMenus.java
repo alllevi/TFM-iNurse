@@ -48,12 +48,12 @@ public class AdapterSeleccionMenus extends RecyclerView.Adapter<AdapterSeleccion
                 if (holder.ckSeleccionado.isChecked()) {
                     activity.controlCardViewItems(-1);
                     holder.ckSeleccionado.setChecked(false);
-                    activity.deseleccionarMenu(listaMenus.get(position));
+                    activity.deseleccionarMenu(listaMenus.get(holder.getAdapterPosition()));
                 } else {
                     Boolean control = activity.controlCardViewItems(1);
                     if (control) {
                         holder.ckSeleccionado.setChecked(true);
-                        activity.seleccionarMenu(listaMenus.get(position));
+                        activity.seleccionarMenu(listaMenus.get(holder.getAdapterPosition()));
                     }
                 }
             }

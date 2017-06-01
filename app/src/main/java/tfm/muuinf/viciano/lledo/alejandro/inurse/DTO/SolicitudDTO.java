@@ -79,22 +79,6 @@ public class SolicitudDTO {
         this.key = key;
     }
 
-    public void setDescripcion(final String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public void setDescripcionLarga(final String descripcionLarga) {
-        this.descripcionLarga = descripcionLarga;
-    }
-
-    public void setPrioridad(final Integer prioridad) {
-        this.prioridad = prioridad;
-    }
-
-    public void setPrioridadDescripcion(final String prioridadDescripcion) {
-        this.prioridadDescripcion = prioridadDescripcion;
-    }
-
     public void setTipoCodigo(final String tipoCodigo) {
         this.tipoCodigo = tipoCodigo;
     }
@@ -103,24 +87,12 @@ public class SolicitudDTO {
         this.tipoDescripcion = tipoDescripcion;
     }
 
-    public void setFecha(final Date fecha) {
-        this.fecha = fecha;
-    }
-
     public String getHabitacion() {
         return habitacion;
     }
 
-    public void setHabitacion(String habitacion) {
-        this.habitacion = habitacion;
-    }
-
     public String getPaciente() {
         return paciente;
-    }
-
-    public void setPaciente(String paciente) {
-        this.paciente = paciente;
     }
 }
 

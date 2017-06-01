@@ -82,7 +82,8 @@
             android:ems="10"
             android:focusable="false"
             android:id="@+id/et_descripcion_solicitud"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:labelFor="@+id/et_descripcion_solicitud" />
 
         <Button
             android:text="@string/enviar_solicitud"

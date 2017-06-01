@@ -81,6 +81,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".gui.personal.MapaHospitalarioActivity" />
         </activity>
+        <activity android:name=".gui.comun.InurseActivity"></activity>
     </application>
 
 </manifest>

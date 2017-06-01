@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,9 +10,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="tfm.muuinf.viciano.lledo.alejandro.inurse.gui.comun.LoginActivity"
-    android:background="@color/colorBackground">
+    android:background="@android:color/background_light">
 
     <!-- Login progress -->
+    <ImageView
+        android:layout_width="match_parent"
+        app:srcCompat="@drawable/cardiogram"
+        android:id="@+id/imageView3"
+        android:layout_height="120dp" />
+
     <ProgressBar
         android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
@@ -23,7 +30,8 @@
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
 
         <LinearLayout
             android:id="@+id/email_login_form"
@@ -38,26 +46,36 @@
                 <AutoCompleteTextView
                     android:id="@+id/email"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorLink="?attr/colorPrimaryDark"
+                    android:drawableLeft="@drawable/ic_action_user"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:textColorHighlight="@color/colorPrimaryDark" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
 
                 <EditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
-                    android:imeActionId="@+id/login"
                     android:imeOptions="actionUnspecified"
+                    android:imeActionId="@+id/login"
                     android:inputType="textPassword"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    android:textColor="?attr/colorPrimary"
+                    android:drawableLeft="@drawable/ic_lock_outline"
+                    android:drawablePadding="7dp"
+                    android:paddingLeft="7dp" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -66,7 +84,7 @@
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 

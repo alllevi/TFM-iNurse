@@ -45,7 +45,6 @@
     <string name="avisos_programados">Avisos programados</string>
     <string name="fecha_inicio_">Fecha inicio:</string>
     <string name="descripcion">Descripción:</string>
-    <string name="guardar">Guardar</string>
 
     <!-- Strings relacionados con listar solicitudes personal-->
     <string name="empezar_progreso">Empezar progreso</string>
@@ -79,12 +78,9 @@
     <string name="nhc_">NHC:</string>
     <string name="telelefono_">Teléfono:</string>
     <string name="edad_">Edad:</string>
-    <string name="fecha_nacimiento_">Fecha nacimiento:</string>
     <string name="direccion_">Dirección:</string>
     <string name="ciudad_">Ciudad:</string>
     <string name="provincia_">Provincia:</string>
-    <string name="alergias_">Alergias:</string>
-    <string name="antecedentes_toxicos_">Antecedentes tóxicos:</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
     <string name="fecha_fin_">Fecha fin:</string>
     <string name="repetir_aviso_horas">Repetir cada #H# horas</string>
@@ -94,5 +90,8 @@
     <string name="primer_plato_">Primer plato:</string>
     <string name="segundo_plato_">Segundo plato:</string>
     <string name="postre_">Postre:</string>
+    <string name="contentDescription_detallePaciente">Foto del paciente</string>
+    <string name="contentDescription_iconoCalendario">Icono calendario</string>
+    <string name="contentDescription_iconoReloj">Icono reloj</string>
 
 </resources>

@@ -6,10 +6,6 @@ import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-/**
- * Created by Alex on 21/02/2017.
- */
-
 public class InurseActivity extends AppCompatActivity {
 
     protected boolean checkInternet() {

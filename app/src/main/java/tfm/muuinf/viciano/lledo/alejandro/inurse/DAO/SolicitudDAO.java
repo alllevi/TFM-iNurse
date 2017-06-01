@@ -90,17 +90,16 @@ public class SolicitudDAO extends iNurseDAO {
             String matiCod = jsonObjectUsuario.get("mati_cod").toString();
             String matiDesc = jsonObjectUsuario.get("mati_desc").toString();
             Date soliFecha = formatter.parse(jsonObjectUsuario.get("soli_fecha").toString());
+            String paciNombre = jsonObjectUsuario.get("paci_nombre").toString();
+            String paciPrimerApellido = jsonObjectUsuario.get("paci_primer_apellido").toString();
+            String paciSegundoApellido = jsonObjectUsuario.get("paci_segundo_apellido").toString();
+            String mapaPlanta = jsonObjectUsuario.get("mapa_planta").toString();
+            String mapaHabitacion = jsonObjectUsuario.get("mapa_habitacion").toString();
 
-            StringBuilder paciBuilder = new StringBuilder();
-            paciBuilder.append(jsonObjectUsuario.get("paci_nombre").toString()).append(" ");
-            paciBuilder.append(jsonObjectUsuario.get("paci_primer_apellido").toString()).append(" ");
-            paciBuilder.append(jsonObjectUsuario.get("paci_segundo_apellido").toString());
+            String paciente = paciNombre + " " + paciPrimerApellido + " " + paciSegundoApellido;
+            String plantaHabitacion = mapaPlanta + "-" + mapaHabitacion;
 
-            StringBuilder habitacionBuilder = new StringBuilder();
-            habitacionBuilder.append(jsonObjectUsuario.get("mapa_planta").toString()).append("-");
-            habitacionBuilder.append(jsonObjectUsuario.get("mapa_habitacion").toString()).append(" ");
-
-            SolicitudDTO solicitudDTO = new SolicitudDTO(soliKey, masoliDesc, soliDesc, maprioPrioridad, maprioDesc, matiCod, matiDesc, soliFecha, paciBuilder.toString(), habitacionBuilder.toString());
+            SolicitudDTO solicitudDTO = new SolicitudDTO(soliKey, masoliDesc, soliDesc, maprioPrioridad, maprioDesc, matiCod, matiDesc, soliFecha, paciente, plantaHabitacion);
             listaSolicitudDTO.add(solicitudDTO);
         }
         ordenarPorPrioridad(listaSolicitudDTO);

@@ -19,15 +19,7 @@ public class AvisoConfiguracionDTO {
         return mapHabitaciones;
     }
 
-    public void setMapHabitaciones(Map<String, List<String>> mapHabitaciones) {
-        this.mapHabitaciones = mapHabitaciones;
-    }
-
     public Map<String, Pair<Integer, String>> getMapPacientes() {
         return mapPacientes;
-    }
-
-    public void setMapPacientes(Map<String, Pair<Integer, String>> mapPacientes) {
-        this.mapPacientes = mapPacientes;
     }
 }

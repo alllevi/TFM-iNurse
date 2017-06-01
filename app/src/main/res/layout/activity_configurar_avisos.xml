@@ -119,7 +119,8 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/ic_action_calendar_month"
                     android:id="@+id/iv_avisos_calendar"
-                    android:layout_marginStart="5dp" />
+                    android:layout_marginStart="5dp"
+                    android:contentDescription="@string/contentDescription_iconoCalendario" />
 
             </LinearLayout>
 
@@ -151,7 +152,8 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/ic_action_clock"
                     android:id="@+id/iv_avisos_clock"
-                    android:layout_marginStart="5dp" />
+                    android:layout_marginStart="5dp"
+                    android:contentDescription="@string/contentDescription_iconoReloj" />
 
             </LinearLayout>
 
@@ -182,7 +184,8 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/ic_action_calendar_month"
                     android:id="@+id/iv_avisos_calendar_fin"
-                    android:layout_marginStart="5dp" />
+                    android:layout_marginStart="5dp"
+                    android:contentDescription="@string/contentDescription_iconoCalendario" />
 
             </LinearLayout>
 
@@ -220,7 +223,8 @@
                     android:focusable="false"
                     android:layout_marginStart="15dp"
                     android:layout_width="40dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/et_avisos_horas" />
 
                 <TextView
                     android:text="@string/horas"
@@ -246,7 +250,8 @@
                 android:focusable="false"
                 android:ems="10"
                 android:id="@+id/et_avisos_descripcion"
-                android:maxLines="4" />
+                android:maxLines="4"
+                android:labelFor="@+id/et_avisos_descripcion" />
 
             <Button
                 android:text="@string/programar"

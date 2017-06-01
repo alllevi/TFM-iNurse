@@ -26,7 +26,8 @@
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:layout_marginStart="10dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/contentDescription_detallePaciente" />
 
         <LinearLayout
             android:orientation="horizontal"
