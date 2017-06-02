@@ -4,95 +4,95 @@
     android:id="@+id/activity_realizar_solicitud"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_inurse_gris"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="tfm.muuinf.viciano.lledo.alejandro.inurse.gui.pacientes.RealizarSolicitudActivity"
-    android:background="@color/colorBackground">
+    tools:context="tfm.muuinf.viciano.lledo.alejandro.inurse.gui.pacientes.RealizarSolicitudActivity">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <TextView
-            android:text="@string/motivo_solicitud"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
+            android:text="@string/motivo_solicitud"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/colorListViewSelected"
             android:textStyle="normal|bold" />
 
         <ListView
+            android:id="@+id/lv_realizar_solicitud"
             android:layout_width="match_parent"
             android:layout_height="125dp"
             android:layout_marginTop="10dp"
             android:background="@android:color/background_light"
             android:choiceMode="singleChoice"
-            android:id="@+id/lv_realizar_solicitud"
             android:listSelector="@color/colorListViewSelected" />
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
 
             <TextView
-                android:text="@string/prioridad_asignada"
+                android:id="@+id/tv_prioridad_realizar_solicitud"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_prioridad_realizar_solicitud"
+                android:text="@string/prioridad_asignada"
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="15sp"
                 android:textStyle="normal|bold" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/tv_prioridad_seleccionada"
-                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:layout_weight="1"
                 android:textColor="?android:attr/textColorPrimary" />
 
         </LinearLayout>
 
         <TextView
-            android:text="@string/descripcion_de_la_solicitud"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:text="@string/descripcion_de_la_solicitud"
             android:textAppearance="@android:style/TextAppearance.Material.Medium"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="15sp"
             android:textStyle="normal|bold" />
 
         <EditText
+            android:id="@+id/et_descripcion_solicitud"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
             android:ems="10"
             android:focusable="false"
-            android:id="@+id/et_descripcion_solicitud"
-            android:textSize="15sp"
-            android:labelFor="@+id/et_descripcion_solicitud" />
+            android:inputType="textMultiLine"
+            android:labelFor="@+id/et_descripcion_solicitud"
+            android:textSize="15sp" />
 
         <Button
-            android:text="@string/enviar_solicitud"
+            android:id="@+id/bt_enviar_solicitud"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/bt_enviar_solicitud"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="70dp"
             android:layout_marginLeft="70dp"
-            android:background="@color/colorButton" />
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/colorButton"
+            android:text="@string/enviar_solicitud" />
     </LinearLayout>
 </RelativeLayout>

@@ -21,12 +21,15 @@
         android:layout_marginTop="10dp">
 
         <TextView
-            android:text="@string/avisos_programados"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/avisos_programados"
             android:textAppearance="@android:style/TextAppearance.Material.Medium"
-            android:textColor="?android:attr/textColorPrimary"
-            android:layout_marginBottom="15dp" />
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"

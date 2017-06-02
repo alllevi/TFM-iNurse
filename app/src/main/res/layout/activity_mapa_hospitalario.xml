@@ -21,25 +21,36 @@
         android:layout_marginRight="5dp">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp">
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
 
             <TextView
-                android:text="@string/filtrar_por_planta"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/filtrar_por_planta"
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
                 android:textColor="?android:attr/textColorPrimary"
-                android:fontFamily="sans-serif" />
+                android:textStyle="bold" />
 
-            <Spinner
-                android:layout_width="159dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/cb_filtro_plantas_mapa_camas"
-                android:layout_weight="0.19" />
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@drawable/cardview_border"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/cb_filtro_plantas_mapa_camas"
+                    android:layout_width="159dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
         </LinearLayout>
 

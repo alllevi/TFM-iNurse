@@ -15,7 +15,7 @@
     <string name="mis_solicitudes">Mis solicitudes</string>
     <string name="seleccionar_menu">Seleccionar menú</string>
     <string name="mis_avisos">Mis avisos</string>
-    <string name="informacion_hospital">Información del hospital</string>
+    <string name="informacion_hospital">Información</string>
 
     <!-- Strings relacionados con el menu personal -->
     <string name="configurar_avisos">Configurar avisos</string>
@@ -31,12 +31,12 @@
 
     <!-- Strings relacionados con mis solicitudes paciente -->
     <string name="filtrar_por_estado">Filtar por estado</string>
-    <string name="prioridad">Prioridad:</string>
+    <string name="prioridad">Prioridad - </string>
     <string name="solicitud">Solicitud:</string>
     <string name="estado">Estado:</string>
 
     <!-- Strings relacionados con seleccionar menu paciente -->
-    <string name="seleccione_el_menu">Seleccione el menú</string>
+    <string name="seleccione_el_menu">Seleccione su menú</string>
     <string name="primer_plato">Primer plato -</string>
     <string name="segundo_plato">Segundo plato -</string>
     <string name="postre">Postre -</string>
@@ -47,7 +47,7 @@
     <string name="descripcion">Descripción:</string>
 
     <!-- Strings relacionados con listar solicitudes personal-->
-    <string name="empezar_progreso">Empezar progreso</string>
+    <string name="empezar_progreso">Empezar</string>
 
     <!-- Strings relacionados con rechazar solicitud personal-->
     <string name="rechazar">Rechazar</string>

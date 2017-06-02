@@ -32,7 +32,7 @@ public class AdapterSeleccionMenus extends RecyclerView.Adapter<AdapterSeleccion
 
     @Override
     public void onBindViewHolder(final SeleccionMenusViewHolder holder, final int position) {
-        holder.tvMenuId.setText("Menu " + (position + 1));
+        holder.tvMenuId.setText("Menú " + (position + 1));
         holder.tvPrimerPlato.setText(listaMenus.get(position).getPrimero());
         holder.tvSegundoPlato.setText(listaMenus.get(position).getSegundo());
         holder.tvTercerPlato.setText(listaMenus.get(position).getPostre());

@@ -12,116 +12,131 @@
         android:id="@+id/cv_seleccion_menu">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp">
+            android:background="@drawable/cardview_border"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="Menú 1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:id="@+id/tv_menu_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:paddingLeft="43dp"
+                        android:text="Menú 1"
                         android:textAppearance="@android:style/TextAppearance.Material.Large"
-                        android:layout_weight="1" />
+                        android:textStyle="bold" />
 
                     <CheckBox
+                        android:id="@+id/ch_menu_solicitado"
                         android:layout_width="43dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/ch_menu_solicitado"
+                        android:checked="false"
                         android:textAlignment="viewEnd"
-                        android:textSize="20sp"
-                        android:checked="false" />
+                        android:textColorLink="@color/colorPrimary"
+                        android:textSize="20sp" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary" />
+
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
 
                 <TextView
-                    android:text="@string/primer_plato"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@string/primer_plato"
                     android:textAppearance="@android:style/TextAppearance.Material.Small"
-                    android:textStyle="normal|bold"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="normal|bold" />
 
                 <TextView
-                    android:text="TextView"
+                    android:id="@+id/tv_primer_plato"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_primer_plato"
-                    tools:text="Sopa de estrellas"
+                    android:layout_marginStart="3dp"
                     android:layout_weight="0.60"
-                    android:layout_marginStart="3dp"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    android:text="TextView"
+                    android:textColor="?android:attr/textColorPrimary"
+                    tools:text="Sopa de estrellas" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="4dp">
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal"
+                android:paddingRight="5dp"
+                android:paddingStart="5dp">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@string/segundo_plato"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:textAppearance="@android:style/TextAppearance.Material.Small"
-                    android:textStyle="normal|bold"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="normal|bold" />
 
                 <TextView
-                    android:text="Pollo asado con patatas fritas"
+                    android:id="@+id/tv_segundo_plato"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_segundo_plato"
-                    android:textAppearance="@android:style/TextAppearance.Material.Small"
-                    android:layout_weight="1"
                     android:layout_marginStart="3dp"
+                    android:layout_weight="1"
+                    android:text="Pollo asado con patatas fritas"
+                    android:textAppearance="@android:style/TextAppearance.Material.Small"
                     android:textColor="?android:attr/textColorPrimary" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="4dp">
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
 
                 <TextView
-                    android:text="@string/postre"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@string/postre"
                     android:textAppearance="@android:style/TextAppearance.Material.Small"
-                    android:textStyle="normal|bold"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="normal|bold" />
 
                 <TextView
-                    android:text="Yogurt natural"
+                    android:id="@+id/tv_postre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_postre"
-                    android:textAppearance="@android:style/TextAppearance.Material.Small"
-                    android:layout_weight="1"
                     android:layout_marginStart="3dp"
+                    android:layout_weight="1"
+                    android:text="Yogurt natural"
+                    android:textAppearance="@android:style/TextAppearance.Material.Small"
                     android:textColor="?android:attr/textColorPrimary" />
             </LinearLayout>
         </LinearLayout>

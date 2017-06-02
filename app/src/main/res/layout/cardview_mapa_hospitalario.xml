@@ -11,104 +11,120 @@
         android:id="@+id/cv_mapa_camas">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp">
+            android:background="@drawable/cardview_border"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:orientation="vertical"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content">
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="4dp">
+                    android:layout_height="30dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:text="@string/habitacion_"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="normal|bold"
-                        android:textColor="?android:attr/textColorPrimary" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/tv_mapa_habitacion"
-                        android:layout_weight="1"
-                        android:layout_marginStart="3dp"
-                        android:textColor="?android:attr/textColorPrimary" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:text="@string/habitacion"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tv_mapa_habitacion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="3dp"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="4dp">
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="@string/paciente_"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textStyle="normal|bold" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:id="@+id/tv_mapa_paciente"
-                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="3dp"
+                        android:layout_weight="1"
                         android:textColor="?android:attr/textColorPrimary" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="4dp">
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="@string/sexo_"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textStyle="normal|bold" />
 
                     <TextView
+                        android:id="@+id/tv_mapa_sexo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tv_mapa_sexo"
-                        android:layout_weight="1"
                         android:layout_marginStart="3dp"
+                        android:layout_weight="1"
                         android:textColor="?android:attr/textColorPrimary" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="4dp">
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="@string/motivo_ingreso_"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/motivo_ingreso_"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textStyle="normal|bold" />
 
                     <TextView
+                        android:id="@+id/tv_mapa_motivo_ingreso"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tv_mapa_motivo_ingreso"
-                        android:layout_weight="1"
                         android:layout_marginStart="3dp"
+                        android:layout_weight="1"
                         android:textColor="?android:attr/textColorPrimary" />
                 </LinearLayout>
 

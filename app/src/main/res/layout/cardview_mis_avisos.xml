@@ -11,91 +11,98 @@
         android:id="@+id/cv_mis_avisos">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp">
+            android:background="@drawable/cardview_border"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@string/fecha_inicio_"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textStyle="normal|bold" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/tv_mis_avisos_fecha_ini"
-                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
+                    android:layout_weight="1"
                     android:textColor="?android:attr/textColorPrimary" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@string/fecha_fin_"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textStyle="normal|bold" />
 
                 <TextView
+                    android:id="@+id/tv_mis_avisos_fecha_fin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_mis_avisos_fecha_fin"
-                    android:layout_weight="1"
                     android:layout_marginStart="3dp"
+                    android:layout_weight="1"
                     android:textColor="?android:attr/textColorPrimary" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp">
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tv_mis_avisos_frecuencia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_mis_avisos_frecuencia"
                     android:layout_weight="1"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textStyle="normal|bold" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp">
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:text="@string/descripcion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@string/descripcion"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textStyle="normal|bold" />
 
                 <TextView
+                    android:id="@+id/tv_mis_avisos_descripcion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_mis_avisos_descripcion"
+                    android:layout_marginStart="3dp"
                     android:layout_weight="1"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:layout_marginStart="3dp" />
+                    android:textColor="?android:attr/textColorPrimary" />
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
