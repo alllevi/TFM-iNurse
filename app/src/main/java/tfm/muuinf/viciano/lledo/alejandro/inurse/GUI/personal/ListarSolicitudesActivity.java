@@ -113,6 +113,12 @@ public class ListarSolicitudesActivity extends InurseActivity {
         }
     }
 
+    public void onClickFinalizar(Integer solicitudKey) {
+        if (checkInternet()) {
+            // IMPLEMENTAR
+        }
+    }
+
     private void updateLists(Integer solicitudKey, String codigo) {
         //Actualizamos la lista en uso
         SolicitudDTO solicitudBorrar = new SolicitudDTO();

@@ -51,14 +51,14 @@
 
     <!-- Strings relacionados con rechazar solicitud personal-->
     <string name="rechazar">Rechazar</string>
-    <string name="motivo_rechazo">Introduzca el motivo por el cual desea rechazar la solicitud:</string>
+    <string name="motivo_rechazo">Motivo del rechazo</string>
     <string name="cancelar">Cancelar</string>
 
     <!-- Strings relacionados con listar menus paciente personal-->
     <string name="filtrar_por_planta">Filtar por planta</string>
 
     <!-- Strings relacionados con configurar avisos personal-->
-    <string name="paciente_alarma">Paciente al que desea programar el aviso:</string>
+    <string name="paciente_alarma">Programar aviso</string>
     <string name="planta">Planta</string>
     <string name="habitacion">Habitación</string>
     <string name="repetir_alarma">¿Repetir aviso?</string>

@@ -8,4 +8,5 @@
     <color name="colorListViewSelected">#8c9bf0</color>
     <color name="blueText">#006df0</color>
     <color name="background_inurse_gris">#f4f3f3</color>
+    <color name="colorList">#2b3f51b5</color>
 </resources>

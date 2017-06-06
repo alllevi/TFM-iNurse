@@ -8,7 +8,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="10dp"
     tools:context="tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal.ConfigurarAvisosActivity">
 
     <ScrollView
@@ -16,250 +16,303 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="1"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true">
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <TextView
-                android:text="@string/paciente_alarma"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/paciente_alarma"
+                android:textAlignment="center"
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/colorPrimaryDark"
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/planta"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="110dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/cardview_border"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/cb_avisos_planta"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:layout_width="250dp">
+                android:orientation="horizontal">
 
                 <TextView
-                    android:text="@string/planta"
-                    android:layout_height="wrap_content"
-                    android:textColor="?android:attr/textColorPrimary"
                     android:layout_width="80dp"
-                    android:layout_gravity="center_vertical" />
-
-                <Spinner
-                    android:layout_height="match_parent"
-                    android:id="@+id/cb_avisos_planta"
-                    android:layout_marginStart="10dp"
-                    android:layout_width="100dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp">
-
-                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="@string/habitacion"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:layout_gravity="center_vertical" />
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
 
-                <Spinner
-                    android:id="@+id/cb_avisos_habitacion"
-                    android:layout_marginStart="10dp"
-                    android:layout_height="match_parent"
-                    android:layout_width="100dp" />
+                <LinearLayout
+                    android:layout_width="110dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="0.70"
+                    android:background="@drawable/cardview_border"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/cb_avisos_habitacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+                </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:text="@string/paciente_"
                     android:layout_width="85dp"
                     android:layout_height="wrap_content"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    android:text="@string/paciente_"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_avisos_paciente"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/tv_avisos_paciente"
                     android:layout_marginStart="3dp"
                     android:textColor="?android:attr/textColorPrimary" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-                <TextView
-                    android:text="@string/fecha_inicio_"
-                    android:layout_height="wrap_content"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="85dp" />
-
-                <TextView
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tv_avisos_date_picker"
-                    android:layout_marginStart="5dp"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:hint="dd/mm/yyyy"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_action_calendar_month"
-                    android:id="@+id/iv_avisos_calendar"
-                    android:layout_marginStart="5dp"
-                    android:contentDescription="@string/contentDescription_iconoCalendario" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/fecha_inicio_"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_avisos_date_picker"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:hint="dd/mm/yyyy"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+                <ImageView
+                    android:id="@+id/iv_avisos_calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:contentDescription="@string/contentDescription_iconoCalendario"
+                    app:srcCompat="@drawable/ic_action_calendar_month" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="@string/hora_inicio_"
-                    android:layout_height="wrap_content"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="85dp" />
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/tv_avisos_time_picker"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginStart="5dp"
-                    android:textColor="?android:attr/textColorPrimary"
                     android:hint="hh:mm"
-                    android:layout_gravity="center_vertical" />
+                    android:textColor="?android:attr/textColorPrimary" />
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_action_clock"
                     android:id="@+id/iv_avisos_clock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:contentDescription="@string/contentDescription_iconoReloj" />
+                    android:contentDescription="@string/contentDescription_iconoReloj"
+                    app:srcCompat="@drawable/ic_action_clock" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="@string/fecha_fin_"
-                    android:layout_height="wrap_content"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="85dp" />
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:layout_height="wrap_content"
                     android:id="@+id/tv_avisos_date_picker_fin"
-                    android:layout_marginStart="5dp"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:hint="dd/mm/yyyy"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content" />
+                    android:layout_marginStart="5dp"
+                    android:hint="dd/mm/yyyy"
+                    android:textColor="?android:attr/textColorPrimary" />
 
                 <ImageView
+                    android:id="@+id/iv_avisos_calendar_fin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_action_calendar_month"
-                    android:id="@+id/iv_avisos_calendar_fin"
                     android:layout_marginStart="5dp"
-                    android:contentDescription="@string/contentDescription_iconoCalendario" />
+                    android:contentDescription="@string/contentDescription_iconoCalendario"
+                    app:srcCompat="@drawable/ic_action_calendar_month" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp">
-
-                <CheckBox
-                    android:text="@string/repetir_alarma"
-                    android:layout_width="match_parent"
-                    android:id="@+id/ch_avisos_repetir"
-                    android:layout_height="18dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp">
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:text="@string/repetir_cada"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:layout_gravity="center_vertical"
-                    android:id="@+id/tv_avisos_repetir_cada" />
+                    android:layout_marginTop="0dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/descripcion_alarma"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
 
                 <EditText
-                    android:inputType="number"
+                    android:id="@+id/et_avisos_descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@drawable/cardview_border"
                     android:ems="10"
-                    android:id="@+id/et_avisos_horas"
                     android:focusable="false"
-                    android:layout_marginStart="15dp"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:labelFor="@+id/et_avisos_horas" />
-
-                <TextView
-                    android:text="@string/horas"
-                    android:layout_height="wrap_content"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:layout_marginStart="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="wrap_content"
-                    android:id="@+id/tv_avisos_hora" />
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:labelFor="@+id/et_avisos_descripcion"
+                    android:maxLines="4"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" />
             </LinearLayout>
 
-            <TextView
-                android:text="@string/descripcion_alarma"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:orientation="horizontal">
 
-            <EditText
+                <CheckBox
+                    android:id="@+id/ch_avisos_repetir"
+                    android:layout_width="match_parent"
+                    android:layout_height="18dp"
+                    android:text="@string/repetir_alarma"
+                    android:textColor="@color/colorPrimary" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:focusable="false"
-                android:ems="10"
-                android:id="@+id/et_avisos_descripcion"
-                android:maxLines="4"
-                android:labelFor="@+id/et_avisos_descripcion" />
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
 
-            <Button
-                android:text="@string/programar"
+                <TextView
+                    android:id="@+id/tv_avisos_repetir_cada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/repetir_cada"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+                <EditText
+                    android:id="@+id/et_avisos_horas"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:inputType="number"
+                    android:labelFor="@+id/et_avisos_horas"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/tv_avisos_hora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="15dp"
+                    android:text="@string/horas"
+                    android:textColor="?android:attr/textColorPrimary" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/bt_avisos_programar"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="17dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
 
+                <Button
+                    android:id="@+id/bt_avisos_programar"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/cardview_border"
+                    android:text="@string/programar"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

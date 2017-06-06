@@ -42,7 +42,7 @@ public class AdapterListarSolicitudes extends RecyclerView.Adapter<AdapterListar
         holder.tvDescripcion.setText(listaSolicitudesDTO.get(position).getDescripcionLarga());
 
         setListeners(holder, listaSolicitudesDTO.get(position).getKey());
-        ocultarBotones(holder, listaSolicitudesDTO.get(position).getTipoCodigo());
+        ocultarBotones(holder, listaSolicitudesDTO.get(position).getTipoCodigo(), listaSolicitudesDTO.get(position).getKey());
     }
 
     private void setListeners(final ListarSolicitudesViewHolder holder, final Integer key) {
@@ -62,9 +62,15 @@ public class AdapterListarSolicitudes extends RecyclerView.Adapter<AdapterListar
         });
     }
 
-    private void ocultarBotones(ListarSolicitudesViewHolder holder, String codigo) {
+    private void ocultarBotones(final ListarSolicitudesViewHolder holder, final String codigo, final Integer key) {
         if (codigo.equals("TIPEST3")) {
-            holder.btEmpezar.setVisibility(View.GONE);
+            holder.btEmpezar.setText("Finalizar");
+            holder.btEmpezar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(final View v) {
+                    listarSolicitudesActivity.onClickFinalizar(key);
+                }
+            });
         } else if ("TIPEST4".equals(codigo) || "TIPEST5".equals(codigo)) {
             holder.btEmpezar.setVisibility(View.GONE);
             holder.btRechazar.setVisibility(View.GONE);

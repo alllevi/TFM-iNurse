@@ -4,315 +4,357 @@
     android:id="@+id/activity_detalle_paciente"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="0dp"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="tfm.muuinf.viciano.lledo.alejandro.inurse.gui.personal.DetallePacienteActivity">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="10dp">
+        android:orientation="vertical">
 
         <ImageView
-            android:layout_width="match_parent"
             android:id="@+id/iv_detalle_imagen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:layout_marginStart="10dp"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/contentDescription_detallePaciente" />
+            android:contentDescription="@string/contentDescription_detallePaciente"
+            android:scaleType="fitCenter" />
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp">
+            android:layout_marginTop="10dp"
+            android:background="@color/colorList"
+            android:orientation="horizontal"
+            android:paddingBottom="3dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="3dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:text="@string/habitacion_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:textStyle="normal|bold" />
 
             <TextView
+                android:id="@+id/tv_detalle_habitacion"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary"
-                android:id="@+id/tv_detalle_habitacion" />
+                android:layout_weight="1"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
+            android:orientation="horizontal"
+            android:paddingBottom="3dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="3dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/nombre_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:textStyle="normal|bold" />
 
             <TextView
+                android:id="@+id/tv_detalle_nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary"
-                android:id="@+id/tv_detalle_nombre" />
+                android:layout_weight="1"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
+            android:background="@color/colorList"
+            android:orientation="horizontal"
+            android:paddingBottom="3dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="3dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/apellidos_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:textStyle="normal|bold" />
 
             <TextView
+                android:id="@+id/tv_detalle_apellidos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary"
-                android:id="@+id/tv_detalle_apellidos" />
+                android:layout_weight="1"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
+            android:orientation="horizontal"
+            android:paddingBottom="3dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="3dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/sexo_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:textStyle="normal|bold" />
 
             <TextView
+                android:id="@+id/tv_detalle_sexo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary"
-                android:id="@+id/tv_detalle_sexo" />
+                android:layout_weight="1"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
+            android:background="@color/colorList"
+            android:orientation="horizontal"
+            android:paddingBottom="3dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="3dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/edad_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:textStyle="normal|bold" />
 
             <TextView
+                android:id="@+id/tv_detalle_edad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary"
-                android:id="@+id/tv_detalle_edad" />
+                android:layout_weight="1"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
+            android:orientation="horizontal"
+            android:paddingBottom="3dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="3dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/sip_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:textStyle="normal|bold" />
 
             <TextView
+                android:id="@+id/tv_detalle_sip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary"
-                android:id="@+id/tv_detalle_sip" />
+                android:layout_weight="1"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
+            android:background="@color/colorList"
+            android:orientation="horizontal"
+            android:paddingBottom="3dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="3dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/nhc_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:textStyle="normal|bold" />
 
             <TextView
+                android:id="@+id/tv_detalle_nhc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary"
-                android:id="@+id/tv_detalle_nhc" />
+                android:layout_weight="1"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
+            android:orientation="horizontal"
+            android:paddingBottom="3dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="3dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/motivo_ingreso_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:textStyle="normal|bold" />
 
             <TextView
+                android:id="@+id/tv_detalle_motivo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary"
-                android:id="@+id/tv_detalle_motivo" />
+                android:layout_weight="1"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
+            android:background="@color/colorList"
+            android:orientation="horizontal"
+            android:paddingBottom="3dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="3dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/telelefono_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:textStyle="normal|bold" />
 
             <TextView
+                android:id="@+id/tv_detalle_telefono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary"
-                android:id="@+id/tv_detalle_telefono" />
+                android:layout_weight="1"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
+            android:orientation="horizontal"
+            android:paddingBottom="3dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="3dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/direccion_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:textStyle="normal|bold" />
 
             <TextView
+                android:id="@+id/tv_detalle_direccion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary"
-                android:id="@+id/tv_detalle_direccion" />
+                android:layout_weight="1"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
+            android:background="@color/colorList"
+            android:orientation="horizontal"
+            android:paddingBottom="3dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="3dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/ciudad_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:textStyle="normal|bold" />
 
             <TextView
+                android:id="@+id/tv_detalle_ciudad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary"
-                android:id="@+id/tv_detalle_ciudad" />
+                android:layout_weight="1"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
+            android:orientation="horizontal"
+            android:paddingBottom="3dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="3dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/provincia_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:textStyle="normal|bold" />
 
             <TextView
+                android:id="@+id/tv_detalle_provincia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary"
-                android:id="@+id/tv_detalle_provincia" />
+                android:layout_weight="1"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
+            android:background="@color/colorList"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="3dp">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/nacionalidad_"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="normal|bold"
-                android:textColor="?android:attr/textColorPrimary" />
+                android:textColor="?android:attr/textColorPrimary"
+                android:textStyle="normal|bold" />
 
             <TextView
+                android:id="@+id/tv_detalle_nacionalidad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="3dp"
-                android:textColor="?android:attr/textColorPrimary"
-                android:id="@+id/tv_detalle_nacionalidad" />
+                android:layout_weight="1"
+                android:textColor="?android:attr/textColorPrimary" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
