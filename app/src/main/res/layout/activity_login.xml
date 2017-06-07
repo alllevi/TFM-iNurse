@@ -13,11 +13,6 @@
     android:background="@android:color/background_light">
 
     <!-- Login progress -->
-    <ImageView
-        android:layout_width="match_parent"
-        app:srcCompat="@drawable/cardiogram"
-        android:id="@+id/imageView3"
-        android:layout_height="120dp" />
 
     <ProgressBar
         android:id="@+id/login_progress"
@@ -26,6 +21,25 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginTop="15dp"
+        app:srcCompat="@drawable/nurse" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="cursive"
+        android:text="@string/login_title"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <ScrollView
         android:id="@+id/login_form"
@@ -41,52 +55,66 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
 
                 <AutoCompleteTextView
                     android:id="@+id/email"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_action_user"
+                    android:drawablePadding="5dp"
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:textColor="@color/colorPrimary"
-                    android:textColorLink="?attr/colorPrimaryDark"
-                    android:drawableLeft="@drawable/ic_action_user"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="5dp"
-                    android:textColorHighlight="@color/colorPrimaryDark" />
+                    android:textColorHighlight="@color/colorPrimaryDark"
+                    android:textColorLink="?attr/colorPrimaryDark" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp">
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp">
 
                 <EditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/prompt_password"
-                    android:imeOptions="actionUnspecified"
-                    android:imeActionId="@+id/login"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:textColor="?attr/colorPrimary"
+                    android:layout_height="40dp"
                     android:drawableLeft="@drawable/ic_lock_outline"
                     android:drawablePadding="7dp"
-                    android:paddingLeft="7dp" />
+                    android:hint="@string/prompt_password"
+                    android:imeActionId="@+id/login"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingLeft="7dp"
+                    android:textColor="?attr/colorPrimary" />
 
             </android.support.design.widget.TextInputLayout>
 
-            <Button
-                android:id="@+id/email_sign_in_button"
-                style="?android:textAppearanceSmall"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/action_sign_in"
-                android:textStyle="bold" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/email_sign_in_button"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0"
+                    android:background="@drawable/cardview_border"
+                    android:text="@string/action_sign_in"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

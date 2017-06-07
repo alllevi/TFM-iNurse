@@ -8,6 +8,9 @@ public class AvisosDTO {
     private Date fechaFin;
     private Integer horasRepeticion;
     private String descripcion;
+    private String paciente;
+    private Integer planta;
+    private String habitacion;
 
     public AvisosDTO(Integer key, Date fechaInicio, Date fechaFin, Integer horasRepeticion, String descripcion) {
         this.key = key;
@@ -15,6 +18,17 @@ public class AvisosDTO {
         this.fechaFin = fechaFin;
         this.horasRepeticion = horasRepeticion;
         this.descripcion = descripcion;
+    }
+
+    public AvisosDTO(Integer key, Date fechaInicio, Date fechaFin, Integer horasRepeticion, String descripcion, String paciente, Integer planta, String habitacion) {
+        this.key = key;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.horasRepeticion = horasRepeticion;
+        this.descripcion = descripcion;
+        this.paciente = paciente;
+        this.planta = planta;
+        this.habitacion = habitacion;
     }
 
     public Integer getKey() {
@@ -35,5 +49,17 @@ public class AvisosDTO {
 
     public String getDescripcion() {
         return descripcion;
+    }
+
+    public String getPaciente() {
+        return paciente;
+    }
+
+    public String getHabitacion() {
+        return habitacion;
+    }
+
+    public Integer getPlanta() {
+        return planta;
     }
 }

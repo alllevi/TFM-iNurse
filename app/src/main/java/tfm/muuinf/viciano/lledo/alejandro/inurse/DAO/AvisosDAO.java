@@ -38,6 +38,33 @@ public class AvisosDAO extends iNurseDAO {
         return listaAvisosDTO;
     }
 
+    public List<AvisosDTO> getAvisosActivos() throws Exception {
+        URL url = new URL(ConstantesDAO.GET_LIST_AVISOS);
+        JSONObject jsonObject = getHTTP(url);
+        JSONArray jsonArrayUsuarios = jsonObject.getJSONArray("avisos");
+
+        List<AvisosDTO> listaAvisosDTO = new ArrayList<>();
+        for (int i = 0; i < jsonArrayUsuarios.length(); i++) {
+            JSONObject jsonObjectUsuario = jsonArrayUsuarios.getJSONObject(i);
+            Integer avisoKey = Integer.parseInt(jsonObjectUsuario.get("aviso_key").toString());
+            Date avisoFechaInicio = formatterLong.parse(jsonObjectUsuario.get("aviso_fecha_inicio").toString());
+            Date avisoFechaFin = formatterLong.parse(jsonObjectUsuario.get("aviso_fecha_fin").toString());
+            Integer avisoHorasRepeticion = Integer.parseInt(jsonObjectUsuario.get("aviso_horas_repeticion").toString());
+            String avisoDescripcion = jsonObjectUsuario.get("aviso_descripcion").toString();
+            String nombre = jsonObjectUsuario.get("nombre").toString();
+            String primerApellido = jsonObjectUsuario.get("primerApellido").toString();
+            String segundoApellido = jsonObjectUsuario.get("segundoApellido").toString();
+            String planta = jsonObjectUsuario.get("planta").toString();
+            String habitacion = jsonObjectUsuario.get("habitacion").toString();
+
+            String paciente = nombre + " " + primerApellido + " " + segundoApellido;
+            String habitacionPlanta = planta + "-" + habitacion;
+
+            listaAvisosDTO.add(new AvisosDTO(avisoKey, avisoFechaInicio, avisoFechaFin, avisoHorasRepeticion, avisoDescripcion, paciente, Integer.parseInt(planta), habitacionPlanta));
+        }
+        return listaAvisosDTO;
+    }
+
     public AvisoConfiguracionDTO getAvisosConfiguracion() throws Exception {
         URL url = new URL(ConstantesDAO.AVISOS_CONFIGURACION);
         JSONObject jsonObject = getHTTP(url);

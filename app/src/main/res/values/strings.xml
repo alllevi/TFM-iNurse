@@ -93,5 +93,7 @@
     <string name="contentDescription_detallePaciente">Foto del paciente</string>
     <string name="contentDescription_iconoCalendario">Icono calendario</string>
     <string name="contentDescription_iconoReloj">Icono reloj</string>
+    <string name="login_title">Bienvenido a iNurse</string>
+    <string name="visualizar_avisos">Ver avisos</string>
 
 </resources>

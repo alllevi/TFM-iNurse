@@ -15,7 +15,13 @@ public class ConstantesComun {
 
     public static final String TIPEST3 = "TIPEST3";
 
+    public static final String TIPEST4 = "TIPEST4";
+
     public static final String TIPEST5 = "TIPEST5";
 
     public static final int REQUEST_CODE = 1;
+
+    public static final int UPDATE_TO_FINALIZADA = 0;
+
+    public static final int UPDATE_TO_PROGRESO = 1;
 }

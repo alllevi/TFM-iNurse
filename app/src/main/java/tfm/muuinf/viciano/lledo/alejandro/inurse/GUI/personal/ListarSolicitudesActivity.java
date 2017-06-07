@@ -108,14 +108,15 @@ public class ListarSolicitudesActivity extends InurseActivity {
 
     public void onClickEnProgreso(Integer solicitudKey) {
         if (checkInternet()) {
-            SolicitudEnProgresoTask solicitudEnProgresoTask = new SolicitudEnProgresoTask(solicitudKey);
-            solicitudEnProgresoTask.execute((Void) null);
+            UpdateSolicitudTask updateSolicitudTask = new UpdateSolicitudTask(solicitudKey, ConstantesComun.UPDATE_TO_PROGRESO);
+            updateSolicitudTask.execute((Void) null);
         }
     }
 
     public void onClickFinalizar(Integer solicitudKey) {
         if (checkInternet()) {
-            // IMPLEMENTAR
+            UpdateSolicitudTask updateSolicitudTask = new UpdateSolicitudTask(solicitudKey, ConstantesComun.UPDATE_TO_FINALIZADA);
+            updateSolicitudTask.execute((Void) null);
         }
     }
 
@@ -189,19 +190,25 @@ public class ListarSolicitudesActivity extends InurseActivity {
     /**
      * Solicitud en progreso task
      */
-    private class SolicitudEnProgresoTask extends AsyncTask<Void, Void, Boolean> {
+    private class UpdateSolicitudTask extends AsyncTask<Void, Void, Boolean> {
 
         private Integer solicitudKey;
+        private Integer idOperacion;
 
-        public SolicitudEnProgresoTask(Integer solicitudKey) {
+        public UpdateSolicitudTask(Integer solicitudKey, Integer idOperacion) {
             this.solicitudKey = solicitudKey;
+            this.idOperacion = idOperacion;
         }
 
         @Override
         protected Boolean doInBackground(final Void... params) {
             ServiciosDAL dal = new ServiciosDAL();
             try {
-                return dal.getSolicitudDAO().updateToProgreso(solicitudKey);
+                if (ConstantesComun.UPDATE_TO_PROGRESO == idOperacion) {
+                    return dal.getSolicitudDAO().updateToProgreso(solicitudKey);
+                } else {
+                    return dal.getSolicitudDAO().updateToFinalizada(solicitudKey);
+                }
             } catch (final Exception e) {
                 e.printStackTrace();
                 return false;
@@ -211,11 +218,16 @@ public class ListarSolicitudesActivity extends InurseActivity {
         @Override
         protected void onPostExecute(Boolean success) {
             if (success) {
-                updateLists(solicitudKey, ConstantesComun.TIPEST3);
+                if (ConstantesComun.UPDATE_TO_PROGRESO == idOperacion) {
+                    updateLists(solicitudKey, ConstantesComun.TIPEST3);
+                } else {
+                    updateLists(solicitudKey, ConstantesComun.TIPEST4);
+                }
                 Toast.makeText(getApplicationContext(), "Se ha actualizado el estado", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getApplicationContext(), "Se ha producido un error inesperado", Toast.LENGTH_SHORT).show();
             }
         }
     }
+
 }

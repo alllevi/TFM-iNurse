@@ -37,7 +37,8 @@ public class SolicitudDAO extends iNurseDAO {
             String matiCod = jsonObjectUsuario.get("mati_cod").toString();
             String matiDesc = jsonObjectUsuario.get("mati_desc").toString();
             Date soliFecha = formatter.parse(jsonObjectUsuario.get("soli_fecha").toString());
-            listaSolicitudDTO.add(new SolicitudDTO(soliKey, masoliDesc, soliDesc, maprioPrioridad, maprioDesc, matiCod, matiDesc, soliFecha));
+            String motivoRechazo = jsonObjectUsuario.get("solire_motivo").toString();
+            listaSolicitudDTO.add(new SolicitudDTO(soliKey, masoliDesc, soliDesc, maprioPrioridad, maprioDesc, matiCod, matiDesc, soliFecha, motivoRechazo));
         }
         return listaSolicitudDTO;
     }
@@ -56,6 +57,15 @@ public class SolicitudDAO extends iNurseDAO {
     public boolean updateToProgreso(final Integer key) throws IOException {
 
         String stringURL = ConstantesDAO.UPDATE_SOLICITUD_PROGRESO + "soliKey=" + key;
+
+        URL url = new URL(stringURL);
+        String codigoRespuesta = insertHTTP(url);
+        return "1".equals(codigoRespuesta);
+    }
+
+    public boolean updateToFinalizada(final Integer key) throws IOException {
+
+        String stringURL = ConstantesDAO.UPDATE_SOLICITUD_FINALIZADA + "soliKey=" + key;
 
         URL url = new URL(stringURL);
         String codigoRespuesta = insertHTTP(url);

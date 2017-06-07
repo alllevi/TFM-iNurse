@@ -41,7 +41,6 @@ public class LoginActivity extends InurseActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
         sharedpreferences = getSharedPreferences(ConstantesComun.SHARED_PREFS_FILE, ConstantesComun.CONTEXT_MODE_PRIVATE);
 
         /*Comprobamos si existe una sesión abierta por usuario

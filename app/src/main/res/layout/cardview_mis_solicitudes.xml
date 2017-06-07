@@ -120,6 +120,33 @@
                     android:textAllCaps="false"
                     android:textColor="?android:attr/textColorPrimary" />
 
+                <LinearLayout
+                    android:id="@+id/tv_mis_solicitudes_vl_rechazo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/motivo_rechazo"
+                        android:textColor="?android:attr/textColorPrimary"
+                        android:textStyle="normal|bold" />
+
+                    <TextView
+                        android:id="@+id/tv_mis_solicitudes_rechazado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_weight="1"
+                        android:text="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos"
+                        android:textColor="?android:attr/textColorPrimary" />
+                </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
 

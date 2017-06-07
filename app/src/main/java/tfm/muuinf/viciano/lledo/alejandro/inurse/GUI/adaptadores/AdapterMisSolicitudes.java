@@ -4,7 +4,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -34,6 +37,13 @@ public class AdapterMisSolicitudes extends RecyclerView.Adapter<AdapterMisSolici
         holder.tvEstado.setText(listaSolicitudesDTO.get(position).getTipoDescripcion());
         holder.tvSolicitud.setText(listaSolicitudesDTO.get(position).getDescripcion());
         holder.tvDescripcion.setText(listaSolicitudesDTO.get(position).getDescripcionLarga());
+        String motivoRechazo = listaSolicitudesDTO.get(position).getMotivoRechazo();
+        if (StringUtils.isNotBlank(motivoRechazo)) {
+            holder.tvMotivoRechazo.setText(motivoRechazo);
+        } else {
+            holder.llMotivoRechazo.setVisibility(View.GONE);
+        }
+
     }
 
     @Override
@@ -48,6 +58,8 @@ public class AdapterMisSolicitudes extends RecyclerView.Adapter<AdapterMisSolici
         TextView tvEstado;
         TextView tvSolicitud;
         TextView tvDescripcion;
+        TextView tvMotivoRechazo;
+        LinearLayout llMotivoRechazo;
 
         MisSolicitudesViewHolder(final View itemView) {
             super(itemView);
@@ -56,6 +68,8 @@ public class AdapterMisSolicitudes extends RecyclerView.Adapter<AdapterMisSolici
             tvEstado = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_estado);
             tvSolicitud = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_solicitud);
             tvDescripcion = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_descripcion);
+            tvMotivoRechazo = (TextView) itemView.findViewById(R.id.tv_mis_solicitudes_rechazado);
+            llMotivoRechazo = (LinearLayout) itemView.findViewById(R.id.tv_mis_solicitudes_vl_rechazo);
         }
     }
 }

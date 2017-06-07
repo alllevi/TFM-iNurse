@@ -19,6 +19,7 @@ public class MenuPersonalActivity extends InurseActivity implements View.OnClick
     private Button btSolicitudes;
     private Button btMapaDeCamas;
     private Button btMenus;
+    private Button btVisualizarAvisos;
     private Button btConfigurarAvisos;
     private Button btCerrarSesion;
 
@@ -37,6 +38,7 @@ public class MenuPersonalActivity extends InurseActivity implements View.OnClick
         btSolicitudes = (Button) findViewById(R.id.bt_menu_personal_solicitudes);
         btMapaDeCamas = (Button) findViewById(R.id.bt_menu_personal_mapa);
         btMenus = (Button) findViewById(R.id.bt_menu_personal_menus);
+        btVisualizarAvisos = (Button) findViewById(R.id.bt_menu_personal_avisos);
         btConfigurarAvisos = (Button) findViewById(R.id.bt_menu_personal_configurar);
         btCerrarSesion = (Button) findViewById(R.id.bt_menu_personal_cerrar_sesion);
     }
@@ -45,6 +47,7 @@ public class MenuPersonalActivity extends InurseActivity implements View.OnClick
         btSolicitudes.setOnClickListener(this);
         btMapaDeCamas.setOnClickListener(this);
         btMenus.setOnClickListener(this);
+        btVisualizarAvisos.setOnClickListener(this);
         btConfigurarAvisos.setOnClickListener(this);
         btCerrarSesion.setOnClickListener(this);
     }
@@ -57,6 +60,9 @@ public class MenuPersonalActivity extends InurseActivity implements View.OnClick
         } else if (v.getId() == R.id.bt_menu_personal_mapa) {
             final Intent mapaCamasIntent = new Intent(this, MapaHospitalarioActivity.class);
             startActivity(mapaCamasIntent);
+        } else if (v.getId() == R.id.bt_menu_personal_avisos) {
+            final Intent listarAvisosActivosIntent = new Intent(this, ListarAvisosActivos.class);
+            startActivity(listarAvisosActivosIntent);
         } else if (v.getId() == R.id.bt_menu_personal_menus) {
             final Intent listarMenusIntent = new Intent(this, ListarMenusActivity.class);
             startActivity(listarMenusIntent);

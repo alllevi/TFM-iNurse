@@ -11,6 +11,7 @@ public class SolicitudDTO {
     private String prioridadDescripcion;
     private String tipoCodigo;
     private String tipoDescripcion;
+    private String motivoRechazo;
     private Date fecha;
     private String paciente;
     private String habitacion;
@@ -19,7 +20,7 @@ public class SolicitudDTO {
 
     }
 
-    public SolicitudDTO(final Integer key, final String descripcion, final String descripcionLarga, final Integer prioridad, final String prioridadDescripcion, final String tipoCodigo, final String tipoDescripcion, final Date fecha) {
+    public SolicitudDTO(final Integer key, final String descripcion, final String descripcionLarga, final Integer prioridad, final String prioridadDescripcion, final String tipoCodigo, final String tipoDescripcion, final Date fecha, final String motivoRechazo) {
         this.key = key;
         this.descripcion = descripcion;
         this.descripcionLarga = descripcionLarga;
@@ -28,6 +29,7 @@ public class SolicitudDTO {
         this.tipoCodigo = tipoCodigo;
         this.tipoDescripcion = tipoDescripcion;
         this.fecha = fecha;
+        this.motivoRechazo = motivoRechazo;
     }
 
     public SolicitudDTO(final Integer key, final String descripcion, final String descripcionLarga, final Integer prioridad, final String prioridadDescripcion, final String tipoCodigo, final String tipoDescripcion, final Date fecha, final String paciente, final String habitacion) {
@@ -93,6 +95,10 @@ public class SolicitudDTO {
 
     public String getPaciente() {
         return paciente;
+    }
+
+    public String getMotivoRechazo() {
+        return motivoRechazo;
     }
 }
 

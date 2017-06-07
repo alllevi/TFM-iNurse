@@ -15,56 +15,69 @@
         android:layout_alignParentStart="true">
 
         <Button
-            android:text="@string/ver_solicitudes"
-            android:layout_width="match_parent"
             android:id="@+id/bt_menu_personal_solicitudes"
-            android:textColor="@color/colorPrimary"
-            android:drawableLeft="@drawable/ver_solicitudes"
-            android:textSize="20sp"
-            android:paddingLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
             android:background="@drawable/menu_button_style"
-            android:gravity="left|center_vertical|center_horizontal"
+            android:drawableLeft="@drawable/ver_solicitudes"
             android:drawablePadding="25dp"
-            android:layout_height="100dp" />
+            android:gravity="left|center_vertical|center_horizontal"
+            android:paddingLeft="20dp"
+            android:text="@string/ver_solicitudes"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
 
         <Button
-            android:text="@string/mapa_camas"
-            android:layout_width="match_parent"
             android:id="@+id/bt_menu_personal_mapa"
-            android:paddingLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
             android:background="@drawable/menu_button_style"
             android:drawableLeft="@drawable/hospital_bed"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimary"
             android:drawablePadding="25dp"
             android:gravity="left|center_vertical|center_horizontal"
-            android:layout_height="100dp" />
+            android:paddingLeft="20dp"
+            android:text="@string/mapa_camas"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
 
         <Button
-            android:text="@string/menus_encargados"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
             android:id="@+id/bt_menu_personal_menus"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
             android:background="@drawable/menu_button_style"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimary"
-            android:gravity="left|center_vertical|center_horizontal"
             android:drawableLeft="@drawable/meal"
+            android:drawablePadding="25dp"
+            android:gravity="left|center_vertical|center_horizontal"
             android:paddingLeft="20dp"
-            android:drawablePadding="25dp" />
+            android:text="@string/menus_encargados"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
 
         <Button
-            android:text="@string/configurar_avisos"
+            android:id="@+id/bt_menu_personal_avisos"
             android:layout_width="match_parent"
-            android:id="@+id/bt_menu_personal_configurar"
+            android:layout_height="85dp"
             android:background="@drawable/menu_button_style"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20sp"
+            android:drawableLeft="@drawable/smartphone"
+            android:drawablePadding="25dp"
             android:gravity="left|center_vertical|center_horizontal"
             android:paddingLeft="20dp"
+            android:text="@string/visualizar_avisos"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/bt_menu_personal_configurar"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:background="@drawable/menu_button_style"
             android:drawableLeft="@drawable/user_warning"
             android:drawablePadding="25dp"
-            android:layout_height="100dp" />
+            android:gravity="left|center_vertical|center_horizontal"
+            android:paddingLeft="20dp"
+            android:text="@string/configurar_avisos"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
 
         <Button
             android:text="@string/cerrar_sesion"
