@@ -62,7 +62,7 @@ public class AdapterSeleccionMenus extends RecyclerView.Adapter<AdapterSeleccion
 
     @Override
     public int getItemCount() {
-        return 4;
+        return listaMenus.size();
     }
 
     public class SeleccionMenusViewHolder extends RecyclerView.ViewHolder {

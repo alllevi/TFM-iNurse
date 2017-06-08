@@ -96,4 +96,13 @@
     <string name="login_title">Bienvenido a iNurse</string>
     <string name="visualizar_avisos">Ver avisos</string>
 
+    <string name="login">Autenticarse</string>
+    <string name="menu_principal">Menu principal</string>
+    <string name="solicitudes">Solicitudes</string>
+    <string name="menus">Menús</string>
+    <string name="avisos">Mis avisos</string>
+    <string name="informacion">Información</string>
+    <string name="rechazar_solicitud">Rechazar solicitud</string>
+    <string name="detalle_paciente">Información del paciente</string>
+    <string name="avisos_activos">Avisos activos</string>
 </resources>
