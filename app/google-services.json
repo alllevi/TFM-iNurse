@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "778212339297",
+    "firebase_url": "https://inurse-10ee5.firebaseio.com",
+    "project_id": "inurse-10ee5",
+    "storage_bucket": "inurse-10ee5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778212339297:android:95274392dfc6a7e2",
+        "android_client_info": {
+          "package_name": "tfm.muuinf.viciano.lledo.alejandro.iNurse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778212339297-g7hlc0steclq3rgv8hdq264k7q6jlh03.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0fLYzF4d_H44FL5qvbcq5-8tb4BNNpJs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
